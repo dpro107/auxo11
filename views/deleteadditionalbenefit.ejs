@@ -1,0 +1,667 @@
+<html>
+
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=0.76">
+</head>
+
+
+
+<body style="background-color: rgb(29,30,31); color: white;" onload="myfn()">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style type="text/css">
+      
+
+
+      @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(29,30,31);
+}
+
+.row {
+    --bs-gutter-x: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75em;
+    font-weight: 150;
+    line-height: 1em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    background-color: rgb(33,37,41);
+    /* padding: 5px 5px; */
+    /* background: #eb2228; */
+    border: none;
+    border-radius: 2;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 3px rgb(255 255 255 / 10%);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 70%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 5px 0;
+}
+
+
+.gtg {
+    height: 10vh;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(65, 0, 0));
+    border-bottom-left-radius: 2rem ;
+    border-bottom-right-radius: 2rem ;
+  }
+  
+  .hero-img{
+    height: 5vh;
+    margin-top: 5px;
+    padding-top: 5px;
+    background-image: url('/images/HV Logo Reverse@250x.png');
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: 7%;
+    position:relative;
+    border-bottom: #aaa;
+  }
+  
+  .card_custom{
+    max-width: 7rem; 
+    border: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+    top: -3rem;
+    text-decoration: none;
+    align-items: center;
+  }
+  .card_custom:hover{
+    box-shadow: 0px 5px 5px rgba(0,0,0,.75);}
+  
+  .admincard{
+    box-shadow: 0px 5px 10px rgba(255, 0, 0, 0.7); ;
+  }
+  .admincard:hover{
+    box-shadow: 0px 5px 5px rgba(255, 0, 0, .8); 
+  }
+  .a{
+    text-decoration: none;
+  }
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 200px;
+    max-width: 300px;
+    height: 100vh;
+    background: rgb(33,37,41);
+    color: #fff;
+    transition: all 0.3s;
+    box-shadow: -5px -15px 15px rgb(203, 203, 203);
+    
+    position: relative;
+}
+
+
+#sidebar.active {
+    margin-left: -205px;
+}
+
+#sidebar .sidebar-header {
+    padding: 5px;
+    background: rgb(28,28,28);
+}
+
+.list-unstyled li{
+    
+    padding-left: 0rem;
+    ;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    padding-left: -1px;
+    border-bottom: 1px solid #00000000;
+    min-height: 40.5rem;
+}
+
+
+
+
+#sidebar ul p {
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    
+}
+
+#sidebar ul li a:hover {
+    /* color: #ff0008; */
+    background: rgba(249, 0, 0, 0.672);
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #434242;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #434242;
+}
+
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #eb2228;
+}
+
+a.article,
+a.article:hover {
+    background: #eb2228 !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+ #content {
+    width: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    min-height: 7em;
+    transition: all 0.3s;
+    background-color: rgb(29,30,31);
+} 
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -220px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+/* ---------------------------------------------------------------------- */
+/* CSS for Popup */
+/* ---------------------------------------------------------------------- */
+
+
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(142, 137, 137, 0.521);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0em;
+  background: white;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
+/* Demo Styles */
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.4;
+}
+/* 
+body {
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #ffffff 0, #ffffff 100%);
+  color: black;
+} */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal-window > div {
+  border-radius: 1rem;
+}
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+#marginalspace{
+    margin-top: 0px;
+}
+
+.logo {
+  max-width: 150px;
+  display: block;
+}
+
+small {
+  color: lightgray;
+}
+
+.btn {
+    background-color: rgb(67,66,66);
+    padding: 5.5px;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: medium;
+    margin-right: 69px;
+    /* margin-top: 2px; */
+    padding-top: 6px;
+    margin-top: -27px;
+}
+
+.btn i {
+  padding-right: 0.3em;
+}
+
+/*-------------------------------------------------------------------------------------- 
+Style for Navbars
+
+-----------------------------------------------------------------------------------------*/
+
+
+/* ENTER STYLES FROM HERE  */
+   
+
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+}
+body {
+   
+    background-position: center;
+    height: 100vh;
+}
+.login {
+    HEIGHT: 543PX;
+    width: 400px;
+    background-color: rgb(29,30,31);
+    /* box-shadow: 0 0 9px 0 rgb(0 0 0 / 30%); */
+    margin: 100px auto;
+}
+
+h5{
+    font-size: 21px;
+}
+.login h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.login form {
+   
+    BACKGROUND-COLOR: rgb(33,37,41);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+    BORDER-RADIUS: 23PX;
+    width: 156%;
+    height: 52.5%;
+    margin-top: -205%;
+    margin-left: -22%;
+    box-shadow: 3px 3px 7.5px 0px #000, -3px -3px 7.5px #555;
+
+}
+.login form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #c72828;
+    color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"] {
+    width: 310px;
+    height: 50px;
+    /* border: 1px solid #dee0e400; */
+    margin-bottom: 20px;
+    padding: 0 15px;
+    BACKGROUND-COLOR: rgb(33,37,41);
+    border-style: solid;
+    color: white;
+
+}
+.login form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: -11px;
+    background-color: #c72828;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    BORDER-RADIUS: 23PX;
+}
+.login form input[type="submit"]:hover {
+  background-color: #c72828;
+    transition: background-color 0.2s;
+}
+
+
+
+
+</style>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <a href="/user/dashboard">
+            <img src="/public/images/HV Logo Reverse@250x.png"  alt="" width="99%" height="55px">
+            </a>
+        </div>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <ul class="list-unstyled components" style="    FONT-SIZE: initial;">
+            <li>
+              <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <h6><i class="fa fa-line-chart" style="margin-right: 10px ; font-size: 25px;"> </i> SALES</h6>  </a>
+              <ul class="pageSubmenu1" id="pageSubmenu1">
+                <ul style="    margin-left: -71px;">
+                    <a href="/crud/form" style="    border: solid;
+                    border-width: thin;
+                    border-color: #7e7e7e;
+                    border-radius: 4px;
+                    
+                ">CREATE ENTRY</a>
+                </ul>
+                <ul style="    margin-left: -71px;">
+                    <a href="/tlogin" style="    border: solid;
+                    border-width: thin;
+                    border-color: #7e7e7e;
+                    border-radius: 4px;
+                   
+                ">UPDATE ENTRY</a>
+                </ul>
+    
+    
+                <ul style="    margin-left: -71px;">
+                  <a href="/grud/insert" style="    border: solid;
+                  border-width: thin;
+                  border-color: #7e7e7e;
+                  border-radius: 4px;
+                 
+              ">ADD PROGRAM</a>
+              </ul>
+    
+    
+    
+              <ul style="    margin-left: -71px;">
+                  <a href="/mrud/insert" style="    border: solid;
+                  border-width: thin;
+                  border-color: #7e7e7e;
+                  border-radius: 4px;
+                  
+              ">ADD COUNSELLOR / TL</a>
+              </ul>
+    
+    
+              <ul style="    margin-left: -71px;">
+                  <a href="/maprud/insert" style="    border: solid;
+                  border-width: thin;
+                  border-color: #7e7e7e;
+                  border-radius: 4px;
+              ">CHANGE MAPPING</a>
+              </ul>
+               
+    
+              <!-- <ul style="    margin-left: -71px;">
+                  <a href="/frud/read_test" style="    border: solid;
+                  border-width: thin;
+                  border-color: #7e7e7e;
+                  border-radius: 4px;
+              ">FETCH DATA (LSQ)</a>
+              </ul>
+                
+    
+               -->
+              <ul style="    margin-left: -71px;">
+                  <a href="/zrud/insert" style="    border: solid;
+                  border-width: thin;
+                  border-color: #7e7e7e;
+                  border-radius: 4px;
+                  background-color:#eb2228;
+              ">ADDITIONAL BENEFIT </a>
+              </ul>
+    
+              <ul style="    margin-left: -71px;">
+                  <a href="/brud/insert" style="    border: solid;
+                  border-width: thin;
+                  border-color: #7e7e7e;
+                  border-radius: 4px;
+              ">BATCH DETAILS</a>
+              </ul>  
+              </ul>
+          </li>
+        </ul>
+
+        <button type="button" class="btn btn-danger" style="width: 90%; --bs-btn-hover-bg: #ff0019; bottom: 30;position: absolute;"> <a href="/users/logout"><i class="bi bi-box-arrow-left"></i>Logout</a></button>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-secondary " style="height: 42px; width: 42px;     margin-top: 1px;">
+                    <i class="bi bi-text-left"></i>
+                    <span></span>
+                </button>
+                
+
+                <h4><center style="font-size: 26px;">Additional Benefit Dashboard</center></h4>
+                
+            </div>
+        </nav>
+
+
+<div class="majorcontainer">
+
+<!-- 
+Enter Content From Here 
+
+-->
+<div class="row no-gutters">
+    <div class="col-12 col-sm-6 col-md-6">
+       
+    <div class="login pt-3">
+        
+        <div class="login pt-3">
+        
+        
+    </div>
+           
+    <form action="<%'/grud/create'%>" method="POST">
+        <h2 style="padding-bottom: 0rem; padding-top: 0rem; font-size: 27px;" >Delete Item from Additional Benefit </h2>
+        <br>
+
+        <h5> Delete Item Name&emsp; :<input type="text"  id ="item" name="item" required value="<%=(typeof editData!='undefined')? editData.item:''%>" style="width: 300px;
+            height: 50px;
+            /* border: 1px solid #dee0e400; */
+            margin-bottom: 20px;
+            padding: 0 15px;
+            BACKGROUND-COLOR: rgb(33,37,41);
+            border-style: solid;
+            border-radius: 0.5rem;
+            margin-left: 53px;
+            color: white;"></h5>
+
+
+<input type="submit" value="DELETE" class="w-50 mb-3 p-1">
+    </form>
+
+</div>
+
+</div>
+
+<div class="col-12 col-sm-6 col-md-6">
+
+    
+      
+
+
+
+</div>
+
+</div>
+
+
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> 
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+
+
+<!-- ENTER SCRIPTS FROM HERE  -->
+
+
+
+</body>
+
+    <!-- <h3>SALESX Form</h3> -->
+    
+
+</html>
+
+
+
+

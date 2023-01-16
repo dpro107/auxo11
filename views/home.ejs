@@ -1,0 +1,893 @@
+<html>
+
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=0.70">
+</head>
+
+
+
+<body style="background-color: rgb(29,30,31); color: white;" onload="myfn()">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style type="text/css">
+      
+
+
+      @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(29,30,31);
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75em;
+    font-weight: 150;
+    line-height: 1em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    background-color: rgb(33,37,41);
+    /* padding: 5px 5px; */
+    /* background: #eb2228; */
+    border: none;
+    border-radius: 2;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 3px rgb(255 255 255 / 10%);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 70%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 5px 0;
+}
+
+
+.gtg {
+    height: 10vh;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(65, 0, 0));
+    border-bottom-left-radius: 2rem ;
+    border-bottom-right-radius: 2rem ;
+  }
+  
+  .hero-img{
+    height: 5vh;
+    margin-top: 5px;
+    padding-top: 5px;
+    background-image: url('/images/HV Logo Reverse@250x.png');
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: 7%;
+    position:relative;
+    border-bottom: #aaa;
+  }
+  
+  .card_custom{
+    max-width: 7rem; 
+    border: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+    top: -3rem;
+    text-decoration: none;
+    align-items: center;
+  }
+  .card_custom:hover{
+    box-shadow: 0px 5px 5px rgba(0,0,0,.75);}
+  
+  .admincard{
+    box-shadow: 0px 5px 10px rgba(255, 0, 0, 0.7); ;
+  }
+  .admincard:hover{
+    box-shadow: 0px 5px 5px rgba(255, 0, 0, .8); 
+  }
+  .a{
+    text-decoration: none;
+  }
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    /* align-items: stretch; */
+}
+
+#sidebar {
+    min-width: 200px;
+    max-width: 300px;
+    /* margin-bottom: 40px; */
+    background: rgb(33,37,41);
+    color: #fff;
+    transition: all 0.3s;
+    box-shadow: -5px -15px 7px rgb(203, 203, 203);
+    
+
+}
+
+
+#sidebar.active {
+    margin-left: -205px;
+}
+
+#sidebar .sidebar-header {
+    padding: 5px;
+    background: rgb(28,28,28);
+}
+
+
+
+#sidebar ul.components {
+    padding: 20px 0;
+    padding-left: -1px;
+    border-bottom: 1px solid #00000000;
+    height: 85vh;
+}
+
+
+
+
+#sidebar ul p {
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    
+}
+
+#sidebar ul li a:hover {
+    /* color: #ff0008; */
+    background: rgba(249, 0, 0, 0.672);
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #3b3b3b;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #3b3b3b;
+}
+
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #eb2228;
+}
+
+a.article,
+a.article:hover {
+    background: #eb2228 !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+ #content {
+    width: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    min-height: 7em;
+    transition: all 0.3s;
+    background-color: rgb(29,30,31);
+} 
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -220px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+/* ---------------------------------------------------------------------- */
+/* CSS for Popup */
+/* ---------------------------------------------------------------------- */
+
+
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(142, 137, 137, 0.521);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0.5px;
+}
+
+
+.modal-window > div {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0em;
+  background: white;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
+/* 
+body {
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #ffffff 0, #ffffff 100%);
+  color: black;
+} */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal-window > div {
+  border-radius: 1rem;
+}
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+#marginalspace{
+    margin-top: 0px;
+}
+
+.logo {
+  max-width: 150px;
+  display: block;
+}
+
+small {
+  color: lightgray;
+}
+
+.btn {
+    background-color: rgb(67,66,66);
+    padding: 5.5px;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: medium;
+    margin-right: 69px;
+    /* margin-top: 2px; */
+    padding-top: 6px;
+    margin-top: -27px;
+}
+
+.btn i {
+  padding-right: 0.3em;
+}
+
+/*-------------------------------------------------------------------------------------- 
+Style for Navbars
+
+-----------------------------------------------------------------------------------------*/
+
+   
+
+
+</style>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header" >
+            <a href="/">
+            <img src="../public/images/HV Logo Reverse@250x.png"  alt="" width="99%" height="55px">
+            </a>
+        </div>
+<!-- sidebar navigations start -->
+        <ul class="list-unstyled components" style="    FONT-SIZE: initial;">
+          <li style="    BORDER: solid;
+          border-width: thin;
+          border-radius: 5px;
+          border-color: #777777;
+      ">
+            
+                <li>
+                    <a href="/xlogin"><i class="fa fa-line-chart" style="    margin-right: 10px;"></i>SALES</a>
+                </li>
+                <li style="    BORDER: solid;
+                border-width: thin;
+                border-radius: 5px;
+                border-color: #777777;
+            ">
+                <li>
+                  <a href="/xlogin"><i class="bi bi-cash-coin"  style="    margin-right: 10px;"></i>FINANCE</a>
+              </li>
+              <li style="    BORDER: solid;
+              border-width: thin;
+              border-radius: 5px;
+              border-color: #777777;
+          ">
+              <li>
+                <a href="/xlogin"><i class="bi bi-cart-check"  style="    margin-right: 10px;"></i>DELIVERY</a>
+            </li>
+            <li style="    BORDER: solid;
+            border-width: thin;
+            border-radius: 5px;
+            border-color: #777777;
+        ">
+            <li>
+              <a href="/xlogin"><i class="bi bi-gear"  style="    margin-right: 10px;"></i>ADMIN</a>
+          </li>
+
+          <li style="    BORDER: solid;
+          border-width: thin;
+          border-radius: 5px;
+          border-color: #777777;
+      ">    
+      
+      
+
+      </ul>
+        
+      <button type="button" class="btn btn-danger" style="  
+      width: 90%;  bottom:0; --bs-btn-hover-bg: #ff0019;"> <a href="/users/logout/"><i class="bi bi-box-arrow-left"></i>Logout</a></button>   
+            
+    </nav>
+    
+<!-- navbar ends -->
+    <!-- Page Content  -->
+    <div id="content" style="margin-left: 5px; padding-right:15px;">
+
+        <nav class="navbar navbar-expand-lg navbar">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-secondary " style="height: 42px; width: 42px;     margin-top: 1px;">
+                    <i class="bi bi-text-left"></i>
+                    <span></span>
+                </button>
+                
+                
+                <h4><center>Hero Vired Dashboard</center></h4>
+                
+
+                
+            </div>
+        </nav>
+
+<!-- 
+Enter Content From Here 
+
+-->
+
+<div class="majorcontainer">
+
+  <section class="section dashboard" style="color: black;">
+
+<style>
+  /* Card */
+  .card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+    background-color: #8d333300;
+  }
+  
+  .card-header,
+  .card-footer {
+    border-color: #ebeef4;
+    background-color: #fff;
+    color: #798eb3;
+    padding: 15px;
+  }
+  
+  .card-title {
+    padding: 20px 0 15px 0;
+    font-size: 26px;
+    font-weight: 500;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .card-title span {
+    color: #a5a5a5;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .card-body {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  h6> input{
+    background: transparent;
+     color: white;
+      border: none;
+  }
+  span>input{
+    background: transparent;
+     color: white;
+      border: none;
+  }
+  </style>
+    <div class="row">
+
+      <!-- Left side columns -->
+      <div class="col-lg-12">
+        <div class="row">
+
+          <!-- Sales Card -->
+          <div class="col-xxl-3 col-md-6">
+            <div class="card info-card sales-card">
+              <div class="card-body" style="    background-color: #1d1f22;
+              /* border: solid; */
+              border-radius: 20px;
+              border-color: #777777;
+              border-width: 1px;
+              box-shadow: 3px 3px 7.5px 0px #000, -3px -3px 7.5px #555;">
+                <h5 class="card-title">Sales <span>| MTD</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-person-plus fa-9x" style="font-size: 75px; color: #a5a5a5;"></i>
+                  </div>
+                  <div class="ps-3" style="    font-size:large;">
+                    <h6 style="font-size: xx-large; color: white; "> 
+                      <!-- BIG HEADER NUMBER -->
+                      <input disabled type="text" id ="sale_c"  name ="sale_c"  readonly value="<%=(typeof sale!='undefined')? sale.count:''%>"></h6>
+                      <!--  -->
+                      <span><input class="text-secondary fs-4 " disabled type="text" id ="sale_p"  name ="sale_p" readonly value="<%=(typeof sale_p!='undefined')? sale_p.count:''%>"></span>
+
+                    <span class="text-muted small"><input type="text" disabled id ="sale_t"  name ="sale_t" readonly ></span>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- End Sales Card -->
+<!-- Revenue Card -->
+<div class="col-xxl-3 col-md-6">
+  <div class="card info-card revenue-card">
+
+  
+    <div class="card-body" style="    background-color: #1d1f22;
+    /* border: solid; */
+    border-radius: 20px;
+    border-color: #777777;
+    border-width: 1px;
+    box-shadow: 3px 3px 7.5px 0px #000, -3px -3px 7.5px #555;">
+      <h5 class="card-title" style="margin-bottom: 4px;">Revenue <span>| (in Lacs) MTD</span></h5>
+
+      <div class="d-flex align-items-center">
+        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+           <svg xmlns="http://www.w3.org/2000/svg" width="60px" height="80px" fill="currentColor" class="bi bi-currency-rupee" style="color: #a5a5a5;" viewBox="0 0 16 16">
+            <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z"/>
+          </svg>
+        </div>
+        <div class="ps-3">
+          <h6 style="font-size: xx-large ; color: white;" > 
+          
+            <input type="text" id ="rev_c" style="width: 10rem;" name ="rev_c" readonly value="<%=(typeof rev_c!='undefined')? rev_c.sum:''%>">
+          
+          </h6>
+          <span  class="text-muted small fw-bold"><input class="text-secondary fs-4 w-50" disabled type="text" id ="rev_m"  name ="rev_m" style="color: grey;"readonly value="<%=(typeof rev_m!='undefined')? rev_m.sum:''%>"></span> 
+          <br>
+          <span class="text-muted small"><input disabled type="text" id ="rev_t"  name ="rev_t" readonly></span>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- End Revenue Card -->
+
+<div class="col-xxl-3 col-md-6">
+  <div class="card info-card sales-card">
+    <div class="card-body" style="    background-color: #1d1f22;
+    /* border: solid; */
+    border-radius: 20px;
+    border-color: #777777;
+    border-width: 1px;
+    box-shadow: 3px 3px 7.5px 0px #000, -3px -3px 7.5px #555;">
+      <h5 class="card-title">Net Learners <span>| YTD</span></h5>
+
+      <div class="d-flex align-items-center">
+        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+          <i class="bi bi-people-fill" style="font-size: 75px; color: #a5a5a5;"></i>
+        </div>
+        <div class="ps-3" style="    font-size:large;">
+        
+          <h6 style="font-size: xx-large ; color: white;" ><input type="text" id ="net_c"  name ="net_c" readonly value="<%=(typeof count_n!='undefined')? count_n:''%>"></h6>
+
+          <span  class="text-muted small fw-bold"><input class="text-secondary fs-4" disabled type="text" id ="count_p"  name ="count_p" style="color: grey;"readonly value="<%=(typeof count_p!='undefined')? count_p:''%>"></span> 
+          <br>
+          <span class="text-muted small"><input disabled type="text" id ="count_t"  name ="count_t" readonly></span>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="col-xxl-3 col-md-6">
+  <div class="card info-card sales-card">
+    <div class="card-body" style="    background-color: #1d1f22;
+    /* border: solid; */
+    border-radius: 20px;
+    border-color: #777777;
+    border-width: 1px;
+    box-shadow: 3px 3px 7.5px 0px #000, -3px -3px 7.5px #555;">
+      <h5 class="card-title">Net Revenue <span> | (in Lacs) YTD </span></h5>
+
+      <div class="d-flex align-items-center">
+        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+          <i class="bi bi-cash-coin" style="font-size: 75px; color: #a5a5a5;"></i>
+        </div>
+        <div class="ps-3" style="font-size:large;">
+          <h6 style="font-size: xx-large ; color: white;" ><input style="width:10rem;"type="text" id ="net_r"  name ="net_r" readonly value="<%=(typeof rev_n!='undefined')? rev_n:''%>" ></h6>
+        
+          <span  class="text-muted small fw-bold"><input class="text-secondary fs-4" disabled type="text" id ="rev_p"  name ="rev_p" style="color: grey;"readonly value="<%=(typeof rev_p!='undefined')? rev_p:''%>"></span> 
+          <br>
+          <span class="text-muted small"><input disabled type="text" id ="rev_yt"  name ="rev_yt" readonly></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <div class="row row-2">
+    <div class="col">
+      <!-- <div class="col"> -->
+
+         <!-- Recent Sales -->
+         <div class="col-auto" >
+          <div class="card recent-sales overflow-auto">
+
+            <div class="card-body">
+              <h5 class="card-title">Upcoming Batches</h5>
+              <div style=" overflow-y:scroll; height: 50vh;">
+              <table class="table table-borderless datatable" style="
+              color: white;
+              border: solid;
+              border-width: thin;
+              border-color: #6a6a6a;">
+                <thead style="position:sticky; top:0;">
+                  <tr style="border-color: inherit;
+                  border-style: solid;
+                  border-width: 0.5; background-color: #1d1e1f;">
+                    <th scope="col">Program Name</th>
+                    <th scope="col">Batch No.</th>
+                    <th scope="col">Batch Start Date</th>                  
+                    <th scope="col">No. of Enrollments</th>                    
+                  </tr>
+                </thead>
+
+                <%
+                if(program.length!=0){
+                var i=1;
+                program.forEach(function(data){
+                %>
+                <tr>    
+                  <td><%=data.program %></td>
+                  <td><%=data.batch_number %></td>
+                  <td ><input style = "background:transparent; border: none; color: white; width:8.2rem;"type ="text" readonly value ="<%=data.batch_date %>"></td>
+                  <td><%=data.count %></td>
+
+                </tr>
+
+
+                  <%  i++; }) %>
+                  <% } else{ %>
+                      <tr>
+                          <td>No Data Found</td>
+                      </tr>
+                  <% } %>
+                
+              </table>
+            </div>
+            </div>
+
+          </div>
+        </div><!-- End Recent Sales -->
+
+
+      </div>
+     <div hidden>
+        <input type="number" id="jan" value="<%=(typeof jan!='undefined')? jan:''%>" >
+        <input type="number" id="feb" value="<%=(typeof feb!='undefined')? feb:''%>" >
+        <input type="number" id="mar" value="<%=(typeof mar!='undefined')? mar:''%>" >
+        <input type="number" id="apr" value="<%=(typeof apr!='undefined')? apr:''%>" >
+        <input type="number" id="may" value="<%=(typeof may!='undefined')? may:''%>" >
+        <input type="number" id="jun" value="<%=(typeof jun!='undefined')? jun:''%>" >
+        <input type="number" id="jul" value="<%=(typeof jul!='undefined')? jul:''%>" >
+        <input type="number" id="aug" value="<%=(typeof aug!='undefined')? aug:''%>" >
+        <input type="number" id="sep" value="<%=(typeof sep!='undefined')? sep:''%>" >
+        <input type="number" id="oct" value="<%=(typeof oct!='undefined')? oct:''%>" >
+        <input type="number" id="nov" value="<%=(typeof nov!='undefined')? nov:''%>" >
+        <input type="number" id="dec" value="<%=(typeof dec!='undefined')? dec:''%>" >
+     
+
+
+
+     </div>
+     
+     <!-- cOLUMN 2 HERE  -->
+     <div class="col-lg-6" >
+      <div class="card  overflow-auto">
+
+<!-- Line Chart -->
+
+<canvas id="lineChart" style="width:100%; padding-top: 4rem;"></canvas>
+<center style="color: white; margin-top:2rem;"><h5 >Monthly Sales Chart (Price Without Tax)</h5><br><h6>X-Axis: Current FY  Y-Axis: Amount in Lacs</h6></center>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new Chart(document.querySelector('#lineChart'), {
+      type: 'bar',
+      data: {
+        labels: ['April', 'May', 'June', 'July','August','September','October','November','December','January','February','March'], font:{size:20},
+        datasets: [{
+          label: 'Monthly Sales Chart for Current FY',
+          data: [document.getElementById("apr").value,
+          document.getElementById("may").value,
+          document.getElementById("jun").value,
+          document.getElementById("jul").value,
+          document.getElementById("aug").value,
+          document.getElementById("sep").value,
+          document.getElementById("oct").value,
+          document.getElementById("nov").value,
+          document.getElementById("dec").value,
+          document.getElementById("jan").value,
+          document.getElementById("feb").value,
+          document.getElementById("mar").value],
+          fill: false,
+          backgroundColor: '#a5a5a5',
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+       
+        }
+      }
+    });
+  });
+
+
+
+  function myfn(){
+    // alert(document.getElementById("nov").value);
+   
+
+    if(Number(document.getElementById("sale_p").value) > 0){
+      var a = Number(document.getElementById("sale_c").value);
+      var b = Number(document.getElementById("sale_p").value);
+      var c = (a-b)/b*100;
+      c=c.toFixed(1);
+      document.getElementById("sale_t").value = c +"%";
+      if(c>0){
+        document.getElementById("sale_t").style.color = "green";
+      }
+      else{
+        document.getElementById("sale_t").style.color = "red";
+      }
+
+    }
+
+    if(Number(document.getElementById("rev_m").value) > 0){
+      document.getElementById("rev_c").value = Number(document.getElementById("rev_c").value).toFixed(0);
+      document.getElementById("rev_m").value = Number(document.getElementById("rev_m").value).toFixed(0);
+      var a = Number(document.getElementById("rev_c").value);
+      var b = Number(document.getElementById("rev_m").value);
+      var c = (a-b)/b*100;
+      c=c.toFixed(1);
+      document.getElementById("rev_t").value = c +"%";
+      if(c>0){
+        document.getElementById("rev_t").style.color = "green";
+      }
+      else{
+        document.getElementById("rev_t").style.color = "red";
+      }
+
+    }
+
+    // //////////////////
+    if(Number(document.getElementById("count_p").value) > 0){
+      var a = Number(document.getElementById("net_c").value);
+      var b = Number(document.getElementById("count_p").value);
+      var c = (a-b)/b*100;
+      c=c.toFixed(1);
+      document.getElementById("count_t").value = c +"%";
+      if(c>0){
+        document.getElementById("count_t").style.color = "green";
+      }
+      else{
+        document.getElementById("count_t").style.color = "red";
+      }
+
+    }
+
+    if(Number(document.getElementById("rev_p").value) > 0){
+      var a = Number(document.getElementById("net_r").value);
+      var b = Number(document.getElementById("rev_p").value);
+      var c = (a-b)/b*100;
+      c=c.toFixed(1);
+      document.getElementById("rev_yt").value = c +"%";
+      if(c>0){
+        document.getElementById("rev_yt").style.color = "green";
+      }
+      else{
+        document.getElementById("rev_yt").style.color = "red";
+      }
+
+    }
+
+  }
+
+</script>
+<!-- End Line CHart -->
+
+
+
+      </div>
+    </div>
+      <!-- <div class="w-100"></div> -->
+      
+    </div>
+  </div>
+
+</div>
+
+
+</div>
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> 
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+
+
+</body>
+
+    <!-- <h3>SALESX Form</h3> -->
+    
+
+</html>

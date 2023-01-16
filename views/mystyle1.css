@@ -1,0 +1,97 @@
+body {
+
+    background-color: #EAF0F6;
+    color: #33475B;
+    border: 3px solid #00A4BD;  
+    padding: 30px;
+}
+*{
+    box-sizing: border-box;
+}
+
+.form-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.form-row label {
+    width: 12.5%;
+    padding-right: 18px;
+    padding-left: 18px;
+    position: relative;
+    margin: 0;
+}
+.form-row label span {
+    display: block;
+    min-height: 40px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #33475B;
+    font-weight: 500;
+}
+input {
+    width: 100%;
+    margin-top: 12px;
+    display: block;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+select{
+    width: 100%;
+    margin-top: 12px;
+    display: block;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+}
+fieldset {
+    background-color: #eeeeee;
+    min-width: 160px;
+    width: 12.5%;
+    padding: 8px;
+    position: relative;
+  }
+fieldset label{
+    width: 100% !important;
+    display: block;
+    display: flex;
+    align-items: center;
+    margin: 12px 0 0 0 !important;
+
+}
+fieldset label input{
+    width: 15px;
+    display: inline-block;
+    margin: 0 8px 0 0;
+}
+.radio-heading {
+    background-color: gray;
+    color: white;
+    padding: 5px 5px;
+    margin: 0;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    text-align: center;
+  }
+  div.button-box{
+      text-align: center;
+      width: 100%;
+  }
+  button{
+      border: 2px solid #00A4BD;
+      text-align: center;
+      color: #00A4BD;
+      background-color: #fff;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      height: 32px;
+      padding: 0 16px ;
+  }

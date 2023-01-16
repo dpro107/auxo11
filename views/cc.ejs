@@ -1,0 +1,1969 @@
+<html>
+
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=0.70">
+</head>
+
+
+
+<body style="background-color: rgb(29,30,31); color: white;" onload="myfn()">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style type="text/css">
+      
+
+
+      @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(29,30,31);
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75em;
+    font-weight: 150;
+    line-height: 1em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    background-color: rgb(33,37,41);
+    /* padding: 5px 5px; */
+    /* background: #eb2228; */
+    border: none;
+    border-radius: 2;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 3px rgb(255 255 255 / 10%);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 70%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 5px 0;
+}
+
+
+.gtg {
+    height: 10vh;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(65, 0, 0));
+    border-bottom-left-radius: 2rem ;
+    border-bottom-right-radius: 2rem ;
+  }
+  
+  .hero-img{
+    height: 5vh;
+    margin-top: 5px;
+    padding-top: 5px;
+    background-image: url('/images/HV Logo Reverse@250x.png');
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: 7%;
+    position:relative;
+    border-bottom: #aaa;
+  }
+  
+  .card_custom{
+    max-width: 7rem; 
+    border: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+    top: -3rem;
+    text-decoration: none;
+    align-items: center;
+  }
+  .card_custom:hover{
+    box-shadow: 0px 5px 5px rgba(0,0,0,.75);}
+  
+  .admincard{
+    box-shadow: 0px 5px 10px rgba(255, 0, 0, 0.7); ;
+  }
+  .admincard:hover{
+    box-shadow: 0px 5px 5px rgba(255, 0, 0, .8); 
+  }
+  .a{
+    text-decoration: none;
+  }
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 200px;
+    max-width: 300px;
+    height: 100vh;
+    background: rgb(33,37,41);
+    color: #fff;
+    transition: all 0.3s;
+    box-shadow: -5px -15px 15px rgb(203, 203, 203);
+    position: relative;
+
+}
+
+
+#sidebar.active {
+    margin-left: -205px;
+}
+
+#sidebar .sidebar-header {
+    padding: 5px;
+    background: rgb(28,28,28);
+}
+
+.list-unstyled li{
+    
+    padding-left: 0rem;
+    ;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    padding-left: -1px;
+    border-bottom: 1px solid #00000000;
+  
+}
+
+
+
+
+#sidebar ul p {
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    
+}
+
+#sidebar ul li a:hover {
+    /* color: #ff0008; */
+    background: rgba(249, 0, 0, 0.672);
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #434242;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #434242;
+}
+
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #eb2228;
+}
+
+a.article,
+a.article:hover {
+    background: #eb2228 !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+ #content {
+    width: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    min-height: 7em;
+    transition: all 0.3s;
+    background-color: rgb(29,30,31);
+} 
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -220px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+/* ---------------------------------------------------------------------- */
+/* CSS for Popup */
+/* ---------------------------------------------------------------------- */
+
+
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(142, 137, 137, 0.521);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0em;
+  background: white;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
+/* Demo Styles */
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.4;
+}
+/* 
+body {
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #ffffff 0, #ffffff 100%);
+  color: black;
+} */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal-window > div {
+  border-radius: 1rem;
+}
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+#marginalspace{
+    margin-top: 0px;
+}
+
+.logo {
+  max-width: 150px;
+  display: block;
+}
+
+small {
+  color: lightgray;
+}
+
+.btn {
+    background-color: rgb(67,66,66);
+    padding: 5.5px;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: medium;
+    margin-right: 69px;
+    /* margin-top: 2px; */
+    padding-top: 6px;
+    margin-top: -27px;
+}
+
+.btn i {
+  padding-right: 0.3em;
+}
+
+/*-------------------------------------------------------------------------------------- 
+Style for Navbars
+
+-----------------------------------------------------------------------------------------*/
+
+    .a{
+        text-decoration: none;
+    }
+    table{
+        
+        border: 1px solid rgba(92, 92, 92, 0);
+    width: max-content;
+
+       
+    }
+
+    /* tr:hover{
+        background-color: rgb(255, 200, 200);
+    } */
+    td{
+    max-width: 11rem;
+    word-wrap: normal;
+    min-width: auto;
+    }
+
+    .slidebar{
+        
+        margin-left: 14%;
+    padding-left: 4%;
+
+    }
+
+    .slidebar2{
+        margin-left: 7%;
+    }
+    
+    label{
+        width:100%;
+    }
+    
+input[type=date]{
+  background-color:black;
+    color: white;
+    border: 0;
+    /* padding-left: 7px; */
+    color-scheme: dark;
+}
+
+    
+    input[type=text], input[type=number], input[type=email], input[type=float],select{
+        
+        width: 190px;
+        background-color: white;
+    /* border: 0px; */
+    /* border-bottom: 3px; */
+    border-top: -67px;
+    border-color: rgb(124, 123, 123);
+    border-radius: 7px;
+    /* border-left: 2px; */
+    /* border-right: 2px; */
+    color: black;
+    
+    border-width: 1px;
+
+    border-style: solid;    
+
+    }
+
+
+    
+.row{
+        /* --bs-gutter-x: 0.5rem; */
+    /* --bs-gutter-y: 0; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* margin-top: calc(-1 * var(--bs-gutter-y)); */
+    /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
+    /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
+    margin-left: 0px;
+
+}
+
+    .inputslide{
+
+        margin-left: 23%;
+    }
+ 
+ 
+    #home_button{
+        position: fixed;
+        /* width: 5rem; */
+        left:2px;
+        top: 20%;
+        z-index: 999;
+        cursor: pointer;
+        padding: 1rem 1rem;
+    }
+    .navig{
+        position: fixed;
+        /* width: 5rem; */
+        left:2px;
+        top: 22%;
+        z-index: 999;
+        cursor: pointer;
+        /* padding: 1rem 1rem; */
+    }
+    .lightgrey{
+        background-color: rgb(80 75 75 / 0%);
+    font-weight: 300;
+    width: max-content;
+    margin-left: 10px;
+    border: none;
+        
+    }
+    .lightred{
+        background-color: #f4f2f2dd;
+        color: black;
+        font-weight: 500;
+        margin-top: -15px;
+        margin-left: 10px;
+    }
+    .lightred_2{
+        background-color: #f4f2f2dd;
+        color: black;
+        font-weight: 500;
+        margin-top: -25px;
+        margin-left: 10px;
+    }
+   
+.majorcontainer{
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+
+.adminbox{
+        
+    background-color: #f4f2f2dd;
+    color: black;
+    font-weight: 500;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+   
+.namebox {
+    transform: rotate(270deg);
+    /* margin-top: 118px;
+    margin-left: -98px;
+    margin-right: -113px;
+    margin-bottom: -208px; */
+    text-align: center;
+    width: fit-content;
+    position:absolute;
+    background-color: #eb2228;
+}
+.namebox2 {
+    transform: rotate(270deg);
+    margin-top: 28px;
+    margin-left: -38px;
+    margin-right: -95px;
+    margin-bottom: -119px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+}
+
+.batchdiff{
+    margin-left: 23%;
+}
+
+.dropout{
+    margin-left: -20%;
+}
+ 
+ 
+.namebox3 {
+    transform: rotate(270deg);
+    margin-top: 36px;
+    margin-left: -52px;
+    margin-right: -108px;
+    margin-bottom: -64px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+
+}
+
+.namebox4 {
+   
+    transform: rotate(270deg);
+    margin-top: 88px;
+    margin-left: -101px;
+    margin-right: -90px;
+    margin-bottom: -113px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+}
+ 
+.defnextmonth{
+
+    margin-left: 7%;
+    font-size: 15px;
+}
+
+.namebox5 {
+   
+    transform: rotate(270deg);
+    margin-top: 25px;
+    margin-left: -40px;
+    margin-right: -109px;
+    margin-bottom: -51px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+}
+
+ 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+
+
+
+</style>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    
+
+    <!-- Page Content  -->
+    <div id="content">
+
+      <nav class="navbar navbar-expand-lg navbar">
+        
+        <div class="container-fluid py-3">
+
+       <h4 style="position: absolute; right: 1rem;">Hero Vired Finance Panel</h4></div>
+      
+    </nav>
+
+
+<form action="<%=(typeof editData!='undefined')?'/prud/update/'+editData.id:'/prud/create'%>" method="POST">
+  
+  
+<!-- COLUMN 1  -->
+
+
+
+<div class="majorcontainer">
+
+
+    
+  <div class="d-flex flex-row my-2">
+    <div style="    border: 1px solid #5c5c5c;
+    width: 3%;
+    position: relative;
+    background-color: rgb(33,37,41);">
+        <h6 style="transform:rotate(270deg);top:42%;position: absolute; width:100%; font-size: medium;">SALES</h6>
+    </div>
+    
+        <div style="width: 99%;">
+            <!-- <div class="w-100"> -->
+    <table class="w-100"  style="    background-color: #3a3a3a;">
+        
+        <tr class="row d-flex align-items-baseline w-100 justify-content-between ">
+            <td class="col" >
+              <label><span > Learner's Name</span>
+                <input type="text" name="customer_name" readonly  value="<%=(typeof editData!='undefined')? editData.customer_name:''%>">
+            </label>
+            </td>
+            <td class="col align-items-baseline ">
+              <label><span > Learner's Email</span>
+                <input type="text" name="customer_email" readonly  value="<%=(typeof editData!='undefined')? editData.email_address:''%>">
+            </label>
+            </td>
+            <td class="col align-items-baseline ">
+              <label><span > Learner's ID</span>
+                <input type="text" name="customer_id" readonly  value="<%=(typeof editData!='undefined')? editData.customer_id:''%>">
+            </label>
+            </td>
+            
+            <td class="col align-items-baseline ">
+              <label><span> Program Name</span>
+
+                <input type="text" id="programme" name="program"  readonly value="<%=(typeof editData!='undefined')? editData.program:''%>" >
+                </label></td>
+    
+            
+        <td class=" col align-items-baseline ">
+          <label><span>Batch Date</span>
+            <input type="text" name="running_batch_start_date" id="running_batch"  style="display:block" readonly   value="<%=(typeof editData!='undefined' && editData.batch_date!=null)?  (editData.batch_date.getMonth()+1).toString()+'/'+editData.batch_date.getDate().toString()+'/'+editData.batch_date.getFullYear().toString():''%>">
+
+
+        </label>
+            </td>
+
+            <input type="text" name="batch_date" id="batch_date" style="display:none ;" value="<%=(typeof editData!='undefined')? editData.batch_date:''%>">
+
+    
+            <td class="col align-items-baseline ">
+              <label><span> Offer Price</span>
+                <input type="number" name="offer_price" id="offer_price"   readonly required value="<%=(typeof editData!='undefined')? editData.offer_price:''%>">
+            </label></td>
+            <td class="col align-items-baseline">
+
+              <label><span>Total Approved Installment</span>
+                <input type="number" name="approved_installment" id="tai" readonly value="<%=(typeof editData!='undefined')? editData.approved_installment:''%>">
+            </label>
+            
+            </td>
+
+            
+
+
+  
+
+
+
+</tr>
+
+
+<tr class=" row d-flex align-items-baseline w-100 justify-content-between " style="margin-top: -17px;">
+  
+  <!-- <td class=" col align-items-baseline " >
+   
+    </td> -->
+
+  
+
+          <td class="col">
+          
+              <label><span>   <br>Price after scholarship & discount with tax</span>
+                <br>
+                <input type="number" name="price_with_tax" id="price_with_tx"   readonly required value="<%=(typeof editData!='undefined')? editData.price_with_tax:''%>">
+            </label>
+                
+            </td>
+            <td class=" col align-items-baseline ">
+  
+              <label><span> Current Status</span>
+                <select id="status" name="status">
+                    <option required value="<%=(typeof editData!='undefined')? editData.current_status:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.current_status:''%></option>
+                   
+                        <%
+                        if(cs_s.length!=0){
+                        var i=1;
+                        cs_s.forEach(function(data){
+                           
+                        %>
+                        <option  value="<%= data.current_status%>" ><%= data.current_status%></option>
+                        <%  i++; }) %>
+                        <% } else{ %>
+                            <option>No data</option>
+                        <% } %>
+              
+                    </select>
+              
+                  
+              </label>
+              </td>
+              <td class=" col " style="visibility: hidden;">
+                <label ><span> Email id</span><br>
+                  <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                </label></td>
+      
+              <td class=" col " style="visibility: hidden;">
+                <label ><span> Email id</span><br>
+                  <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                </label></td>
+                <td class=" col " style="visibility: hidden;">
+                  <label ><span> Email id</span><br>
+                    <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                  </label></td>
+                  <td class=" col " style="visibility: hidden;">
+                    <label ><span> Email id</span><br>
+                      <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                    </label></td>
+                    <td class=" col " style="visibility: hidden;">
+                      <label ><span> Email id</span><br>
+                        <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                      </label></td>
+                  
+                                                                      
+
+        </tr>
+        
+    
+
+    
+</table>
+</div>
+
+</div>
+
+
+<!-- COLUMN 2  -->
+
+<div class="d-flex flex-row my-2"  >
+  <div style="    border: 1px solid #5c5c5c;
+  width: 3%;
+  position: relative;
+  background-color: rgb(33,37,41);"id = "installment_row" name = "installment_row"  >
+      <h6 style="transform:rotate(270deg);top:50%;position: absolute; width:100%; font-size: medium; overflow: hidden;">INSTALLMENTS</h6>
+  </div>
+  
+      <div style="width: 97%;" name = "installment_row1"  id ="installment_row1" >
+          <!-- <div class="w-100"> -->
+  <table class="w-100 " >
+      
+      <tr class="row d-flex align-items-baseline w-100 justify-content-between ">
+
+        <td class="col align-items-baseline " id="install_1">
+          <label><span>Installment_1</span>
+            <input type="number" name="installment_1" id="installment_1"  value="<%=(typeof ipData!='undefined')? ipData.installment_1:''%>">
+          </label></td>
+       <td class="col align-items-baseline " id="install_1d">
+          <label><span>Installment_1(Date)</span>
+            <input type="date" name="installment_1_date" id="installment_1_date" onchange="idate1(this.value)" value="<%=(typeof ipData!='undefined')? ipData.installment_1_date:''%>">
+            <input type="text" name="installmentt_1_date" id="installmentt_1_date" style="display:block" readonly value="<%=(typeof ipData!='undefined' && ipData.installment_1_date!=null)?  (ipData.installment_1_date.getMonth()+1).toString()+'/'+ipData.installment_1_date.getDate().toString()+'/'+ipData.installment_1_date.getFullYear().toString():''%>">
+          </label></td>
+          <td class="col align-items-baseline " id="install_2">
+            <label><span>Installment_2</span>
+              <input type="float" name="installment_2" id="installment_2"  value= "<%=(typeof ipData!='undefined')? ipData.installment_2:''%>">
+            </label></td>
+         <td class="col align-items-baseline " id="install_2d">
+            <label><span>Installment_2(Date)</span>
+              <input type="date" name="installment_2_date" id="installment_2_date" onchange="idate2(this.value)" value="<%=(typeof ipData!='undefined')? ipData.installment_2_date:''%>">
+              <input type="text" name="installmentt_2_date" id="installmentt_2_date" style="display:block" readonly value="<%=(typeof ipData!='undefined' && ipData.installment_2_date!=null)?  (ipData.installment_2_date.getMonth()+1).toString()+'/'+ipData.installment_2_date.getDate().toString()+'/'+ipData.installment_2_date.getFullYear().toString():''%>">                  
+            </label></td>
+            <td class="col align-items-baseline " id="install_3">
+              <label><span>Installment_3</span>
+                <input type="float" name="installment_3" id="installment_3" value="<%=(typeof ipData!='undefined')? ipData.installment_3:''%>">
+              </label></td>
+           <td class="col align-items-baseline " id="install_3d">
+              <label><span>Installment_3(Date)</span>
+                <input type="date" name="installment_3_date" id="installment_3_date" onchange="idate3(this.value)" value="<%=(typeof ipData!='undefined')? ipData.installment_3_date:''%>">
+                <input type="text" name="installmentt_3_date" id="installmentt_3_date" style="display:block" readonly value="<%=(typeof ipData!='undefined' && ipData.installment_3_date!=null)?  (ipData.installment_3_date.getMonth()+1).toString()+'/'+ipData.installment_3_date.getDate().toString()+'/'+ipData.installment_3_date.getFullYear().toString():''%>">
+              </label></td>
+              <td class="col align-items-baseline " id="install_4">
+                <label><span>Installment_4</span>
+                  <input type="float" name="installment_4" id="installment_4" value="<%=(typeof ipData!='undefined')? ipData.installment_4:''%>">
+                </label></td>
+             <td class="col align-items-baseline " id="install_4d">
+                <label><span>Installment_4(Date)</span>
+                  <input type="date" name="installment_4_date" id="installment_4_date" onchange="idate4(this.value)" value="<%=(typeof ipData!='undefined')? ipData.installment_4_date:''%>">
+                  <input type="text" name="installmentt_4_date" id="installmentt_4_date" style="display:block" readonly value="<%=(typeof ipData!='undefined' && ipData.installment_4_date!=null)?  (ipData.installment_4_date.getMonth()+1).toString()+'/'+ipData.installment_4_date.getDate().toString()+'/'+ipData.installment_4_date.getFullYear().toString():''%>">
+                </label></td>
+                <td class="col align-items-baseline " id="install_5">
+                  <label><span>Installment_5</span>
+                    <input type="float"name="installment_5" id="installment_5"  value="<%=(typeof ipData!='undefined')? ipData.installment_5:''%>">
+                  </label></td>
+               <td class="col align-items-baseline " id="install_5d">
+                  <label><span>Installment_5(Date)</span>
+                    <input type="date" name="installment_5_date" id="installment_5_date" onchange="idate5(this.value)" value="<%=(typeof ipData!='undefined')? ipData.installment_5_date:''%>">
+                    <input type="text" name="installmentt_5_date" id="installmentt_5_date" style="display:block" readonly value="<%=(typeof ipData!='undefined' && ipData.installment_5_date!=null)?  (ipData.installment_5_date.getMonth()+1).toString()+'/'+ipData.installment_5_date.getDate().toString()+'/'+ipData.installment_5_date.getFullYear().toString():''%>">
+                  </label></td>
+                  <td class="col align-items-baseline " id="install_6">
+                    <label><span>Installment_6</span>
+                      <input type="float" name="installment_6" id="installment_6" value="<%=(typeof ipData!='undefined')? ipData.installment_6:''%>">
+                    </label></td>
+                 <td class="col align-items-baseline " id="install_6d">
+                    <label><span>Installment_6(Date)</span>
+                      <input type="date" name="installment_6_date" id="installment_6_date" onchange="idate6(this.value)" value="<%=(typeof ipData!='undefined')? ipData.installment_6_date:''%>">
+                      <input type="text" name="installmentt_6_date" id="installmentt_6_date" style="display:block" readonly value="<%=(typeof ipData!='undefined' && ipData.installment_6_date!=null)?  (ipData.installment_6_date.getMonth()+1).toString()+'/'+ipData.installment_6_date.getDate().toString()+'/'+ipData.installment_6_date.getFullYear().toString():''%>">
+                    </label></td>
+                    <td class=" col " style="visibility: hidden;">
+                      <label ><span> Email id</span><br>
+                        <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                      </label></td>
+                      <td class=" col " style="visibility: hidden;">
+                        <label ><span> Email id</span><br>
+                          <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                        </label></td>
+                    
+      </tr>
+    
+
+  
+  </table>
+  </div>
+  </div>
+
+
+
+    
+<div class="d-flex flex-row my-2">
+  <div style="    border: 1px solid #5c5c5c;
+  width: 3%;
+  position: relative;
+  background-color: rgb(33,37,41);">
+      <h6 style="transform:rotate(270deg);top:50%;position: absolute; width:100%; font-size: medium;">FINANCE</h6>
+  </div>
+  
+      <div style="width: 97%;">
+          <!-- <div class="w-100"> -->
+  <table class="w-100">
+      
+      <tr class="row d-flex align-items-baseline w-100 justify-content-between ">
+          <td class="col" >
+            <label><span> Booking Amount</span>
+              <input type="number" name="booking_amount" id="booking_amount" required onchange="bamount(this.value)" value="<%=(typeof editData!='undefined')? editData.booking_amount:''%>" step="0.001">
+            </label>
+          </td>
+          <td class="col align-items-baseline ">
+            <label><span>New Self Payment</span>
+              <input type="number" name="new_self_payment" id="new_self_payment" required value="<%=(typeof editData!='undefined')? editData.new_self_payment:''%>">
+            </label></td>
+                    
+                        
+  
+          
+      <td class=" col align-items-baseline ">
+        <label><span> Loan Payment Recieved (INR)</span>
+          <input type="number" name="loan_payment" id="loan_payment" required value="<%=(typeof editData!='undefined')? editData.loan_payment:''%>">
+</label>
+          </td>
+
+          <input type="text" name="batch_date" id="batch_date" style="display:none ;" value="<%=(typeof editData!='undefined')? editData.batch_date:''%>">
+
+  
+        
+  
+<td class=" col align-items-baseline ">
+
+<label><span> Subvention Amount (INR)</span>
+  <input type="number" name="subvention" id="subvention"  required value="<%=(typeof editData!='undefined')? editData.subvention:''%>">
+</label>
+</td>
+
+
+
+      <td class=" col align-items-baseline " >
+        <label><span>Loan Payment Transaction Ref. No.</span><br>
+          <input type="text" name="loan_payment_transaction_ref_no" id="loan_payment_transaction_ref_no" required value="<%=(typeof editData!='undefined')? editData.loan_payment_transaction_ref_no:''%>">
+      </label>
+              
+          </td>
+
+          <td  class=" col align-items-baseline ">
+             
+          <label><span> Loan Partner</span>
+            <select id="loan" name="loan">
+                <option required value="<%=(typeof editData!='undefined')? editData.loan_partner:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.loan_partner:''%></option>
+                <%
+              if(lpp_s.length!=0){
+              var i=1;
+              lpp_s.forEach(function(data){
+                 
+              %>
+              <option  value="<%= data.loan_partner%>" ><%= data.loan_partner%></option>
+              <%  i++; }) %>
+              <% } else{ %>
+                  <option>No data</option>
+              <% } %>
+            </select>
+        </label>
+          </td>
+          <td class="col">
+        
+            <label><span># Installments Paid</span>
+              <input type="number" name="installment_paid" id="installment_paid" onchange="ip(this.value)"   value="<%=(typeof editData!='undefined')? editData.installment_paid:''%>">
+          </label>
+              
+          </td>
+      </tr>
+      
+
+      <tr class=" row d-flex align-items-baseline w-100 justify-content-between ">
+
+
+      
+       
+
+
+        <td class="col">
+        
+          <label><span> Date Of Disbursal</span>
+            <input type="date" name="date_of_distributio" onchange="getdisdat(this.value)"  value="<%=(typeof editData!='undefined')? editData.date_of_disbursal:''%>" style="width:1.5rem;">
+            <input type="text" name="date_of_distribution" id="date_of_distribution"  readonly value="<%=(typeof editData!='undefined' && editData.date_of_disbursal!=null)?  (editData.date_of_disbursal.getMonth()+1).toString()+'/'+editData.date_of_disbursal.getDate().toString()+'/'+editData.date_of_disbursal.getFullYear().toString():''%>">
+  
+        </label>
+            
+        </td>
+
+
+
+        <td class="col">
+        
+          <label><fieldset><span class="radio-heading">Refund Processed</span>
+            <!-- <label> <input type="radio" id="yes" name="refund_processe" value="Yes" onclick="ShowHideDiv(this.value)" > Yes</label>
+            <label> <input type="radio" id="no" name="refund_processe" value="No" onclick="ShowHideDiv(this.value)"  > No</label>
+            <input type="text" name="refund_processed" id="refund_processed" style="display: block" readonly   required value="<%=(typeof editData!='undefined')? editData.refund_processed:''%>"> -->
+
+            <select id="refund_processed" name="refund_processed"  onchange="ShowHideDiv(this.value)">
+              <option required value="<%=(typeof editData!='undefined')? editData.refund_processed:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.refund_processed:''%></option>
+              <option value="Yes">Yes</option>
+              <option value="No" >No</option>
+          </select>
+         </fieldset>
+        </label>
+            
+        </td>
+
+
+
+        <td class="col">
+        
+          <label><span>Refund Amount</span>
+            <input type="number" name="refund_amount" id="dvPassport" style="display: block" required value="<%=(typeof editData!='undefined')? editData.refund_amount:''%>">
+        </label>
+            
+        </td>
+
+
+
+
+        <td class="col">
+        
+          <label><span>Refund Process Date</span>
+            <input type="date" name="refund_dat" id="dvPassport_s" style="display:block; width:1.5rem;" onchange="getdate(this.value)"   value="<%=(typeof editData!='undefined')? editData.refund_process_date:''%>">
+            <input type="text" name="refund_date" id="dvPassport_st" style="display:block" readonly required value="<%=(typeof editData!='undefined' && editData.refund_process_date!=null)?  (editData.refund_process_date.getMonth()+1).toString()+'/'+editData.refund_process_date.getDate().toString()+'/'+editData.refund_process_date.getFullYear().toString():''%>">
+  
+        </label>
+            
+        </td>
+        <td class="col align-items-baseline ">
+          <label><span> Loan Foreclosure Amount</span>
+            <input type="number" name="loan_foreclosure_amount" id="loan_foreclosure_amount"  value="<%=(typeof editData!='undefined')? editData.loan_foreclosure_amount:''%>">
+        </label></td>
+        
+        
+      <td class="col">
+      
+        <label><fieldset>
+          <span class="radio-heading"> <br> Deferrement Fin Approved</span><br>
+ 
+          <input type="radio" id="yes" name="deferrement_finance_approve" value="Yes" onclick="ShowHideDiv_t(this.value)" > Yes
+          <input type="radio" id="no" name="deferrement_finance_approve" value="No" onclick="ShowHideDiv_t(this.value)"  > No
+          <input type="radio" id="not_applicable" name="deferrement_finance_approve" value="Not Applicable" onclick="ShowHideDiv_t(this.value)"  > NA
+ 
+         <!-- <select id="no_yes_d" name="deferrement_finance_approve"  onchange="ShowHideDiv_t(this.value)">
+           <option required value="<%=(typeof editData!='undefined')? editData.deferrement_finance_approved:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.deferrement_finance_approved:''%></option>
+           <option value="Yes">Yes</option>
+           <option value="No" >No</option>
+           <option value="Not Applicable" >Not Applicable</option>
+         </select> -->
+ 
+         <input type="text" name="deferrement_finance_approved" id="no_yes_d" style="display: block" readonly   required value="<%=(typeof editData!='undefined')? editData.deferrement_finance_approved:''%>">
+      </fieldset>
+      </label>
+          
+      </td>
+
+
+
+      <td class="col">
+        
+        <label><span> Deferrement Fees</span>
+          <input type="number" name="deferemment_fees" id="deferemment_fees"  value="<%=(typeof editData!='undefined')? editData.deferemment_fees:''%>">
+      </label>
+          
+      </td>
+
+      
+                    
+        
+
+
+    </tr>
+  
+
+
+    
+    <tr class=" row d-flex align-items-baseline w-100 justify-content-between ">
+
+
+
+
+        <td class=" col align-items-baseline " >
+          <label class="mx-auto"><span>
+            <input type="button" value="CALCULATE" onclick="total_self_loan();total_self_loan_withoutTAX();remaining()" style="background-color: #ca3636;border: none; color: white;  padding: .5rem 2rem; text-align: center; text-decoration: none; display: inline-block; border-radius:.3rem;">
+        </span>
+  </label></td>
+
+  <td class=" col " style="visibility: hidden;">
+    <label ><span> Email id</span><br>
+      <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+    </label></td>
+
+
+
+          <td class=" col " style="visibility: hidden;">
+            <label ><span> Email id</span><br>
+              <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+            </label></td>
+
+
+            <td class=" col " style="visibility: hidden;">
+              <label ><span> Email id</span><br>
+                <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+              </label></td>
+
+
+
+
+
+      </tr>
+
+  
+</table>
+</div>
+</div>
+
+
+<!-- column 3  -->
+
+ 
+<div class="d-flex flex-row my-2">
+  <div style="    border: 1px solid #5c5c5c;
+  width: 3%;
+  position: relative;
+  background-color: rgb(33,37,41);">
+      <h6 style="transform:rotate(270deg);top:70%;position: absolute; width:100%; font-size: medium;">AUTO_CALCULATED</h6>
+  </div>
+  
+      <div style="width: 97%;">
+          <!-- <div class="w-100"> -->
+  <table class="w-100" style="    background-color: #3a3a3a;">
+      
+      <tr class="row d-flex align-items-baseline w-100 justify-content-between ">
+          <td class="col" >
+            <label><span> Remaining Amount</span>
+              <input type="float" name="remaining" id="Remaining" readonly value="<%=(typeof editData!='undefined')? editData.remaining:''%>">
+          </label>
+          </td>
+          <td class="col align-items-baseline ">
+            <label><span> Self Payment (INR)</span>
+              <input type="number" name="self_payment" id="self_payment" required readonly value="<%=(typeof editData!='undefined')? editData.self_payment:''%>">
+          </label></td>
+  
+          
+      <td class=" col align-items-baseline ">
+        <label ><span> Total Recieved (self payment+loan)</span>
+          <input type="float" name="total" id="total_val" readonly required  value="<%=(typeof editData!='undefined')? editData.total:''%>">
+        </label>
+          </td>
+
+          <input type="text" name="batch_date" id="batch_date" style="display:none ;" value="<%=(typeof editData!='undefined')? editData.batch_date:''%>">
+
+  
+          <td class="col align-items-baseline ">
+            <label><span> Total Recieved without GST</span>
+              <input type="float" name="total_without_tax" readonly  value="<%=(typeof editData!='undefined')? editData.total_without_tax:''%>">
+            </label></td>
+  
+<td class=" col align-items-baseline ">
+
+  <label><span ># Installments Pending</span>
+    <input type="number" name="installment_pending" id="instp"   readonly value="<%=(typeof editData!='undefined')? editData.installment_pending:''%>">
+    </label>
+</td>
+
+
+
+      <td class=" col align-items-baseline " >
+        <label><span>Due%</span><br>
+          <input type="float" name="due_per" id="due_per" required value="<%=(typeof editData!='undefined')? editData.due:''%>" onchange="dueper(this.value)">
+      </label></td>
+    
+
+
+          <td class="col">
+          
+            <label><fieldset><span>  <br> Minimum 50% received
+            </span><br>
+            <input type="radio" name="min_50_received_r" id="Approved"  value="Approved" onclick="mr(this.value)"> Approved
+            <input type="radio" name="min_50_received_r" id="Not Approved" value="Not Approved" onclick="mr(this.value)"> Not_Appr.
+            <input type="text" name="min_50_received" id="no_yes_r" style="display: block" readonly   required value="<%=(typeof editData!='undefined')? editData.min_50_received:''%>">
+    
+            <!-- <select id="no_yes_r" name="min_50_received"  onchange="mr(this.value)">
+              <option required value="<%=(typeof editData!='undefined')? editData.min_50_received:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.min_50_received:''%></option>
+              <option name="min_50_received_r" id="Approved"  value="Approved">Approved</option>
+              <option name="min_50_received_r" id="Not Approved" value="Not Approved"  >Not Approved</option>
+          </select> -->
+    
+          </fieldset>
+          </label>
+              
+          </td>
+
+        </tr>
+ 
+        <tr class=" row d-flex align-items-baseline w-100 justify-content-between ">
+
+          <td class=" col align-items-baseline " >
+            <label><fieldset><span class="radio-heading">Due/Not Due</span><br>
+              <input type="radio" name="due_r" id="due_yes"  value="Due" onclick="dnd(this.value)" > Due
+              <input type="radio" name="due_r" id="not_due"  value="Due Not" onclick="dnd(this.value)" > Not Due
+              <input type="text" name="due" id="no_yes_n" style="display: block" readonly   required value="<%=(typeof editData!='undefined')? editData.due_notdue:''%>">
+      
+              <!-- <select id="no_yes_n" name="due"  onchange="dnd(this.value)">
+                <option required value="<%=(typeof editData!='undefined')? editData.due_notdue:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.due_notdue:''%></option>
+                <option value="Due">Due</option>
+                <option value="Due Not" >Not Due</option>
+            </select> -->
+      
+          </fieldset>
+          </label></td>
+          
+
+          
+
+   
+    <td class=" col " style="visibility: hidden;">
+      <label ><span> Email id</span><br>
+        <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+      </label></td><td class=" col " style="visibility: hidden;">
+        <label ><span> Email id</span><br>
+          <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+        </label></td>
+  
+         
+        
+
+                  <td class=" col " style="visibility: hidden;">
+                    <label ><span> Email id</span><br>
+                      <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                    </label></td>
+                    <td class="  col " style="visibility: hidden;">
+                      <label ><span> Email id</span><br>
+                        <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                          </label></td>
+                          <td class="   col " style="visibility: hidden;">
+                            <label ><span> Email id</span><br>
+                              <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                            </label></td>
+
+          
+                      
+          
+
+
+      </tr>
+      
+  
+
+  
+</table>
+</div>
+
+</div>
+
+
+
+<!-- COLUMN 4 -->
+
+
+<div class="d-flex flex-row my-2">
+  <div style="    border: 1px solid #5c5c5c;
+  width: 3%;
+  position: relative;
+  background-color: rgb(33,37,41);">
+      <h6 style="transform:rotate(270deg);top:50%;position: absolute; width:100%; font-size: medium;">DELIVERY</h6>
+  </div>
+  
+      <div style="width: 97%;">
+          <!-- <div class="w-100"> -->
+  <table class="w-100">
+      
+      <tr class="row d-flex align-items-baseline w-100 justify-content-between ">
+          <td class="col" >
+            <label><span>Delivery Final Status</span>
+              <input type="text"  readonly value="<%=(typeof editData!='undefined')? editData.delivery_final_status:''%>">
+            </label>
+          </td>
+          <td class="col align-items-baseline ">
+            <label><span>Delivery Expenses</span>
+              <input type="number" name="delivery_expense" id="delivery_expense" readonly  value="<%=(typeof editData!='undefined')? editData.delivery_expense:''%>">
+          </label></td>
+  
+          
+      <td class=" col align-items-baseline ">
+        <label><span  style="color:rgb(182, 255, 182)" >Special Case Approved By Gunjan</span>
+       
+          <input type="text" name="post_batch_approval" id="post_batch_approval" style="display: block" readonly    value="<%=(typeof editData!='undefined')? editData.post_batch_approval:''%>">
+  
+        </label>
+          </td>
+
+          <input type="text" name="batch_date" id="batch_date" style="display:none ;" value="<%=(typeof editData!='undefined')? editData.batch_date:''%>">
+
+  
+          <td class="col align-items-baseline ">
+            <label><span>Deferred yes/no</span>
+              <input type="text" name="Deferred" id="Deferred" style="display: block" readonly value="<%=(typeof editData!='undefined')? editData.batch_deferred:''%>">
+            </label> </td>
+  
+            <td class=" col " style="visibility: hidden;">
+              <label ><span> Email id</span><br>
+                <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+              </label></td>
+
+              <td class=" col align-items-baseline " >
+                <div class="button-box mt-3" id="buton" style="display:none ;"> <button class="btn btn-success w-50 ">Submit Booking</button></div>
+                  </div>
+                </td>
+
+
+
+      </tr>
+      
+  
+
+  
+</table>
+</div>
+
+</div>
+
+
+
+
+
+
+
+</form>   
+</div>
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> 
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+
+
+<script>
+   function idate1(t)
+  {
+
+   if(installment_1.value>0)
+   {
+    installmentt_1_date.value=t;
+   }
+   else{
+    installmentt_1_date.value="";
+    installment_1_date.value='';}
+
+
+  }
+
+  function idate2(t)
+  {
+    if(installment_2.value>0)
+   {
+    installmentt_2_date.value=t;
+    }
+    else{
+      installmentt_2_date.value="";
+      installment_2_date.value='';
+  }
+  }
+
+  function idate3(t)
+  {if(installment_3.value>0)
+   {
+
+    installmentt_3_date.value=t;
+   }
+   else{installmentt_3_date.value="";
+        installment_3_date.value='';
+      }
+  }
+
+  function idate4(t)
+  {if(installment_4.value>0)
+   {
+
+    installmentt_4_date.value=t;
+   }
+   else{installmentt_4_date.value="";
+   installment_4_date.value='';}
+  }
+
+  function idate5(t)
+  {if(installment_5.value>0)
+   {
+
+    installmentt_5_date.value=t;
+   }
+   else{installmentt_5_date.value="";
+   installment_5_date.value='';}
+  }
+
+  function idate6(t)
+  {if(installment_6.value>0)
+   {
+
+    installmentt_6_date.value=t;
+   }
+   else{installmentt_6_date.value="";
+   installment_6_date.value='';}
+  }
+    
+  function sc(t)
+  {
+    special_case.value=t;
+  }
+  
+  function bamount(t){
+self_payment.value=Number(self_payment.value)+Number(t);
+  }
+  
+  function total_self_loan(){
+
+
+    // self_payment.value=Number(self_payment.value)+Number(new_self_payment.value);
+
+    if(installment_1.value > 0 && installmentt_1_date.value =="")
+    {
+      document.getElementById("installment_1_date").setAttribute('required','');
+    }
+    if(installment_2.value > 0)
+   {
+      if(installmentt_2_date.value ==""){
+      document.getElementById("installment_2_date").setAttribute('required','');}
+      if(installmentt_1_date.value ==""){
+      document.getElementById("installment_1_date").setAttribute('required','');}
+
+    }
+    if(installment_3.value > 0)
+    {
+      if(installmentt_3_date.value ==""){
+      document.getElementById("installment_3_date").setAttribute('required','');}
+      if(installmentt_2_date.value ==""){
+      document.getElementById("installment_2_date").setAttribute('required','');}
+    }
+    if(installment_4.value > 0 && installmentt_4_date.value =="" && installmentt_3_date.value =="")
+    {
+      if(installmentt_4_date.value ==""){
+      document.getElementById("installment_4_date").setAttribute('required','');}
+      if(installmentt_3_date.value ==""){
+      document.getElementById("installment_3_date").setAttribute('required','');}
+     
+      
+      
+    }
+    if(installment_5.value > 0 && installmentt_4_date.value =="" && installmentt_5_date.value =="")
+    {
+      if(installmentt_5_date.value ==""){
+      document.getElementById("installment_5_date").setAttribute('required','');}
+      if(installmentt_4_date.value ==""){
+      document.getElementById("installment_4_date").setAttribute('required','');}      
+      
+    }
+    if(installment_6.value > 0 && installmentt_5_date.value =="" && installmentt_6_date.value =="")
+    {
+      if(installmentt_6_date.value ==""){
+      document.getElementById("installment_6_date").setAttribute('required','');}
+      if(installmentt_5_date.value ==""){
+      document.getElementById("installment_5_date").setAttribute('required','');}
+
+    }
+    
+       
+ 
+    self_payment.value= Number(booking_amount.value)+Number(new_self_payment.value)+Number(installment_1.value)+Number(installment_2.value)+Number(installment_3.value)+Number(installment_4.value)+Number(installment_5.value)+Number(installment_6.value);
+
+    let num1 = self_payment.value;
+    let num2 = document.getElementsByName("loan_payment")[0].value;
+    let num3 = document.getElementsByName("offer_price")[0].value;
+    let num4 = document.getElementsByName("subvention")[0].value;
+
+  
+    let sum = Number(num1) + Number(num2) +Number(num4);
+    let sum1 = sum/ 1.18;
+    let diff = Number(num3)+0.18*Number(num3) - Number(num1) - Number(num2)-Number(num4);
+    let diff1=Number(price_with_tx.value)-Number(sum);
+    document.getElementsByName("total")[0].value = sum;
+    document.getElementsByName("total_without_tax")[0].value = sum1;
+    document.getElementsByName("remaining")[0].value = diff1;
+
+    due_per.value=(Number(diff1)/Number(price_with_tx.value))*100;
+    let due_perc=(Number(diff1)/Number(price_with_tx.value))*100;
+
+    if(Number(due_per.value)<=52)
+    {
+      document.getElementById( "Approved" ).checked = true;
+      no_yes_r.value="Approved";
+      
+      
+      var mydate = new Date(running_batch.value);
+
+      
+      var q = new Date();
+      var date = new Date(q.getFullYear(),q.getMonth(),q.getDate());
+
+      if(mydate<=date)
+      {
+        document.getElementById( "due_yes" ).checked = true;
+        no_yes_n.value="due";
+
+      }
+      else{
+        document.getElementById( "not_due" ).checked = true;
+      no_yes_n.value="Not due";
+      }
+
+
+    }
+    else{
+      document.getElementById( "Not Approved" ).checked = true;
+      no_yes_r.value="Not Approved";
+      document.getElementById( "not_due" ).checked = true;
+      no_yes_n.value="Not due";
+
+
+
+    }
+
+
+    buton.style.display="block";
+    
+
+
+  
+
+   /*if(batch_date.value==" " ||Number(sum1)>Number(num3)  )
+   // {
+   //   document.getElementById( "not_due" ).checked = true;
+      no_yes_n.value="Not due";
+
+    }
+
+    else if(Number(sum1)<Number(num3))
+    {
+      document.getElementById( "due_yes" ).checked = true;
+      no_yes_n.value="due";
+    }*/
+    
+    
+
+  }
+
+  function myfn()
+  {
+    
+    if (new_self_payment.value == 0)   
+    {
+      new_self_payment.value = Number(self_payment.value)-Number(booking_amount.value) - Number(installment_1.value)- Number(installment_2.value)-Number(installment_3.value)- Number(installment_4.value)- Number(installment_5.value)- Number(installment_6.value);
+    }
+
+
+
+    if (tai.value < 2 || tai.value.length ==0)
+    { 
+      installment_row.style.display = "none";
+      installment_row1.style.display = "none";
+      install_1.style.display ="none";
+      install_1d.style.display ="none";
+      install_2.style.display ="none";
+      install_2d.style.display ="none";
+      install_3.style.display ="none";
+      install_3d.style.display ="none";
+      install_4.style.display ="none";
+      install_4d.style.display ="none";
+      install_5.style.display ="none";
+      install_5d.style.display ="none";
+      install_6.style.display ="none";
+      install_6d.style.display ="none";
+    
+    }
+
+    if (tai.value ==2)
+    {
+      install_1.style.display ="block";
+      install_1d.style.display ="block";
+      install_2.style.display ="block";
+      install_2d.style.display ="block";
+      install_3.style.display ="none";
+      install_3d.style.display ="none";
+      install_4.style.display ="none";
+      install_4d.style.display ="none";
+      install_5.style.display ="none";
+      install_5d.style.display ="none";
+      install_6.style.display ="none";
+      install_6d.style.display ="none";
+     
+    }
+    if (tai.value ==3)
+    {
+      install_1.style.display ="block";
+      install_1d.style.display ="block";
+      install_2.style.display ="block";
+      install_2d.style.display ="block";
+      install_3.style.display ="block";
+      install_3d.style.display ="block";
+      install_4.style.display ="none";
+      install_4d.style.display ="none";
+      install_5.style.display ="none";
+      install_5d.style.display ="none";
+      install_6.style.display ="none";
+      install_6d.style.display ="none";
+     
+    }
+    if (tai.value ==4)
+    {
+      install_1.style.display ="block";
+      install_1d.style.display ="block";
+      install_2.style.display ="block";
+      install_2d.style.display ="block";
+      install_3.style.display ="block";
+      install_3d.style.display ="block";
+      install_4.style.display ="block";
+      install_4d.style.display ="block";
+      install_5.style.display ="none";
+      install_5d.style.display ="none";
+      install_6.style.display ="none";
+      install_6d.style.display ="none";
+      
+    }
+    if (tai.value ==5)
+    {
+      install_1.style.display ="block";
+      install_1d.style.display ="block";
+      install_2.style.display ="block";
+      install_2d.style.display ="block";
+      install_3.style.display ="block";
+      install_3d.style.display ="block";
+      install_4.style.display ="block";
+      install_4d.style.display ="block";
+      install_5.style.display ="block";
+      install_5d.style.display ="block";
+      install_6.style.display ="none";
+      install_6d.style.display ="none";
+      
+    }
+    if (tai.value >=6)
+    {
+      install_1.style.display ="block";
+      install_1d.style.display ="block";
+      install_2.style.display ="block";
+      install_2d.style.display ="block";
+      install_3.style.display ="block";
+      install_3d.style.display ="block";
+      install_4.style.display ="block";
+      install_4d.style.display ="block";
+      install_5.style.display ="block";
+      install_5d.style.display ="block";
+      install_6.style.display ="block";
+      install_6d.style.display ="block";
+      
+    }
+  
+    
+
+    if(installmentt_1_date.value=="") 
+    {
+      installmentt_1_date.value=null;
+    }
+    if(installmentt_2_date.value=="") 
+    {
+      installmentt_2_date.value=null;
+    }
+    if(installmentt_3_date.value=="") 
+    {
+      installmentt_3_date.value=null;
+    }
+    if(installmentt_4_date.value=="") 
+    {
+      installmentt_4_date.value=null;
+    }
+    if(installmentt_5_date.value=="") 
+    {
+      installmentt_5_date.value=null;
+    }
+    if(installmentt_6_date.value=="") 
+    {
+      installmentt_6_date.value=null;
+    }
+   
+
+
+    
+    
+    
+    
+    
+    
+    
+    if(installment_paid.value.length==0)
+    {
+      installment_paid.value=0;
+    }
+    if(instp.value.length==0)
+    {
+      instp.value=0;
+    }
+    if( deferemment_fees.value.length==0)
+    {
+      deferemment_fees.value=0;
+    }
+    if( dvPassport.value.length==0)
+    {
+      dvPassport.value=0;
+    }
+    if( booking_amount.value.length==0 )
+    {
+      booking_amount.value=0;
+    }
+
+    if(Deferred.value=="No")
+    {
+    deferemment_fees.value=0;
+    }
+
+    if(new_self_payment.value.length==0)
+    { 
+      new_self_payment.value=0;
+    }
+
+    if(subvention.value.length==0)
+    {
+      subvention.value=0;
+    }
+
+    if(loan_payment.value.length==0)
+    {
+      loan_payment.value=0;
+    }
+    if(loan_payment_transaction_ref_no.value.length==0)
+    {
+      loan_payment_transaction_ref_no.value=0;
+    }
+    if(date_of_distribution.value=="") 
+    {
+      date_of_distribution.value=null;
+    }
+    if(dvPassport_st.value.length==0)
+    {
+      dvPassport_st.value=null;
+    }
+    if(deferemment_fees.value.length==0)
+    {
+      deferemment_fees.value=0;
+    }
+    if(no_yes_d.value.length==0)
+    {
+      no_yes_d.value="Not Applicable";
+    }
+
+    if(refund_processed.value=="No")
+    {
+      dvPassport.style.display="None";
+      dvPassport_s.style.display="None";
+      dvPassport_st.style.display="None";
+      dvPassport.value=0;
+    }
+
+    if(loan_foreclosure_amount.value.length==0)
+    {
+      loan_foreclosure_amount.value=0;
+    }
+  }
+  
+ function ShowHideDiv_t(t)
+  {
+    no_yes_d.value=t;
+
+  }
+  function getbatchd(t)
+{
+  batch_date.value=t;
+}
+
+
+  function ip(t)
+  {
+      instp.value=tai.value-t
+  }
+  function dnd(t)
+  {
+      no_yes_n.value=t;
+  }
+  function mr(t)
+  {
+      no_yes_r.value=t;
+  }
+  
+ /* function total_self_loan_withoutTAX(){
+  
+    let num1 = document.getElementsByName("self_payment")[0].value;
+    let num2 = document.getElementsByName("loan_payment")[0].value;
+   // let num3 = document.getElementsByName("offer_price")[0].value;
+  
+    let sum = (Number(num1) + Number(num2)) / 1.18;
+   // let diff = Number(num3)+0.18*Number(num3) - Number(num1) - Number(num2);
+   
+    document.getElementsByName("total_without_tax")[0].value = sum1;
+    document.getElementsByName("remaining")[0].value = 4554;
+  }*/
+
+ /* function remaining() {
+  
+ let num1 = document.getElementsByName("offer_price")[0].value;
+  let num2 = document.getElementsByName("loan_payment")[0].value;
+  let num3 = document.getElementsByName("self_payment")[0].value;
+
+  let diff = Number(num1)+0.18*Number(num1) - Number(num2) - Number(num3);
+  document.getElementsByName("remaining")[0].value = 6767;
+
+}*/
+
+
+
+/*function ShowHideDiv() {
+      var chkYes = document.getElementById("yes");
+      var dvPassport = document.getElementById("dvPassport");
+      dvPassport.style.display = chkYes.checked ? "block" : "none";
+      var dvPassport_s = document.getElementById("dvPassport_s");
+      dvPassport_s.style.display = chkYes.checked ? "block" : "none";
+      if(chkYes.checked==false)
+      {
+          dvPassport.value=0;
+      }
+  }*/
+  
+  function ShowHideDiv(t) {
+      if(t=="Yes")
+      {
+          dvPassport.style.display="block"
+          dvPassport_s.style.display="block";
+          dvPassport_st.style.display="block";
+          refund_processed.value="Yes";
+          Deferred.value="No";
+          document.getElementById("dvPassport_s").setAttribute('required','');
+  Dropout.value="No";
+  loan_rejected.value="No";
+  late_s.value="No";
+  deferemment_fees.value=0;
+
+
+
+      }
+      else if(t=="No")
+      {
+          dvPassport.style.display="none"
+          dvPassport_s.style.display="none";
+          dvPassport.value=0;
+          dvPassport_st.value=" ";
+          refund_processed.value="No";
+          loan_foreclosure_amount.value=0;
+      
+        
+      }
+
+  }
+  function getdate(t)
+  {
+    
+      document.getElementById("dvPassport_st").value=t;
+  }
+  function getdisdat(t)
+  {
+
+    date_of_distribution.value=t;
+
+  }
+  function getdat(t)
+
+  {
+    
+      running_batch_start.value=t;
+  }
+  
+  
+  function refundcase( a )
+  {
+    document.getElementById( "refund reason" ).style.visibility = "hidden";
+  
+    if( a == "Yes" )
+    {
+      document.getElementById( "refund reason" ).style.visibility = "visible";
+    }
+  
+  }
+  function dueper( a )
+  {
+  
+    if( a >= 50 )
+    {
+      document.getElementById( "Approved" ).checked = true;
+    }
+    
+    if(a<50)
+    {
+      document.getElementById( "Not Approved" ).checked = true;
+
+
+    }
+  
+  }
+  
+  
+  function dropoutcase( b )
+  {
+    document.getElementById( "Dropout reason" ).style.visibility = "hidden";
+  
+    if( b == "Yes" )
+    {
+      document.getElementById( "Dropout reason" ).style.visibility = "visible";
+    }
+  }
+  
+  
+  function loancase( b )
+  {
+    document.getElementById( "loan rejected reason" ).style.visibility = "hidden";
+  
+    if( b == "Yes" )
+    {
+      document.getElementById( "loan rejected reason" ).style.visibility = "visible";
+    }
+  }
+  
+
+ 
+  
+  function deferredcase( c )
+  {
+      if(c=="No")
+  
+    document.getElementById( "next batch" ).style.visibility = "hidden";
+    document.getElementById( "next batch month" ).style.visibility = "hidden"
+    
+    document.getElementById("Deferred_Date").disabled = true;
+  
+      
+  
+  
+    if( c == "Yes" )
+    {
+      document.getElementById( "next batch" ).style.visibility = "visible";
+      document.getElementById( "next batch month" ).style.visibility = "visible";
+     
+  
+    }
+  }
+  function pmode( c )
+  {
+     
+  
+    document.getElementById( "loan" ).style.visibility = "hidden";
+    
+  
+      
+  
+  
+    if( c == "Loan" )
+    {
+      document.getElementById( "loan" ).style.visibility = "visible";
+     
+     
+  
+    }
+  }
+  
+  
+  // function update() {
+  //                 var select = document.getElementById('program');
+  //                 var option = select.options[select.selectedIndex];
+  
+  //                 document.getElementById('offer_price').value = option.value;
+  //                 document.getElementById('programme').value = option.text;
+  //             }
+  
+  //             update();
+  
+  
+  
+          
+  
+  </script>
+      
+
+</body>
+
+    <!-- <h3>SALESX Form</h3> -->
+    
+
+</html>

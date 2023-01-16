@@ -1,0 +1,174 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+   
+    
+table, td, th {  
+ border: 1px solid #ddd;
+ text-align: left;
+}
+table{
+ border-collapse: collapse;
+ width: 50%;
+}
+.table-data{
+  overflow-x:auto;
+  overflow-y: auto;
+  height: 700px;
+}
+.table-data thead th {
+      position: sticky;
+      top: 0;
+      background-color: aqua;
+    }
+th, td {
+  padding: 15px;
+}
+ </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  
+</head>
+<body>
+  
+  
+  <div class="table-data">
+    <table border="1" >
+        <thead>
+            
+            <th>S.N</th>
+            <th>Name Of Program</th>
+            <th>Students Enrolled </th>
+            <th>Booked Revenue</th>
+            <th>Scholarship</th>
+            <th>Revenue Net Scholarship</th>
+
+           
+           
+
+        </thead>
+        
+        <%
+        if(fetchData.length!=0){
+        var i=1;
+        fetchData.forEach(function(data){
+        %>
+       
+        <tr>
+          
+           
+            <td><%=i; %></td>
+            <td><%=data.program %></td>
+            <td><%=data.count %></td>
+            <td><%=data.offer_price %></td>
+            <td><%=data.scholar %></td>
+            <td><%=data.ppp %></td>
+
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+
+    </div>
+
+    <h2>Summary Till Date</h2>
+
+    <div class="table-data">
+        <table border="1" >
+            <thead>
+                
+                <th>S.N</th>
+                <th>Name Of Program</th>
+                <th>Students Enrolled </th>
+                <th>Booked Revenue</th>
+                <th>Scholarship</th>
+                <th>Revenue Net Scholarship</th>
+    
+               
+               
+    
+            </thead>
+            
+            <%
+            if(fetch.length!=0){
+            var i=1;
+            fetch.forEach(function(data){
+            %>
+           
+            <tr>
+              
+               
+                <td><%=i; %></td>
+                <td><%=data.program %></td>
+                <td><%=data.count %></td>
+                <td><%=data.offer_price %></td>
+                <td><%=data.scholar %></td>
+                <td><%=data.ppp %></td>
+    
+            </tr>
+            <%  i++; }) %>
+            <% } else{ %>
+                <tr>
+                    <td colspan="7">No Data Found</td>
+                </tr>
+            <% } %>
+        </table>
+    
+        </div>
+    
+       
+        
+
+
+
+    <script>
+      function done() { 
+    document.getElementById("popup").style.display = "none";
+    var password = document.getElementById("pass").value;
+
+    //DO STUFF WITH PASSWORD HERE
+};
+function popup() {
+
+     
+};
+
+
+    $('#comment').on('input', function() {
+  var href = new URL($('#myLink').prop('href'));
+  var href1 = new URL($('#mmm').prop('href'));
+
+  href.searchParams.set('amount', this.value);
+  href1.searchParams.set('amount', this.value);
+
+  $('#myLink').prop('href', href.toString())
+  $('#mmm').prop('href', href1.toString())
+
+  console.log(href.toString());
+  console.log(this.value);
+  console.log(href);
+});
+
+
+
+
+
+
+
+function form_app()
+{
+    form_element.style.display = "block";
+}
+
+    </script>
+</body>
+</html>

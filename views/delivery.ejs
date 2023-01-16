@@ -1,0 +1,1595 @@
+<html>
+
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=0.70">
+</head>
+
+
+
+<body style="background-color: rgb(29,30,31); color: white;" onload="myfn()">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style type="text/css">
+      
+
+
+      @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(29,30,31);
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75em;
+    font-weight: 150;
+    line-height: 1em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    background-color: rgb(33,37,41);
+    /* padding: 5px 5px; */
+    /* background: #eb2228; */
+    border: none;
+    border-radius: 2;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 3px rgb(255 255 255 / 10%);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 70%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 5px 0;
+}
+
+
+.gtg {
+    height: 10vh;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(65, 0, 0));
+    border-bottom-left-radius: 2rem ;
+    border-bottom-right-radius: 2rem ;
+  }
+  
+  .hero-img{
+    height: 5vh;
+    margin-top: 5px;
+    padding-top: 5px;
+    background-image: url('/images/HV Logo Reverse@250x.png');
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: 7%;
+    position:relative;
+    border-bottom: #aaa;
+  }
+  
+  .card_custom{
+    max-width: 7rem; 
+    border: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+    top: -3rem;
+    text-decoration: none;
+    align-items: center;
+  }
+  .card_custom:hover{
+    box-shadow: 0px 5px 5px rgba(0,0,0,.75);}
+  
+  .admincard{
+    box-shadow: 0px 5px 10px rgba(255, 0, 0, 0.7); ;
+  }
+  .admincard:hover{
+    box-shadow: 0px 5px 5px rgba(255, 0, 0, .8); 
+  }
+  .a{
+    text-decoration: none;
+  }
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 200px;
+    max-width: 300px;
+    height: 101vh;
+    background: rgb(33,37,41);
+    color: #fff;
+    transition: all 0.3s;
+    box-shadow: -5px -15px 15px rgb(203, 203, 203);
+    position: relative;
+
+}
+
+
+#sidebar.active {
+    margin-left: -205px;
+}
+
+#sidebar .sidebar-header {
+    padding: 5px;
+    background: rgb(28,28,28);
+}
+
+.list-unstyled li{
+    
+    padding-left: 0rem;
+    ;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    padding-left: -1px;
+    border-bottom: 1px solid #00000000;
+  
+}
+
+
+
+
+#sidebar ul p {
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    
+}
+
+#sidebar ul li a:hover {
+    /* color: #ff0008; */
+    background: rgba(249, 0, 0, 0.672);
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #434242;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #434242;
+}
+
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #eb2228;
+}
+
+a.article,
+a.article:hover {
+    background: #eb2228 !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+ #content {
+    width: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    min-height: 7em;
+    transition: all 0.3s;
+    background-color: rgb(29,30,31);
+} 
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -220px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+/* ---------------------------------------------------------------------- */
+/* CSS for Popup */
+/* ---------------------------------------------------------------------- */
+
+
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(142, 137, 137, 0.521);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0em;
+  background: white;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
+/* Demo Styles */
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.4;
+}
+/* 
+body {
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #ffffff 0, #ffffff 100%);
+  color: black;
+} */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal-window > div {
+  border-radius: 1rem;
+}
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+#marginalspace{
+    margin-top: 0px;
+}
+
+.logo {
+  max-width: 150px;
+  display: block;
+}
+
+small {
+  color: lightgray;
+}
+
+.btn {
+    background-color: rgb(67,66,66);
+    padding: 5.5px;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: medium;
+    margin-right: 69px;
+    /* margin-top: 2px; */
+    padding-top: 6px;
+    margin-top: -27px;
+}
+
+.btn i {
+  padding-right: 0.3em;
+}
+
+/*-------------------------------------------------------------------------------------- 
+Style for Navbars
+
+-----------------------------------------------------------------------------------------*/
+
+    .a{
+        text-decoration: none;
+    }
+    table{
+        
+        border: 1px solid rgba(92, 92, 92, 0);
+    width: max-content;
+
+       
+    }
+    tr{
+        
+        /* padding: .5rem; */
+    }
+    /* tr:hover{
+        background-color: rgb(255, 200, 200);
+    } */
+    td{
+        
+        padding: 0.2rem;
+    max-width: 11rem;
+    word-wrap: normal;
+    min-width: auto;
+    }
+
+    .slidebar{
+        
+        margin-left: 14%;
+    padding-left: 4%;
+
+    }
+
+    .slidebar2{
+        margin-left: 7%;
+    }
+    
+    label{
+        width:100%;
+    }
+    
+    
+    input[type=text], input[type=number], input[type=email], input[type=float],select{
+        
+        width: 190px;
+        background-color: rgb(29,30,31);
+    /* border: 0px; */
+    /* border-bottom: 3px; */
+    border-top: -67px;
+    border-color: rgb(124, 123, 123);
+    border-radius: 7px;
+    /* border-left: 2px; */
+    /* border-right: 2px; */
+    color: white;
+    
+    border-width: 1px;
+
+    border-style: solid;    
+
+    }
+
+
+    
+.row{
+        /* --bs-gutter-x: 0.5rem; */
+    /* --bs-gutter-y: 0; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* margin-top: calc(-1 * var(--bs-gutter-y)); */
+    /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
+    /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
+    margin-left: 0px;
+
+}
+
+    .inputslide{
+
+        margin-left: 23%;
+    }
+ 
+ 
+    #home_button{
+        position: fixed;
+        /* width: 5rem; */
+        left:2px;
+        top: 20%;
+        z-index: 999;
+        cursor: pointer;
+        padding: 1rem 1rem;
+    }
+    .navig{
+        position: fixed;
+        /* width: 5rem; */
+        left:2px;
+        top: 22%;
+        z-index: 999;
+        cursor: pointer;
+        /* padding: 1rem 1rem; */
+    }
+    .lightgrey{
+        background-color: rgb(80 75 75 / 0%);
+    font-weight: 300;
+    width: max-content;
+    margin-left: 10px;
+    border: none;
+        
+    }
+    .lightred{
+        background-color: #f4f2f2dd;
+        color: black;
+        font-weight: 500;
+        margin-top: -15px;
+        margin-left: 10px;
+    }
+    .lightred_2{
+        background-color: #f4f2f2dd;
+        color: black;
+        font-weight: 500;
+        margin-top: -25px;
+        margin-left: 10px;
+    }
+   
+.majorcontainer{
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+
+.adminbox{
+        
+    background-color: #f4f2f2dd;
+    color: black;
+    font-weight: 500;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+   
+.namebox {
+    transform: rotate(270deg);
+    /* margin-top: 118px;
+    margin-left: -98px;
+    margin-right: -113px;
+    margin-bottom: -208px; */
+    text-align: center;
+    width: fit-content;
+    position:absolute;
+    background-color: #eb2228;
+}
+.namebox2 {
+    transform: rotate(270deg);
+    margin-top: 28px;
+    margin-left: -38px;
+    margin-right: -95px;
+    margin-bottom: -119px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+}
+
+.inputbar{
+
+}
+
+.batchdiff{
+    margin-left: 23%;
+}
+
+.dropout{
+    margin-left: -20%;
+}
+ 
+ 
+.namebox3 {
+    transform: rotate(270deg);
+    margin-top: 36px;
+    margin-left: -52px;
+    margin-right: -108px;
+    margin-bottom: -64px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+
+}
+
+.namebox4 {
+   
+    transform: rotate(270deg);
+    margin-top: 88px;
+    margin-left: -101px;
+    margin-right: -90px;
+    margin-bottom: -113px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+}
+ 
+.defnextmonth{
+
+    margin-left: 7%;
+    font-size: 15px;
+}
+
+.namebox5 {
+   
+    transform: rotate(270deg);
+    margin-top: 25px;
+    margin-left: -40px;
+    margin-right: -109px;
+    margin-bottom: -51px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+}
+
+ 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+
+
+input{
+  width: 190px;
+    background-color: rgb(29,30,31);
+    /* border: 0px; */
+    /* border-bottom: 3px; */
+    border-top: -69px;
+    border-color: rgb(124, 123, 123);
+    border-radius: 7px;
+    /* border-left: 2px; */
+    /* border-right: 2px; */
+    color: white;
+    border-width: 1px;
+    border-style: solid;
+
+}
+
+</style>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <a href="/user/dashboard">
+            <img src="/public/images/HV Logo Reverse@250x.png"  alt="" width="99%" height="55px">
+            </a>
+        </div>
+
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <ul class="list-unstyled components" style="    FONT-SIZE: initial;">
+            <li>
+              <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <h6><i class="bi bi-cart-check" style="margin-right: 10px ; font-size: 25px;"> </i> DELIVERY  </h6>  </a>
+              <ul class="pageSubmenu1" id="pageSubmenu1">
+                  <ul style="    margin-left: -71px;">
+                      <a href="/wrud/read_deli" style="    border: solid;
+                      border-width: thin;
+                      border-color: #7e7e7e;
+                      border-radius: 4px;
+                  ">UPDATE DELIVERY ENTRY</a>
+                  </ul>
+
+                  <ul style="    margin-left: -71px;">
+                    <a href="/mang/insert" style="    border: solid;
+                    border-width: thin;
+                    border-color: #7e7e7e;
+                    border-radius: 4px;
+                ">LRM / OPS ANALYST</a>
+                </ul>
+                  
+                <ul style="    margin-left: -71px;">
+                  <a href="/del/insert" style="    border: solid;
+                  border-width: thin;
+                  border-color: #7e7e7e;
+                  border-radius: 4px;
+              ">ASSIGN PROGRAM <br> DELIVERY</BR></a>
+              </ul>
+                  
+              </ul>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-danger" style="width: 90%; --bs-btn-hover-bg: #ff0019; bottom: 30;position: absolute;"> <a href="/users/logout"><i class="bi bi-box-arrow-left"></i>Logout</a></button>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-secondary " style="height: 42px; width: 42px;     margin-top: 1px;">
+                    <i class="bi bi-text-left"></i>
+                    <span></span>
+                </button>
+                
+
+                <h4><center>Hero Vired Delivery Panel</center></h4>
+            </div>
+        </nav>
+
+<!-- 
+Enter Content From Here 
+
+-->
+
+<form action="<%=(typeof editData!='undefined')?'/wrud/update/'+editData.id:'/wrud/create'%>" method="POST">
+
+<div class="majorcontainer">
+
+
+    
+  <div class="d-flex flex-row my-2">
+    <div style="    border: 1px solid #5c5c5c;
+    width: 3%;
+    position: relative;
+    background-color: rgb(33,37,41);">
+        <h6 style="transform:rotate(270deg);top:70%;position: absolute; width:100%; font-size: medium;">LEARNER'S_DATA</h6>
+    </div>
+    
+        <div style="width: 97%;">
+            <!-- <div class="w-100"> -->
+    <table class="w-100">
+        
+        <tr class="row d-flex align-items-baseline w-100 justify-content-between ">
+          <td class="col" >
+            <label><span > Customer ID</span><br>
+              <input type="text" id="customer_id" name="customer_id" readonly  value="<%=(typeof editData!='undefined')? editData.customer_id:''%>">
+          </label>
+          </td>  
+          <td class="col" >
+              <label><span > Learner's Name</span><br>
+                <input type="text" name="customer_name" readonly  value="<%=(typeof editData!='undefined')? editData.customer_name:''%>">
+            </label>
+            </td>
+            <td class="col align-items-baseline ">
+              <label><span > Email id</span><br>
+                <input type="email" name="email_address" readonly value="<%=(typeof editData!='undefined')? editData.email_address:''%>">
+              </label></td>
+    
+            
+        <td class=" col align-items-baseline ">
+          <label><span > Enrollment Date</span><br>
+            <input type="text" name="enrollment_date" id="enrollment_date" required readonly value="<%=(typeof editData!='undefined' && editData.enrollment_date!=null)?  (editData.enrollment_date.getMonth()+1).toString()+'/'+editData.enrollment_date.getDate().toString()+'/'+editData.enrollment_date.getFullYear().toString():''%>">
+            </label>
+            
+            </td>
+
+            <input type="text" name="batch_date" id="batch_date" style="display:none ;" value="<%=(typeof editData!='undefined')? editData.batch_date:''%>">
+
+    
+            <td class="col align-items-baseline ">
+              <label><span > Phone</span><br>
+                <input type="number" name="phone" readonly value="<%=(typeof editData!='undefined')? editData.phone_number:''%>">
+                </label></td>
+    
+<td class=" col align-items-baseline ">
+  <label><span >Program Name</span><br>
+    <input type="text" id="programme" name="program"  readonly value="<%=(typeof editData!='undefined')? editData.program:''%>" >
+  </label>
+</td>
+
+
+
+        <td class=" col align-items-baseline " >
+          <label>
+            <span >Batch Number</span><br>
+            <input type="number" name="batch_number" id="batch_number" readonly value="<%=(typeof editData!='undefined')? editData.batch_number:''%>">
+            </label></td>
+        </tr>
+   
+        <tr class=" row d-flex align-items-baseline w-100 justify-content-between ">
+
+
+            <td class="col">
+            
+              <label>
+                <span >Batch Date </span> <br> 
+                <input type="text"   style="display:block" readonly   value="<%=(typeof editData!='undefined')? editData.batch_date:''%>">
+              </label>
+                
+                
+            </td>
+            
+            
+    
+    
+                <td class="col">
+                  <label><span > Scholarship (%)</span><br>
+                    <input type="number" name="scholarship_perc"  readonly  value="<%=(typeof editData!='undefined')? editData.scholarship_per:''%>">
+          </label></td>
+   
+
+                <td class="col" >
+                  <label><span > Price after scholarship and discounts</span><br>
+                    <input type="number" name="price_after" readonly  value="<%=(typeof editData!='undefined')? editData.price_without_tax:''%>">
+                </label>
+                    </td>
+
+                    <td class=" col " style="visibility: hidden;">
+                      <label ><span> Email id dummy</span><br>
+                        <input type="email" name="email_addressdummy" style="visibility: hidden;">
+                      </label></td>
+                      <td class=" col " style="visibility: hidden;">
+                        <label ><span> Email id dummy</span><br>
+                          <input type="email" name="email_addressdummy" style="visibility: hidden;">
+                        </label></td>
+
+                        <td class=" col " style="visibility: hidden;">
+                          <label ><span> Email id dummy</span><br>
+                            <input type="email" name="email_addressdummy" style="visibility: hidden;">
+                          </label></td>
+
+            
+                        
+            
+
+
+        </tr>
+        
+        <tr class=" d-flex align-items-baseline w-100 justify-content-between " id="marginalspace">
+            
+            <td style="margin-left: 10px;
+            margin-top: 17px;" >
+                
+        
+            </td>
+            
+           
+           
+                      <!--            
+                        <td class="   align-items-baseline " style="visibility: hidden;">
+                            <label ><span> Email id</span><br>
+                                <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                            </label></td> -->
+    </tr>
+    
+
+    
+</table>
+</div>
+
+</div>
+
+
+ <!-- column 2 -->
+
+
+     
+ <div class="d-flex flex-row my-2">
+  <div style="    border: 1px solid #5c5c5c;
+  width: 3%;
+  position: relative;
+  background-color: rgb(33,37,41);">
+      <h6 style="transform:rotate(270deg);top:57%;position: absolute; width:100%; font-size: medium; ">PAYMENT</h6>
+  </div>
+  
+      <div style="width: 97%;">
+          <!-- <div class="w-100"> -->
+  <table class="w-100">
+      
+      <tr class="row d-flex align-items-baseline w-100 justify-content-between " style="background-color: #4e4e4e;">
+          <td class="col" >
+            <label ><span > Total Recieved (self payment+loan)</span><br>
+              <input type="float" name="total"  readonly  value="<%=(typeof editData!='undefined')? editData.total:''%>">
+        </label>
+          </td>
+          <td class="col align-items-baseline ">
+            <label><span > Remaining Amount</span><br>
+              <input type="float" name="remaining" id="Remaining" readonly value="<%=(typeof editData!='undefined')? editData.remaining:''%>">
+            </label></td>
+  
+          
+      <td class=" col align-items-baseline ">
+        <label><span > Deferrement Finance Approved</span> <br>
+          <input type="text" name="deferrement_finance_approved" id="no_yes_d" style="display: block" readonly    value="<%=(typeof editData!='undefined')? editData.deferrement_finance_approved:''%>">
+        </label></td>
+  
+<td class=" col align-items-baseline ">
+  <label><span > Deferrement Fees</span><br>
+    <input type="number" name="deferemment_fees" id="deferemment_fees" readonly value="<%=(typeof editData!='undefined')? editData.deferemment_fees:''%>">
+  </label>
+</td>
+
+<td class=" col align-items-baseline ">
+  <label>  <span  >Refund Processed</span><br>
+    <input type="text" name="refund_processed"  style="display: block" readonly    value="<%=(typeof editData!='undefined')? editData.refund_processed:''%>">
+  </label>
+</td>
+
+
+
+      <td class=" col align-items-baseline " >
+        <label><span >Refund Amount</span><br>
+          <input type="number" name="refund_amount"  style="display: block" readonly value="<%=(typeof editData!='undefined')? editData.refund_amount:''%>">
+        </label></td>
+      </tr>
+ 
+  
+
+  
+</table>
+</div>
+
+</div>
+
+
+
+<!-- 3RD COLUMN -->
+
+
+
+     
+<div class="d-flex flex-row my-2">
+  <div style="    border: 1px solid #5c5c5c;
+  width: 3%;
+  position: relative;
+  background-color: rgb(33,37,41);">
+      <h6 style="transform:rotate(270deg);top:64%;position: absolute; width:100%; font-size: medium;">ENGAGEMENT</h6>
+  </div>
+  
+      <div style="width: 97%;">
+          <!-- <div class="w-100"> -->
+  <table class="w-100">
+      
+      <tr class="row d-flex align-items-baseline w-100 justify-content-between ">
+          <td class="col" >
+            <label>
+              <span>  Welcome Kit Sent </span>
+            <input name="welcome_kit_sent"  value="<%=(typeof editData!='undefined')? editData.welcome_kit_sent:''%>">
+          </label>
+          </td>
+          <td class="col align-items-baseline ">
+            <label>
+              <span>  Classes Attended  </span>
+            <input name="classes_attended"  value="<%=(typeof editData!='undefined')? editData.classes_attended:''%>">
+            </label></td>
+  
+          
+      <td class=" col align-items-baseline ">
+        <label>
+          <span>  Total Live Classes completed </span>
+        <input name="total_live_classes_attended"  value="<%=(typeof editData!='undefined')? editData.total_live_classes_attended:''%>">
+        </label></td>
+  
+<td class=" col align-items-baseline ">
+<label>
+  <span>  Total Career Session Hours  </span>
+<input name="total_career_session_hours"  value="<%=(typeof editData!='undefined')? editData.total_career_session_hours:''%>">
+</label>
+</td>
+
+<td class=" col align-items-baseline ">
+  <label>
+    <span>  PM/PA Name   </span>
+  <input name="pm_name"  value="<%=(typeof editData!='undefined')? editData.pm_name:''%>">
+  </label>
+</td>
+
+
+
+      <td class=" col align-items-baseline " >
+        <label>
+          <span>  Assignments Assigned </span>
+        <input name="assignment_assigned"  value="<%=(typeof editData!='undefined')? editData.assignment_assigned:''%>">
+        </label></td>
+      </tr>
+ 
+      <tr class="row d-flex align-items-baseline w-100 justify-content-between ">
+        <td class="col" >
+          <label>
+            <span>Assignments Submitted/ Completed </span>
+          <input name="assignment_submitted"  value="<%=(typeof editData!='undefined')? editData.assignment_submitted:''%>">
+          </label>
+        </td>
+        <td class="  col " style="visibility: hidden;">
+          <label ><span> Email id</span><br>
+            <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+              </label></td>
+              <td class=" col " style="visibility: hidden;">
+                <label ><span> Email id dummy</span><br>
+                  <input type="email" name="email_addressdummy" style="visibility: hidden;">
+                </label></td>
+
+                <td class=" col " style="visibility: hidden;">
+                  <label ><span> Email id dummy</span><br>
+                    <input type="email" name="email_addressdummy" style="visibility: hidden;">
+                  </label></td>
+
+                  <td class=" col " style="visibility: hidden;">
+                    <label ><span> Email id dummy</span><br>
+                      <input type="email" name="email_addressdummy" style="visibility: hidden;">
+                    </label></td>
+
+                    <td class=" col " style="visibility: hidden;">
+                      <label ><span> Email id dummy</span><br>
+                        <input type="email" name="email_addressdummy" style="visibility: hidden;">
+                      </label></td>
+
+
+                               
+
+      </tr>
+
+  
+</table>
+</div>
+
+</div>
+
+  <!-- column 4  -->
+
+
+    
+  <div class="d-flex flex-row my-2">
+    <div style="    border: 1px solid #5c5c5c;
+    width: 3%;
+    position: relative;
+    background-color: rgb(33,37,41);">
+        <h6 style="transform:rotate(270deg);top:78%;position: absolute; width:100%; font-size: medium;">DELIVERY_DETAILS</h6>
+    </div>
+    
+        <div style="width: 97%;">
+            <!-- <div class="w-100"> -->
+    <table class="w-100">
+        
+        <tr class="row d-flex align-items-baseline w-100 justify-content-between  " style="background-color: #4e4e4e;">
+            <td class="col" >
+              <label><span> Date of first request </span>
+                <input type="date" name="delivery_date_of_first_reques" id="delivery_date_of_first_reque" style=" width: 1.5rem; background-color: white;" onchange="getdatedel(this.value)">
+  
+                <input type="text" name="delivery_date_of_first_request" id="delivery_date_of_first_request" readonly  value="<%=(typeof editData!='undefined' && editData.delivery_date_of_first_request!=null)?  (editData.delivery_date_of_first_request.getMonth()+1).toString()+'/'+editData.delivery_date_of_first_request.getDate().toString()+'/'+editData.delivery_date_of_first_request.getFullYear().toString():''%>">
+              </label>
+            </td>
+            
+    
+            
+        <td class=" col align-items-baseline ">
+          <label><span> Request Made</span><br>
+            <select id="delivery_request_made" name="delivery_request_made">
+              <option required value="<%=(typeof editData!='undefined')? editData.delivery_request_made:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.delivery_request_made:''%></option>
+              <%
+              if(fd_s.length!=0){
+              var i=1;
+              fd_s.forEach(function(data){
+                 
+              %>
+              <option  value="<%= data.delivery_request_mode%>" ><%= data.delivery_request_mode%></option>
+              <%  i++; }) %>
+              <% } else{ %>
+                  <option>No data</option>
+              <% } %>
+
+          </select>
+        </label>
+            </td>
+
+            <td class="col align-items-baseline ">
+              <label><span> Date of Acceptance</span>
+                <input type="date" name="delivery_date_of_acceptanc" id="delivery_date_of_acceptanc" style=" width: 1.5rem; background-color: white;" onchange="getdateofaccept(this.value)" value="<%=(typeof editData!='undefined')? editData.refund_date:''%>">
+  
+                 <input type="text" name="delivery_date_of_acceptance" id="delivery_date_of_acceptance"  value="<%=(typeof editData!='undefined' && editData.delivery_date_of_acceptance!=null)?  (editData.delivery_date_of_acceptance.getMonth()+1).toString()+'/'+editData.delivery_date_of_acceptance.getDate().toString()+'/'+editData.delivery_date_of_acceptance.getFullYear().toString():''%>">
+                      </label></td>
+
+            <input type="text" name="batch_date" id="batch_date" style="display:none ;" value="<%=(typeof editData!='undefined')? editData.batch_date:''%>">
+
+    
+            <td class="col align-items-baseline ">
+              <label><span> Final Status</span><br>
+                <select id="delivery_final_status" name="delivery_final_status" onchange="df(this.value)">
+                  <option required value="<%=(typeof editData!='undefined')? editData.delivery_final_status:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.delivery_final_status:''%></option>
+                  <%
+                  if(dd_s.length!=0){
+                  var i=1;
+                  dd_s.forEach(function(data){
+                     
+                  %>
+                  <option  value="<%= data.delivery_final_status%>" ><%= data.delivery_final_status%></option>
+                  <%  i++; }) %>
+                  <% } else{ %>
+                      <option>No data</option>
+                  <% } %>
+
+              </select>
+            </label></td>
+    
+<td class=" col align-items-baseline ">
+  <label><span>Delivery/Progam Expenses</span><br>
+    <input type="number" name="delivery_expense" id="delivery_expense"  value="<%=(typeof editData!='undefined')? editData.delivery_expense:''%>">
+</label>
+</td>
+
+
+
+        <td class=" col align-items-baseline " >
+          <label><span> Detailed Notes</span><br>
+            <input type="text" name="delivery_detailed_notes"  value="<%=(typeof editData!='undefined')? editData.delivery_detailed_notes:''%>">
+        </label></td>
+        </tr>
+   
+        <tr class=" row d-flex align-items-baseline w-100 justify-content-between " style="background-color: #4e4e4e;">
+
+
+            <td class="col">
+            
+              <label><span>Deferred To Month</span><br>
+                <input type="month" name ="delivery_def_month" style="display: block" onchange="getmonthdeferred(this.value)" >
+                  <input type="month" name="delivery_deferred_to_month" id="delivery_deferred_to_month" readonly required  value="<%=(typeof editData!='undefined')? editData.delivery_deferred_to_month:''%>">
+            </label>
+                
+                
+            </td>
+            
+            
+    
+    
+                <td class="col">
+                  <label ><span> Deferred Program</span><br>
+      
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+
+                    
+                    <select id="deferred_program"  onchange="update(this.value)">
+                      <option required value="<%=(typeof editData!='undefined')? editData.deferred_program:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.deferred_program:''%></option>
+                      <%
+                      if(fetchData.length!=0){
+                      var i=1;
+                      fetchData.forEach(function(data){
+                         
+                      %>
+                      <option  value="<%= data.deferred_batch_no%>" ><%= data.name%></option>
+                        <%  i++; }) %>
+                        <% } else{ %>
+                            <option>No data</option>
+                        <% } %>
+                  </select>
+                  <input type="text" id="deferred_programm" name="deferred_program" style="display: none;" readonly required value="<%=(typeof editData!='undefined')? editData.deferred_program:''%>">
+                
+                  </label></td>
+   
+
+                <td class="col" >
+                  <label><span>Deferred Batch No</span><br>
+                    <input type="number" id="deferred_batch_no" name="deferred_batch_no"  required value="<%=(typeof editData!='undefined')? editData.deferred_batch_no:''%>">
+  
+                </label>
+                    </td>
+
+                    <td class=" col " style="visibility: hidden;">
+                      <label ><span> Email id dummy</span><br>
+                        <input type="email" name="email_addressdummy" style="visibility: hidden;">
+                      </label></td>
+                      <td class=" col " style="visibility: hidden;">
+                        <label ><span> Email id dummy</span><br>
+                          <input type="email" name="email_addressdummy" style="visibility: hidden;">
+                        </label></td>
+
+                        <td class=" col " style="visibility: hidden;">
+                          <label ><span> Email id dummy</span><br>
+                            <input type="email" name="email_addressdummy" style="visibility: hidden;">
+                          </label></td>
+            
+                        
+            
+
+
+        </tr>
+        
+       
+
+    
+</table>
+</div>
+
+</div>
+
+
+
+<!-- column 5 -->
+
+
+
+     
+<div class="d-flex flex-row my-2">
+  <div style="    border: 1px solid #5c5c5c;
+  width: 3%;
+  position: relative;
+  background-color: rgb(33,37,41);">
+      <h6 style="transform:rotate(270deg);top:45%;position: absolute; width:100%; font-size: medium;">ADMIN</h6>
+  </div>
+  
+      <div style="width: 97%;">
+          <!-- <div class="w-100"> -->
+  <table class="w-100">
+      
+      <tr class="row d-flex align-items-baseline w-100 justify-content-between ">
+          <td class="col" >
+            <label>
+              <span>Comment for Approval</span>
+            <input name="del_comment_over_gunjan"  value="<%=(typeof editData!='undefined')? editData.del_comment_over_gunjan:''%>">
+      </label>
+          </td>
+          <td class="col align-items-baseline ">
+            <label>
+              <span style="color:green">Comment By Admin</span>
+            <input type="text" readonly value="<%=(typeof editData!='undefined')? editData.comment:''%>">
+            </label></td>
+  
+          
+      <td class=" col align-items-baseline ">
+        <label><span style="color:green"> Post Batch Approval Status</span>
+          <input type="text" name="post_batch_approval" id="post_batch_approval" readonly value="<%=(typeof editData!='undefined')? editData.post_batch_approval:''%>"> 
+        </label></td>
+  
+<td class=" col align-items-baseline ">
+  <div class="button-box pt-2 mx-auto"> <button class="btn btn-danger" style="width: 100%;">Submit Booking</button></div> 
+</td>
+<td class=" col align-items-baseline ">
+  <div class="button-box pt-2 mx-auto" > <button class="btn btn-success" style="display: none;">Submit Approval</button></div> 
+</td>
+
+<td class=" col " style="visibility: hidden;">
+  <label ><span> Email id dummy</span><br>
+    <input type="email" name="email_addressdummy" style="visibility: hidden;">
+  </label></td>
+
+  <td class=" col " style="visibility: hidden;">
+    <label ><span> Email id dummy</span><br>
+      <input type="email" name="email_addressdummy" style="visibility: hidden;">
+    </label></td>
+
+  
+</table>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> 
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+
+<script>
+    
+  function df(t)
+  { 
+    document.getElementById("delivery_date_of_acceptanc").setAttribute('required','');
+    document.getElementByName("delivery_deferred_to_month").setAttribute('required','');
+    
+    if(t=='Refund')
+    {
+      post_batch_approval.value='Pending';
+    }
+    else if(t=='Deferrement Without Fees')
+    {
+      post_batch_approval.value='Pending';
+
+    }
+  else  if(t=='Deferred')
+    {
+      var mydate = new Date(enrollment_date.value);
+      var mydate1 = new Date(delivery_date_of_first_request.value);
+      var mydate2=new Date(batch_date.value);
+      mydate=mydate.getTime();
+      mydate1=mydate1.getTime();
+      mydate2=mydate2.getTime();
+      
+
+
+      if((mydate1-max(mydate,mydate2))<=86400000*21)
+      {
+        post_batch_approval.value='';
+
+      }
+      else{
+        post_batch_approval.value='Pending';
+
+      }
+    }
+    else{
+      post_batch_approval.value='';
+
+    }
+  }
+  
+  
+  
+  function total_self_loan(){
+  
+    let num1 = document.getElementsByName("self_payment")[0].value;
+    let num2 = document.getElementsByName("loan_payment")[0].value;
+    let num3 = document.getElementsByName("offer_price")[0].value;
+    let num4 = document.getElementsByName("subvention")[0].value;
+
+  
+    let sum = Number(num1) + Number(num2) +Number(num4);
+    let sum1 = (Number(num1) + Number(num2)) / 1.18;
+    let diff = Number(num3)+0.18*Number(num3) - Number(num1) - Number(num2)-Number(num4);
+    let diff1=Number(price_with_tx.value)-Number(sum);
+    document.getElementsByName("total")[0].value = sum;
+    document.getElementsByName("total_without_tax")[0].value = sum1;
+    document.getElementsByName("remaining")[0].value = diff1;
+
+    due_per.value=(Number(diff1)/Number(sum))*100;
+    let due_perc=(Number(diff1)/Number(sum))*100;
+
+    if(Number(due_perc)<=48)
+    {
+      document.getElementById( "Approved" ).checked = true;
+      no_yes_r.value="Approved";
+
+
+    }
+    else{
+      document.getElementById( "Not Approved" ).checked = true;
+      no_yes_r.value="Approved";
+
+
+    }
+
+    if(batch_date.value=="" ||Number(sum1)>Number(num3)  )
+    {
+      document.getElementById( "not_due" ).checked = true;
+      no_yes_n.value="Not due";
+
+    }
+
+    else if(Number(sum1)<Number(num3))
+    {
+      document.getElementById( "due_yes" ).checked = true;
+      no_yes_n.value="due";
+    }
+    
+    
+
+  }
+
+  function getdateofaccept(t)
+  {
+   
+    delivery_date_of_acceptance.value=t;
+    var enroll = new Date(document.getElementById( "enrollment_date" ).value);
+        var dof = new Date(t);
+        var dof_acc = new Date(dof.getFullYear(),dof.getMonth(),dof.getDate(),0,0,0,0); 
+        var today = new Date();
+        // var today= new Date(ctoday.getFullYear(), ctoday.getMonth(), ctoday.getDate(), 0,0,0,0 );
+
+        var sd = new Date(today.getFullYear(),today.getMonth()-1,1,0,0,0,0);
+        var cd = new Date(today.getFullYear(),today.getMonth(),1,0,0,0,0);
+        var ed = new Date(today.getFullYear(),today.getMonth(),7,0,0,0,0);
+        
+        if(today<=ed){
+                if(dof_acc>enroll && dof_acc>=sd && dof_acc <=today)
+                {
+                    document.getElementById( "delivery_date_of_acceptance" ).value = t ;
+                    
+
+                }
+                else{alert("Invalid Date");
+                document.getElementById("delivery_date_of_acceptanc").value = '';
+                document.getElementById( "delivery_date_of_acceptance" ).value = '' ;
+            }
+            } 
+        
+        
+        else{    
+            if(dof_acc>enroll && dof_acc>=cd && dof_acc<=today)
+            {
+                document.getElementById( "delivery_date_of_acceptance" ).value = t ;
+                
+            }
+            else{
+                alert("Invalid date");
+                document.getElementById("delivery_date_of_acceptanc").value = '';
+                document.getElementById( "delivery_date_of_acceptance" ).value = '' ;
+            }
+
+        } 
+  }
+  function getdatedel(t)
+  {
+    
+    delivery_date_of_first_request.value=t;
+  }
+  function getmonthdeferred(t)
+  {
+    
+    delivery_deferred_to_month.value=t;
+  }
+  function getbatchd(t)
+{
+  batch_date.value=t;
+}
+
+
+  function ip(t)
+  {
+      instp.value=tai.value-t
+  }
+  function dnd(t)
+  {
+      no_yes_n.value=t;
+  }
+  function mr(t)
+  {
+      no_yes_r.value=t;
+  }
+  
+ /* function total_self_loan_withoutTAX(){
+  
+    let num1 = document.getElementsByName("self_payment")[0].value;
+    let num2 = document.getElementsByName("loan_payment")[0].value;
+   // let num3 = document.getElementsByName("offer_price")[0].value;
+  
+    let sum = (Number(num1) + Number(num2)) / 1.18;
+   // let diff = Number(num3)+0.18*Number(num3) - Number(num1) - Number(num2);
+   
+    document.getElementsByName("total_without_tax")[0].value = sum1;
+    document.getElementsByName("remaining")[0].value = 4554;
+  }*/
+
+ /* function remaining() {
+  
+ let num1 = document.getElementsByName("offer_price")[0].value;
+  let num2 = document.getElementsByName("loan_payment")[0].value;
+  let num3 = document.getElementsByName("self_payment")[0].value;
+
+  let diff = Number(num1)+0.18*Number(num1) - Number(num2) - Number(num3);
+  document.getElementsByName("remaining")[0].value = 6767;
+
+}*/
+
+
+
+/*function ShowHideDiv() {
+      var chkYes = document.getElementById("yes");
+      var dvPassport = document.getElementById("dvPassport");
+      dvPassport.style.display = chkYes.checked ? "block" : "none";
+      var dvPassport_s = document.getElementById("dvPassport_s");
+      dvPassport_s.style.display = chkYes.checked ? "block" : "none";
+      if(chkYes.checked==false)
+      {
+          dvPassport.value=0;
+      }
+  }*/
+  
+  function ShowHideDiv(t) {
+      if(t=="Yes")
+      {
+         
+          no_yes.value="Yes";
+          
+        
+
+      }
+      else if(t=="No")
+      {
+          
+          no_yes.value="No";
+
+
+      }
+
+  }
+  function getdate(t)
+  {
+      document.getElementById("dvPassport_st").value=t;
+  }
+  function getdisdat(t)
+  {
+    date_of_distribution.value=t;
+
+  }
+  function getdat(t)
+  {
+      running_batch_start.value=t;
+  }
+  
+  
+  function refundcase( a )
+  {
+    document.getElementById( "refund reason" ).style.visibility = "hidden";
+  
+    if( a == "Yes" )
+    {
+      document.getElementById( "refund reason" ).style.visibility = "visible";
+    }
+  
+  }
+  function dueper( a )
+  {
+  
+    if( a >= 50 )
+    {
+      document.getElementById( "Approved" ).checked = true;
+    }
+    
+    if(a<50)
+    {
+      document.getElementById( "Not Approved" ).checked = true;
+
+
+    }
+  
+  }
+  
+  
+  function dropoutcase( b )
+  {
+    document.getElementById( "Dropout reason" ).style.visibility = "hidden";
+  
+    if( b == "Yes" )
+    {
+      document.getElementById( "Dropout reason" ).style.visibility = "visible";
+    }
+  }
+  
+  
+  function loancase( b )
+  {
+    document.getElementById( "loan rejected reason" ).style.visibility = "hidden";
+  
+    if( b == "Yes" )
+    {
+      document.getElementById( "loan rejected reason" ).style.visibility = "visible";
+    }
+  }
+  
+
+ 
+  
+  function deferredcase( c )
+  {
+      if(c=="No")
+  
+    document.getElementById( "next batch" ).style.visibility = "hidden";
+    document.getElementById( "next batch month" ).style.visibility = "hidden"
+    
+    document.getElementById("Deferred_Date").disabled = true;
+  
+      
+  
+  
+    if( c == "Yes" )
+    {
+      document.getElementById( "next batch" ).style.visibility = "visible";
+      document.getElementById( "next batch month" ).style.visibility = "visible";
+     
+  
+    }
+  }
+  function pmode( c )
+  {
+     
+  
+    document.getElementById( "loan" ).style.visibility = "hidden";
+    
+  
+      
+  
+  
+    if( c == "Loan" )
+    {
+      document.getElementById( "loan" ).style.visibility = "visible";
+     
+     
+  
+    }
+  }
+  
+  
+  function update() {
+                  var select = document.getElementById('deferred_program');
+                  var option = select.options[select.selectedIndex];
+  
+                  // document.getElementById('offer_price').value = option.value;
+                  document.getElementById('deferred_programm').value = option.text;
+              }
+  
+              update();
+  
+  function myfn(){
+    if(delivery_expense.value.length==0)
+      {
+          delivery_expense.value=0;
+      }
+  }
+
+
+
+  
+  
+  
+  
+  </script>
+      
+
+
+</body>
+
+    <!-- <h3>SALESX Form</h3> -->
+    
+
+</html>

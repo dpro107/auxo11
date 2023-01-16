@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+   
+    
+table, td, th {  
+ border: 1px solid #ddd;
+ text-align: left;
+}
+table{
+ border-collapse: collapse;
+ width: 50%;
+}
+.table-data{
+  overflow-x:auto;
+  overflow-y: auto;
+  height: 700px;
+}
+.table-data thead th {
+      position: sticky;
+      top: 0;
+      background-color: #ff9c9c;
+
+    }
+th, td {
+  padding: 15px;
+}
+ </style>
+</head>
+<body>
+ <div class="table-data">
+    <table border="1" >
+        <thead>
+            <th>S.N</th>
+            <th>Customer_Id</th>
+            <th>Full Name</th>
+            <th>Phone_number</th>
+            <th>Email Address</th>
+            <th>Counsellor</th>
+            <th>batch_number</th>
+            <th>batch_type</th>
+            <th>Enrollment_date</th>
+            <th>Program</th>
+            
+            <th>Offer_price</th>
+           
+            <th>discount</th>
+            <th>scholarship</th>
+            <th>scholarship_per</th>
+            <th>subvention</th>
+            <th>self_payment</th>
+            <th>loan_payment</th>
+            <th>total</th>
+            <th>total_without_tax</th>
+            <th>payment_mode</th>
+            <th>Loan_partner</th>
+            <th>current_status</th>
+            <th>Approved_installment</th>
+            <th>remarks</th>
+            <th>loan_rejected</th>
+            <th>loan_rejected_reason</th>
+            <th>refund</th>
+            <th>refund_reason</th>
+            <th>refund_remarks</th>
+            <th>Dropout</th>
+            <th>Dropout_reason</th>
+            <th>dropout_date</th>
+            <th>Batch_deferred</th>
+            <th>Deferred_to_next_batch</th>
+            <th>deferred_date</th>
+            <th>Late_start</th>
+            <th>Late_start_month</th>
+            <th>Enrollment_month</th>
+            <th>Increased</th>
+            <th>Approved_by</th>
+            <th>upcoming_batch_month</th>
+            <th>bootcamp_date</th>
+           
+
+            <th>Date_of_distribution</th>
+          
+            <th>Upcoming_batch</th>
+            
+            
+
+
+
+            
+           
+           
+            <th>Price_with_tax</th>
+            <th>price_without_tax</th>
+            <th>remaining</th>
+            <th>Loan_payment_transaction_ref_no</th>
+            <th>Installment_paid</th>
+            <th>Installment_pending</th>
+            <th>refund_processed</th>
+            <th>refund_amount</th>
+            <th>refund_process_date</th>
+            <th> refund_date</th>
+            <th>running_batch_start_date</th>
+            <th>Due_notdue</th>
+            <th>Due</th>
+            <th>min_50_received</th>
+            <th>deferemment_fees</th>
+            <th>loan_foreclosure_amount</th>
+            <th>deferrement_finance_approved</th>
+            <th>Edit Finance</th>
+        </thead>
+        
+        <%
+        if(fetchData.length!=0){
+        var i=1;
+        fetchData.forEach(function(data){
+        %>
+       
+        <tr>
+          
+            <td><%=i; %></td>
+            <td><%=data.customer_id %></td>
+            <td><%=data.customer_name %></td>
+            <td><%=data.phone_number %></td>
+
+            <td><%=data.email_address %></td>
+            <td><%=data.counsellor %></td>
+            <td><%=data.batch_number %></td>
+            <td><%=data.batch_type %></td>
+            <td><%=data.enrollment_date %></td>
+            <td><%=data.program %></td>
+           
+
+            <td><%=data.offer_price %></td>
+            
+            <td><%=data.discount %></td>
+            <td><%=data.scholarship %></td>
+            <td><%=data.scholarship_per %></td>
+            <td><%=data.subvention %></td>
+            <td><%=data.self_payment %></td>
+            <td><%=data.loan_payment %></td>
+            <td><%=data.total %></td>
+            <td><%=data.total_without_tax %></td>
+            <td><%=data.payment_mode %></td>
+            <td><%=data.loan_partner %></td>
+            <td><%=data.current_status %></td>
+            <td><%=data.approved_installment %></td>
+            <td><%=data.remarks %></td>
+            <td><%=data.loan_rejected %></td>
+            <td><%=data.loan_rejected_reason %></td>
+            <td><%=data.refund %></td>
+            <td><%=data.refund_reason %></td>
+            <td><%=data.refund_remarks %></td>
+            <td><%=data.dropout %></td>
+            <td><%=data.dropout_reason %></td>
+            <td><%=data.dropout_date %></td>
+            <td><%=data.batch_deferred %></td>
+            <td><%=data.deferred_to_next_batch %></td>
+            <td><%=data.deferred_date %></td>
+            <td><%=data.late_start %></td>
+            <td><%=data.late_start_month %></td>
+            <td><%=data.enrollment_month %></td>
+            <td><%=data.increased %></td>
+            <td><%=data.approved_by %></td>
+          <td> <%=data.upcoming_batch_month%></td>
+          <td> <%=data.bootcamp_date%></td>
+           
+            <td><%=data.date_of_distribution %></td>
+            
+            <td><%=data.upcoming_batch %></td>
+           
+
+
+
+
+
+
+            
+            
+
+            
+            <td><%=data.price_with_tax %></td>
+            <td><%=data.price_without_tax %></td>
+            <td><%=data.remaining %></td>
+            <td><%=data.loan_payment_transaction_ref_no %></td>
+            <td><%=data.installment_paid %></td>
+            <td><%=data.installment_pending %></td>
+            <td><%=data.refund_processed %></td>
+            <td><%=data.refund_amount %></td>
+            <td><%=data.refund_process_date %></td>
+            <td><%=data.refund_date %></td>
+            <td><%=data.running_batch_start_date %></td>
+            <td><%=data.due_notdue %></td>
+            <td><%=data.due %></td>
+            <td><%=data.min_50_received%></td>
+            <td><%=data.deferemment_fees %></td>
+
+            <td><%=data.loan_foreclosure_amount%></td>
+            <td><%=data.deferrement_finance_approved %></td>
+            <td><a href="/prud/edit/<%=data.id%>">Edit For Finance</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+
+
+   
+
+    <script>
+      function done() { 
+    document.getElementById("popup").style.display = "none";
+    var password = document.getElementById("pass").value;
+
+    //DO STUFF WITH PASSWORD HERE
+};
+function showPopup() {
+     document.getElementById("popup").style.display = "block";
+}
+
+    </script>
+</body>
+</html>

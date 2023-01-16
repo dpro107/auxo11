@@ -1,0 +1,609 @@
+<html>
+
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=0.70">
+</head>
+
+
+
+<body style="background-color: rgb(29,30,31); color: white;" onload="myfn()">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+
+
+<link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../public/stylesheets/sb-admin-2.min.css" rel="stylesheet">
+
+
+
+   <style type="text/css">
+      
+
+
+      @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(29,30,31);
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75em;
+    font-weight: 150;
+    line-height: 1em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    background-color: rgb(33,37,41);
+    /* padding: 5px 5px; */
+    /* background: #eb2228; */
+    border: none;
+    border-radius: 2;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 3px rgb(255 255 255 / 10%);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 70%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 5px 0;
+}
+
+
+.gtg {
+    height: 10vh;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(65, 0, 0));
+    border-bottom-left-radius: 2rem ;
+    border-bottom-right-radius: 2rem ;
+  }
+  
+  .hero-img{
+    height: 5vh;
+    margin-top: 5px;
+    padding-top: 5px;
+    background-image: url('/images/HV Logo Reverse@250x.png');
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: 7%;
+    position:relative;
+    border-bottom: #aaa;
+  }
+  
+  .card_custom{
+    max-width: 7rem; 
+    border: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+    top: -3rem;
+    text-decoration: none;
+    align-items: center;
+  }
+  .card_custom:hover{
+    box-shadow: 0px 5px 5px rgba(0,0,0,.75);}
+  
+  .admincard{
+    box-shadow: 0px 5px 10px rgba(255, 0, 0, 0.7); ;
+  }
+  .admincard:hover{
+    box-shadow: 0px 5px 5px rgba(255, 0, 0, .8); 
+  }
+  .a{
+    text-decoration: none;
+  }
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 200px;
+    max-width: 200px;
+    
+    background: rgb(33,37,41);
+    color: #fff;
+    transition: all 0.3s;
+    box-shadow: -5px -15px 15px rgb(203, 203, 203);
+    
+
+}
+
+
+#sidebar.active {
+    margin-left: -205px;
+}
+
+#sidebar .sidebar-header {
+    padding: 5px;
+    background: rgb(28,28,28);
+}
+
+.list-unstyled li{
+    
+    padding-left: 0rem;
+    ;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    padding-left: -1px;
+    border-bottom: 1px solid #00000000;
+    min-height: 40.5rem;
+}
+
+
+
+
+#sidebar ul p {
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    
+}
+
+#sidebar ul li a:hover {
+    /* color: #ff0008; */
+    background: rgba(249, 0, 0, 0.672);
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #eb2228;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #eb2228;
+}
+
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #eb2228;
+}
+
+a.article,
+a.article:hover {
+    background: #eb2228 !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+ #content {
+    width: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    min-height: 7em;
+    transition: all 0.3s;
+    background-color: rgb(29,30,31);
+} 
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -220px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+/* ---------------------------------------------------------------------- */
+/* CSS for Popup */
+/* ---------------------------------------------------------------------- */
+
+
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(142, 137, 137, 0.521);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0em;
+  background: white;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
+/* Demo Styles */
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.4;
+}
+/* 
+body {
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #ffffff 0, #ffffff 100%);
+  color: black;
+} */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal-window > div {
+  border-radius: 1rem;
+}
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+#marginalspace{
+    margin-top: 0px;
+}
+
+.logo {
+  max-width: 150px;
+  display: block;
+}
+
+small {
+  color: lightgray;
+}
+
+.btn {
+    background-color: rgb(67,66,66);
+    padding: 5.5px;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: medium;
+    margin-right: 69px;
+    /* margin-top: 2px; */
+    padding-top: 6px;
+    margin-top: -27px;
+}
+
+.btn i {
+  padding-right: 0.3em;
+}
+
+/*-------------------------------------------------------------------------------------- 
+Style for Navbars
+
+-----------------------------------------------------------------------------------------*/
+
+   
+
+
+</style>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <a href="/">
+            <img src="../public/images/HV Logo Reverse@250x.png"  alt="" width="99%" height="55px">
+            </a>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+           
+
+        
+
+            <li>
+                <a href="/plogin"><p>UPDATE FINANCE ENTRY</p></a>
+            </li>
+
+            <!-- <li>
+                <div class="interior">
+                    <a class="btn" href="#open-modal">Popup here</a>
+                  </div>
+                  <div id="open-modal" class="modal-window">
+                    <div>
+                      <a href="#" title="Close" class="modal-close">Close</a>
+                      <a href="/crud/form">Form</a>
+                    </div>
+                  </div>
+            </li> -->
+            <!-- <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li> -->
+                <!-- <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li> -->
+        </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-secondary " style="height: 42px; width: 42px;     margin-top: 1px;">
+                    <i class="bi bi-text-left"></i>
+                    <span></span>
+                </button>
+                
+
+                <h4><center>Hero Vired Finance</center></h4>
+            </div>
+        </nav>
+
+<!-- 
+Enter Content From Here 
+
+-->
+
+<div class="majorcontainer">
+
+    
+   <!-- Earnings (Monthly) Card Example -->
+   <div class="row">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            TOTAL ENROLLMENTS</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">1287</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                          NET REVENUE in Lacs</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">&#x20b9; 2,151</div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Earnings (Monthly) Card Example -->
+  
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                        Gross (+TAX) in Lacs</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">&#x20b9; 5,230</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Pending Requests Card Example -->
+  
+</div>
+
+<div class="row">
+
+  <div class="col-xl-8 col-lg-7">
+
+      <!-- Area Chart -->
+      <div class="card shadow mb-4">
+          <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary"><center>Gross Revenue</center></h6>
+          </div>
+          <div class="card-body">
+              <div class="chart-area">
+                <canvas id="bar-chartnew" width="800" height="450"></canvas>
+                <script>
+                new Chart(document.getElementById("bar-chartnew"), {
+                    type: 'bar',
+                    data: {
+                      labels: ["April", "May", "June", "July", "August" ,"September", "October" , "November" , "December" , "January" , "February" , "March" , "April" , "May" , "June" , "July" , "August" , "September"],
+                      datasets: [
+                        {
+                          label: "Gross Revenue",
+                          backgroundColor: ["#3e95cd" , "#3e95cd" , "#3e95cd" , "#3e95cd", "#3e95cd" ,"#3e95cd" , "#3e95cd" , "#3e95cd", "#3e95cd" , "#3e95cd" , "#3e95cd" ,"#3e95cd" ,"#3e95cd" , "#3e95cd" , "#3e95cd" , "#3e95cd" , "#3e95cd" ,"#3e95cd"],
+                          data: [21.2,60.2,61.7,153.7,192.0,249.9 , 269.3 , 304.1 , 376.4 , 295.3 , 403.6 , 489.4 , 332.8 , 312.7 , 481.1 , 397.4 , 531.0 , 298.5]
+                        }
+                      ]
+                    },
+                    options: {
+                      legend: { display: false },
+                      title: {
+                        display: true,
+                        text: 'Gross Revenue'
+                      }
+                    }
+                });
+              </script>
+              </div>
+             
+          </div>
+      </div>
+
+
+</div>
+
+
+
+
+  
+
+
+
+</div>
+
+
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> 
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+
+
+</body>
+
+    <!-- <h3>SALESX Form</h3> -->
+    
+
+</html>

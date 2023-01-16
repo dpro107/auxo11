@@ -1,0 +1,2539 @@
+<html>
+
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=0.70">
+</head>
+
+
+
+<body style="background-color: rgb(29,30,31); color: white;" onload="myfn()">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style type="text/css">
+      
+
+
+      @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(29,30,31);
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75em;
+    font-weight: 150;
+    line-height: 1em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    background-color: rgb(33,37,41);
+    /* padding: 5px 5px; */
+    /* background: #eb2228; */
+    border: none;
+    border-radius: 2;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 3px rgb(255 255 255 / 10%);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 70%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 5px 0;
+}
+
+
+.gtg {
+    height: 10vh;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(65, 0, 0));
+    border-bottom-left-radius: 2rem ;
+    border-bottom-right-radius: 2rem ;
+  }
+  
+  .hero-img{
+    height: 5vh;
+    margin-top: 5px;
+    padding-top: 5px;
+    background-image: url('/images/HV Logo Reverse@250x.png');
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: 7%;
+    position:relative;
+    border-bottom: #aaa;
+  }
+  
+  .card_custom{
+    max-width: 7rem; 
+    border: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+    top: -3rem;
+    text-decoration: none;
+    align-items: center;
+  }
+  .card_custom:hover{
+    box-shadow: 0px 5px 5px rgba(0,0,0,.75);}
+  
+  .admincard{
+    box-shadow: 0px 5px 10px rgba(255, 0, 0, 0.7); ;
+  }
+  .admincard:hover{
+    box-shadow: 0px 5px 5px rgba(255, 0, 0, .8); 
+  }
+  .a{
+    text-decoration: none;
+  }
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 200px;
+    max-width: 300px;
+    
+    background: rgb(33,37,41);
+    color: #fff;
+    transition: all 0.3s;
+    box-shadow: -5px -15px 15px rgb(203, 203, 203);
+    position: relative;
+    height: 100vh;
+}
+
+
+#sidebar.active {
+    margin-left: -205px;
+    
+}
+
+#sidebar .sidebar-header {
+    padding: 5px;
+    background: rgb(28,28,28);
+}
+
+.list-unstyled li{
+    
+    padding-left: 0rem;
+    ;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    padding-left: -1px;
+    border-bottom: 1px solid #00000000;
+  
+}
+
+
+
+
+#sidebar ul p {
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    
+}
+
+#sidebar ul li a:hover {
+    /* color: #ff0008; */
+    background: rgba(249, 0, 0, 0.672);
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #3e4144;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #3e4144;
+}
+
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #eb2228;
+}
+
+a.article,
+a.article:hover {
+    background: #eb2228 !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+ #content {
+    width: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    min-height: 7em;
+    transition: all 0.3s;
+    background-color: rgb(29,30,31);
+} 
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -220px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+/* ---------------------------------------------------------------------- */
+/* CSS for Popup */
+/* ---------------------------------------------------------------------- */
+
+
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(142, 137, 137, 0.521);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0em;
+  background: white;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
+/* Demo Styles */
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.4;
+}
+/* 
+body {
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #ffffff 0, #ffffff 100%);
+  color: black;
+} */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal-window > div {
+  border-radius: 1rem;
+}
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+#marginalspace{
+    margin-top: 0px;
+}
+
+.logo {
+  max-width: 150px;
+  display: block;
+}
+
+small {
+  color: lightgray;
+}
+
+.btn {
+    background-color: rgb(67,66,66);
+    padding: 5.5px;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: medium;
+    margin-right: 69px;
+    /* margin-top: 2px; */
+    padding-top: 6px;
+    margin-top: -27px;
+}
+
+.btn i {
+  padding-right: 0.3em;
+}
+
+/*-------------------------------------------------------------------------------------- 
+Style for Navbars
+
+-----------------------------------------------------------------------------------------*/
+
+    .a{
+        text-decoration: none;
+    }
+    table{
+        
+        border: 1px solid rgba(92, 92, 92, 0);
+    width: max-content;
+
+       
+    }
+    tr{
+        
+        /* padding: .5rem; */
+    }
+    /* tr:hover{
+        background-color: rgb(255, 200, 200);
+    } */
+    td{
+        
+        padding: 0.2rem;
+    max-width: 11rem;
+    word-wrap: normal;
+    min-width: auto;
+    }
+
+    .slidebar{
+        
+        margin-left: 14%;
+    padding-left: 4%;
+
+    }
+
+    .slidebar2{
+        margin-left: 7%;
+    }
+    
+    label{
+        width:100%;
+    }
+    
+    
+    input[type=text], input[type=number], input[type=email], input[type=float],select{
+        
+        width: 190px;
+        background-color: rgb(29,30,31);
+   
+    border-top: -67px;
+    border-color: rgb(124, 123, 123);
+    border-radius: 7px;
+
+    color: white;
+    
+    border-width: 1px;
+
+    border-style: solid;    
+
+    }
+
+
+    
+.row{
+        /* --bs-gutter-x: 0.5rem; */
+    /* --bs-gutter-y: 0; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* margin-top: calc(-1 * var(--bs-gutter-y)); */
+    /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
+    /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
+    margin-left: 0px;
+
+}
+
+    .inputslide{
+
+        margin-left: 23%;
+    }
+ 
+ 
+    #home_button{
+        position: fixed;
+        /* width: 5rem; */
+        left:2px;
+        top: 20%;
+        z-index: 999;
+        cursor: pointer;
+        padding: 1rem 1rem;
+    }
+    .navig{
+        position: fixed;
+        /* width: 5rem; */
+        left:2px;
+        top: 22%;
+        z-index: 999;
+        cursor: pointer;
+        /* padding: 1rem 1rem; */
+    }
+    .lightgrey{
+        background-color: rgb(80 75 75 / 0%);
+    font-weight: 300;
+    width: max-content;
+    margin-left: 10px;
+    border: none;
+        
+    }
+    .lightred{
+        background-color: #f4f2f2dd;
+        color: black;
+        font-weight: 500;
+        margin-top: -15px;
+        margin-left: 10px;
+    }
+    .lightred_2{
+        background-color: #f4f2f2dd;
+        color: black;
+        font-weight: 500;
+        margin-top: -25px;
+        margin-left: 10px;
+    }
+   
+.majorcontainer{
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+
+.adminbox{
+        
+    background-color: #f4f2f2dd;
+    color: black;
+    font-weight: 500;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+   
+.namebox {
+    transform: rotate(270deg);
+    /* margin-top: 118px;
+    margin-left: -98px;
+    margin-right: -113px;
+    margin-bottom: -208px; */
+    text-align: center;
+    width: fit-content;
+    position:absolute;
+    background-color: #eb2228;
+}
+.namebox2 {
+    transform: rotate(270deg);
+    margin-top: 28px;
+    margin-left: -38px;
+    margin-right: -95px;
+    margin-bottom: -119px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+}
+
+.inputbar{
+
+}
+
+.batchdiff{
+    margin-left: 23%;
+}
+
+.dropout{
+    margin-left: -20%;
+}
+ 
+ 
+.namebox3 {
+    transform: rotate(270deg);
+    margin-top: 36px;
+    margin-left: -52px;
+    margin-right: -108px;
+    margin-bottom: -64px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+
+}
+
+.namebox4 {
+   
+    transform: rotate(270deg);
+    margin-top: 88px;
+    margin-left: -101px;
+    margin-right: -90px;
+    margin-bottom: -113px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+}
+ 
+.defnextmonth{
+
+    margin-left: 7%;
+    font-size: 15px;
+}
+
+.namebox5 {
+   
+    transform: rotate(270deg);
+    margin-top: 25px;
+    margin-left: -40px;
+    margin-right: -109px;
+    margin-bottom: -51px;
+    text-align: center;
+    width: fit-content;
+    background-color: #eb2228;
+}
+
+ 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+
+
+
+</style>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <a href="/user/dashboard">
+            <img src="../public/images/HV Logo Reverse@250x.png"  alt="" width="99%" height="55px">
+            </a>
+        </div>
+
+        <!-- <ul class="list-unstyled components">
+            <li> -->
+            <!-- <H6> <center> CONTROL PANEL </center></H6> -->
+            <!-- <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                </ul>
+            </li> -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+            <ul class="list-unstyled components" style="    FONT-SIZE: initial;">
+                <li>
+                  <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <h6><i class="fa fa-line-chart" style="margin-right: 10px ; font-size: 25px;"> </i> SALES</h6>  </a>
+                  <ul class="pageSubmenu1" id="pageSubmenu1">
+                      <ul style="    margin-left: -71px;">
+                          <a href="/crud/form" style="    border: solid;
+                          border-width: thin;
+                          border-color: #7e7e7e;
+                          border-radius: 4px;
+                      ">CREATE ENTRY</a>
+                      </ul>
+                      <ul style="    margin-left: -71px;">
+                          <a href="/crud/read" style="    border: solid;
+                          border-width: thin;
+                          border-color: #7e7e7e;
+                          border-radius: 4px;
+                      ">UPDATE ENTRY</a>
+                      </ul>
+
+
+                      <ul style="    margin-left: -71px;">
+                        <a href="/grud/insert" style="    border: solid;
+                        border-width: thin;
+                        border-color: #7e7e7e;
+                        border-radius: 4px;
+                    ">ADD PROGRAM</a>
+                    </ul>
+
+                    <ul style="    margin-left: -71px;">
+                        <a href="/mrud/insert" style="    border: solid;
+                        border-width: thin;
+                        border-color: #7e7e7e;
+                        border-radius: 4px;
+                    ">ADD COUNSELLOR</a>
+                    </ul>
+
+
+                    <ul style="    margin-left: -71px;">
+                        <a href="/maprud/insert" style="    border: solid;
+                        border-width: thin;
+                        border-color: #7e7e7e;
+                        border-radius: 4px;
+                    ">CHANGE MAPPING</a>    
+                    </ul>
+                     
+
+                    <!-- <ul style="    margin-left: -71px;">
+                        <a href="/frud/read_test" style="    border: solid;
+                        border-width: thin;
+                        border-color: #7e7e7e;
+                        border-radius: 4px;
+                    ">FETCH DATA (LSQ)</a>
+                    </ul> -->
+                      
+
+                    
+                    <ul style="    margin-left: -71px;">
+                        <a href="/zrud/insert" style="    border: solid;
+                        border-width: thin;
+                        border-color: #7e7e7e;
+                        border-radius: 4px;
+                    ">ADDITIONAL BENEFIT </a>
+                    </ul>
+
+                    <ul style="    margin-left: -71px;">
+                        <a href="/brud/insert" style="    border: solid;
+                        border-width: thin;
+                        border-color: #7e7e7e;
+                        border-radius: 4px;
+                    ">BATCH DETAILS</a>
+                    </ul>
+                    
+                  </ul>
+                  
+              </li>
+              
+            </ul>
+            <!-- <li>
+                <div class="interior">
+                    <a class="btn" href="#open-modal">Popup here</a>
+                  </div>
+                  <div id="open-modal" class="modal-window">
+                    <div>
+                      <a href="#" title="Close" class="modal-close">Close</a>
+                      <a href="/crud/form">Form</a>
+                    </div>
+                  </div>
+            </li> -->
+            <!-- <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li> -->
+                <!-- <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li> -->
+        <!-- </li>
+        </ul> -->
+    
+        <button type="button" class="btn btn-danger" style="width: 90%; --bs-btn-hover-bg: #ff0019; bottom: 30; position: absolute;"> <a href="/users/logout"><i class="bi bi-box-arrow-left"></i>Logout</a></button>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-secondary " style="height: 42px; width: 42px;     margin-top: 1px;">
+                    <i class="bi bi-text-left"></i>
+                    <span></span>
+                </button>
+                
+
+                <h4><center>Hero Vired Sales Panel</center></h4>
+            </div>
+        </nav>
+
+<!-- 
+Enter Content From Here 
+
+-->
+    <form action="<%=(typeof editData!='undefined')?'/crud/update/'+editData.id:'/crud/create'%>" method="POST" class="w-100">
+    <input type="hidden" id="b_id" name="b_id" value="<%=leng+1%>">
+
+<div class="majorcontainer">
+
+    
+<div class="d-flex flex-row my-2">
+    <div style="    border: 1px solid #5c5c5c;
+    width: 3%;
+    position: relative;
+    background-color: rgb(33,37,41);">
+        <h6 style="transform:rotate(270deg);top:75%;position: absolute; width:100%; font-size: medium;">ENROLLMENT_DATA</h6>
+    </div>
+    
+    <div style="width: 97%;">
+            <!-- <div class="w-100"> -->
+        <table class="w-100">
+                
+                <tr class="row d-flex align-items-baseline w-100 justify-content-between ">
+                    <td class="col" >
+                        <label><span> Learner's Name</span>
+                            <input autofocus type="text" name="customer_name" required value="<%=(typeof editData!='undefined')? editData.customer_name:''%>" >
+                        </label>
+                    </td>
+                    
+                <td class=" col align-items-baseline ">
+                        <label ><span> Phone</span><br>
+                            <input type="number" name="phone" required value="<%=(typeof editData!='undefined')? editData.phone_number:''%>" >
+                        </label>
+                    </td>
+
+                    <td class="col align-items-baseline ">
+                    <label ><span> Email id</span><br>
+                        <input type="email" name="email_address" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                    </label></td>
+            
+                    <td class="col align-items-baseline ">
+                        <label ><span> Counsellor</span><br>
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                
+                        
+                            <select type="text" id="counsellor" onchange="getTL(this.value)" >
+                                <option required value="<%=(typeof editData!='undefined')? editData.counsellor:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.counsellor:''%></option>
+                                <%
+                                if(data_c.length!=0){
+                                var i=1;
+                                data_c.forEach(function(data){
+                                
+                                %>
+                                <option  value="<%= data.lc_tl_am%>" ><%= data.counsellor%></option>
+                                <%  i++; }) %>
+                                <% } else{ %>
+                                    <option>No data</option>
+                                <% } %>
+                
+                            </select>
+                            <input type="text" id="counsell" name="counsellor" readonly required value="<%=(typeof editData!='undefined')? editData.counsellor:''%>" style="display:none;" >
+
+                        </label></td>
+                
+                    <td class=" col align-items-baseline ">
+                        <label><span> Team Lead</span>
+                            <input type="text" name="team_lead" id="team_lead" required readonly value="<%=(typeof editData!='undefined')? editData.team_lead:''%>">
+                        </label>
+                    </td>    
+                    <td class=" col align-items-baseline ">
+                        <label><span> Assistant Manager</span>
+                            <input type="text" name="asst_mgr" id="asst_mgr" required readonly value="<%=(typeof editData!='undefined')? editData.am_sales:''%>">
+                        </label>
+                    </td>    
+                
+                </tr>
+
+                <tr class="row d-flex align-items-baseline w-100 justify-content-between ">
+
+                    <td class=" col align-items-baseline " >
+                        <label ><span> Enrollment Date </span>
+                            <input type="date" name="enrollment_dat" id="enrollment_dat" onchange="geda(this.value)"  value="<%=(typeof editData!='undefined')? editData.enrollment_date:''%>" style="width: 1.25rem;height: 1.25rem;padding:0%;">
+                            <input type="text" name="enrollment_date" id="enrollment_date" required readonly value="<%=(typeof editData!='undefined' && editData.enrollment_date!=null)?  (editData.enrollment_date.getMonth()+1).toString()+'/'+editData.enrollment_date.getDate().toString()+'/'+editData.enrollment_date.getFullYear().toString():''%>" >
+                
+                        </label></td>
+
+                    <td  class="col"> 
+                        <label ><span> Program Name</span><br>
+                            
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        
+                        
+                        <select id="program"  onchange="update(this.value);validation()">
+                            <option required value="<%=(typeof editData!='undefined')? editData.program:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.program:''%></option>
+                        <%
+                        if(fetchData.length!=0){
+                            var i=1;
+                            fetchData.forEach(function(data){
+                                
+                        %>
+                        <option value="<%= data.offer_price%>"><%= data.name%></option>
+                        <%  i++; }) %>
+                        <% } else{ %>
+                            <option>No data</option>
+                            <% } %>
+                            
+                        </select>
+                        <input type="text" id="programme" name="program" readonly required value="<%=(typeof editData!='undefined')? editData.program:''%>" style="display:none;" >
+                    </label></td>
+                
+                    
+                    <td class="col">
+                    
+                        <label ><span> Batch ID</span><br>
+                            
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                            
+                            
+                            <select id="batch_id" required onchange="getbatchdate(this.value)">
+                                <option required value="<%=(typeof editData!='undefined')? editData.batch_id:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.batch_id:''%></option>
+                            <%
+                            if(batchData.length!=0){
+                                var i=1;
+                                batchData.forEach(function(data){
+                                    
+                            %>
+                            <option value="<%= data.batch_start_date%>"><%= data.batch_id%></option>
+                            <%  i++; }) %>
+                            <% } else{ %>
+                                <option>No data</option>
+                                <% } %>
+                                
+                            </select>
+                            <input type="text" id="batchidd" name="batchidd" readonly required value="<%=(typeof editData!='undefined')? editData.batch_id:''%>" style="display:none;" >
+                        </label>
+                        
+                        
+                    </td>
+            
+                    <td class="col">
+                    <label>
+                        <span>
+                            Batch Number
+                        </span>
+                        <input type="text" name="batch_number" id="batch_number" required readonly value="<%=(typeof editData!='undefined')? editData.batch_number:''%>">
+                    </label></td>
+            
+                    <td class="col">
+                    <label><span> Batch Start Date &nbsp;</span>
+                        <input readonly type="text" name="batch_date" id="batch_date" value="<%=(typeof editData!='undefined' && editData.batch_date!=null)?  (editData.batch_date.getMonth()+1).toString()+'/'+editData.batch_date.getDate().toString()+'/'+editData.batch_date.getFullYear().toString():''%>" >
+            
+                    </label></td>
+        
+
+                    <td class="col" >
+                            <label>
+                                <span class="radio-heading">Batch Type</span><br>
+                                
+                                <input type="radio" name="batch_type_s" value="Part Time" onclick="bt(this.value)" >Part Time
+                                <input type="radio" name="batch_type_s" value="Full Time" onclick="bt(this.value)">Full Time
+                            
+                                <input type="text" name="batch_type" id="bt_bt" required readonly value="<%=(typeof editData!='undefined')? editData.batch_type:''%>">
+                            </label>
+                    </td>
+
+                </tr>
+
+
+                <tr class=" row d-flex align-items-baseline w-100 justify-content-between pt-3">
+
+                    <td class="col">
+                        <label><span> Discount amount</span>
+                            <input type="float" name="discount" id="discount"   value="<%=(typeof editData!='undefined')? editData.discount:''%>">
+                        </label></td>
+
+                    <td  class="col"> 
+                        <label><span> Scholarship Amount</span>
+                            <input type="float" name="scholarship" id="scholarship"  required value="<%=(typeof editData!='undefined')? editData.scholarship:''%>">                            
+                        </select>        
+                    </label></td>
+                
+                    
+                    <td class="col">
+                        <label><span> Additional Benefit</span><br>
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                
+                        
+                            <select type="text" id="additional_benefits" name="additional_benefits" >
+                                <option required value="<%=(typeof editData!='undefined')? editData.additional_benefits:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.additional_benefits:''%></option>
+                                <%
+                                if(benefit.length!=0){
+                                
+                                benefit.forEach(function(data){
+                                
+                                %>
+                                <option  value="<%= data.item%>" ><%= data.item%></option>
+                                <%  i++; }) %>
+                                <% } else{ %>
+                                    <option>No data</option>
+                                <% } %>
+                
+                            </select>
+                            </label>
+                        
+                        
+                    </td>
+            
+                    <td class="col">
+                        <label><span>Scholarship Approved</span>
+                            <select id="approved by" name="approved_by">
+                                <option required value="<%=(typeof editData!='undefined')? editData.approved_by:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.approved_by:''%></option>
+                                <%
+                                if(sab_s.length!=0){
+                                var i=1;
+                                sab_s.forEach(function(data){
+                                
+                                %>
+                                <option  value="<%= data.scholarship_approved_by%>" ><%= data.scholarship_approved_by%></option>
+                                <%  i++; }) %>
+                                <% } else{ %>
+                                    <option>No data</option>
+                                <% } %>
+                            </select>
+                                </label>
+                    </td>
+            
+                    <td class="col">
+                        <label>
+                            <span>
+                                <input  type="button" class="btn btn-secondary" value="Calculate" onclick="getcustid();calcprice();calcscholarship();total_self_loan_t()"  style=  "    background-color: rgb(179 42 42);
+                                border: none;
+                                color: white;
+                                /* padding-top: 8px; */
+                                /* padding-right: 0px; */
+                                width: 187px;
+                                text-align: center;
+                                vertical-align: text-top;
+                                text-decoration: none;
+                                display: inline-block;
+                                border-radius: 0.3rem;
+                                font-size: medium;
+                                margin-top: -12px;
+                                margin-right: 4px;"
+                                >
+                            </span>
+                        </label></td>
+        
+                    <td class="col">
+                            <label ><span> </span><br>
+                                <input type="email" name="email_address_dummy" style="visibility: hidden;" >
+                            </label></td>
+
+                </tr>
+
+        </table>
+    </div>
+
+</div>
+
+
+ 
+
+
+    <div>
+
+    <!-- <form action="<%=(typeof editData!='undefined')?'/crud/update/'+editData.id:'/crud/create'%>" method="POST" class="w-100">
+    <input type="hidden" id="b_id" name="b_id" value="<%=leng+1%>"> -->
+
+    <!-- COLUMN 2 here -->
+    <!-- Column 2 : Calculated columns -->
+    
+        
+<div class="d-flex flex-row my-2">
+    <div style="    border: 1px solid  #5c5c5c;
+    width: 3%;
+    position: relative;
+    background-color: rgb(179 42 42);">
+        <h6 style="transform:rotate(270deg);top:75%;position: absolute; width:100%; margin-top: -25px;  font-size: medium; "> AUTO</h6>
+    </div>
+    
+        <div style="width: 97%;">
+            <!-- <div class="w-100"> -->
+    <table class="w-100">
+        
+        <tr class=" row d-flex align-items-baseline justify-content-between " style="background-color:rgb(62 65 68);     width: 100%;">
+            
+                <td class="col" >
+                    <label><span><i> Customer ID</i></span>
+        
+                        <input class="inputbar" type="text" name="customer_id" id="customer_id"  required value="<%=(typeof editData!='undefined')? editData.customer_id:''%>">
+                    </label></td>
+    
+            </td>
+            <td class=" col align-items-baseline ">
+                    <label><span><i> Offer Price Wrt Website</i></span>
+                        <input class="inputbar"  id ="offer_price" type="float" name="offer_price" id="offer_price"  readonly required value="<%=(typeof editData!='undefined')? editData.offer_price:''%>">
+                    </label></td>
+    
+            
+        <td class="col align-items-baseline ">
+            <label><span><i> Price after scholarship and discounts</i></span>
+                <input class="inputbar" type="number" name="price_after" readonly  required value="<%=(typeof editData!='undefined')? editData.price_without_tax:''%>">
+        </label>
+            </td>
+    
+            <td class="col align-items-baseline ">
+                <label><span><i> Scholarship (%)</i></span>
+                    <input class="inputbar" type="number" name="scholarship_perc" id="scholarship_perc" readonly required value="<%=(typeof editData!='undefined')? editData.scholarship_per:''%>">
+                </label></td>
+    
+<td class="col align-items-baseline ">
+    <label><span style="color:rgb(255, 255, 255);"><i>Price after scholarship and discount with tax</i></span><br>
+        <input class="inputbar" type="number" name="price_with_tax" id="price_with_tax" readonly required value="<%=(typeof editData!='undefined')? editData.price_with_tax:''%>">
+    </label>
+</td>
+
+<td class=" col align-items-baseline ">
+    <label><span style="color:rgb(255, 255, 255);"><i>Add.Benefit Price</i></span><br>
+        <input class="inputbar" type="number">
+    </label>
+</td>
+
+
+        </tr>
+   
+      
+
+</table>
+</div>
+
+</div>
+<!-- COMMENTED SECTION START -->
+            
+                <input type="float" name="due_per" id="due_per"  style="display:none"  value="<%=(typeof editData!='undefined')? editData.due:''%>" onchange="dueper(this.value)">
+                    
+                
+                <input type="number" name="subvention" id="subvention"  style="display:none" value="<%=(typeof editData!='undefined')? editData.subvention:''%>">
+           
+               
+                <input type="text" name="running_batch_start_date" id="running_batch_start"  style="display:none" readonly   value="<%=(typeof editData!='undefined')? editData.running_batch_start_date:''%>">
+                    
+                
+                <input type="number" name="self_payment" id="self_payment"  style="display:none" value="<%=(typeof editData!='undefined')? editData.self_payment:''%>">
+    
+                
+                <input type="number" name="loan_payment" id="loan_payment"  style="display:none" value="<%=(typeof editData!='undefined')? editData.loan_payment:''%>">
+               
+                
+                <input type="float" name="total" id="total_val" readonly style="display:none"  value="<%=(typeof editData!='undefined')? editData.total:''%>">
+       
+
+                <input type="float" name="total_without_tax" id="total_without_tax" readonly style="display:none"   value="<%=(typeof editData!='undefined')? editData.total_without_tax:''%>">
+        
+                
+                <input type="float" name="remaining" id="Remaining" style="display:none"  readonly value="<%=(typeof editData!='undefined')? editData.remaining:''%>">
+                   
+                     
+                <input type="text" name="min_50_received" id="no_yes_r" style="display: none" readonly style="display:none"   value="<%=(typeof editData!='undefined')? editData.min_50_received:''%>">
+       
+                
+                <input type="text" name="due" id="no_yes_n" style="display: none" readonly   required value="<%=(typeof editData!='undefined')? editData.due_notdue:''%>"> 
+                <!-- COMMENT SECTION END -->
+                
+            </table>
+       
+            <!-- ---------------------------------------
+
+                COLUMN 3 HERE
+
+             --------------------------------------------->
+
+      
+             <div class="d-flex flex-row my-2">
+                <div style="border: 1px solid #5c5c5c;
+                width: 3%;
+                position: relative;
+                background-color:rgb(33,37,41)">
+                    <h6 style="transform:rotate(270deg);top:75%;position: absolute; width:100%; margin-top: -35px;  font-size: medium;"> PAY</h6>
+                </div>
+                
+                    <div style="width: 97%;">
+                        <!-- <div class="w-100"> -->
+                <table class="w-100">
+                    
+                    <tr class="row w-100 d-flex align-items-baseline justify-content-between " >
+                        
+                            <td class="col">
+                                <label><span> Payment Mode</span><br>
+                                    <select id="mode" name="mode" onchange="pmode(this.value)">
+                                        <option required value="<%=(typeof editData!='undefined')? editData.payment_mode:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.payment_mode:''%></option>
+                                        <option value="Loan">Loan</option>
+                                        <option value="Self(Installment)">Self(Installment)</option>
+                                        <option value="Self(Fully Paid)">Self(Fully Paid)</option>
+                                    </select>
+                                </label>
+                            </td>
+                
+                        </td>
+                        <td class=" col align-items-baseline ">
+                            <label><span> Loan Partner</span><br>
+                                <div class="inputbar">
+                                <select id="loan" name="loan">
+                                    <option required value="<%=(typeof editData!='undefined')? editData.loan_partner:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.loan_partner:''%></option>
+                                    <%
+                                    if(lpp_s.length!=0){
+                                    var i=1;
+                                    lpp_s.forEach(function(data){
+                                       
+                                    %>
+                                    <option  value="<%= data.loan_partner%>" ><%= data.loan_partner%></option>
+                                    <%  i++; }) %>
+                                    <% } else{ %>
+                                        <option>No data</option>
+                                    <% } %>
+                
+                                </select></div>
+                            </label></td>
+                
+                        
+                    <td class="col align-items-baseline ">
+                        <label><span> Final Disposition</span><br>
+                            <select id="Disposition" name="Disposition">
+                                    <option required value="<%=(typeof editData!='undefined')? editData.final_disposition:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.final_disposition:''%></option>
+                                    <%
+                                    if(fd_s.length!=0){
+                                    var i=1;
+                                    fd_s.forEach(function(data){
+                                       
+                                    %>
+                                    <option  value="<%= data.final_disposition%>" ><%= data.final_disposition%></option>
+                                    <%  i++; }) %>
+                                    <% } else{ %>
+                                        <option>No data</option>
+                                    <% } %>
+                
+                                </select>
+                        </label>
+                        </td>
+                
+                        <!-- <td class=" col align-items-baseline ">
+                            <label><span>No. of Installment <br><small><b> <font color="white"> (In case of self payment) </font></b></small></span><br>
+                                <input type="number" min="0" max="6" id="approved_installment" name="approved_installment" required value="<%=(typeof editData!='undefined')? editData.approved_installment:''%>">
+                            </label></td> -->
+
+                            <td class=" col align-items-baseline ">
+                                <label><span>No. of Installments<br><small><b> <font color="white"> (In case of self payment) </font></b></small></span><br>
+                                    <input type="number" min="0" max="6" id="approved_installment" name="approved_installment" required onchange="validateins(this.value)" value="<%=(typeof editData!='undefined')? editData.approved_installment:''%>">
+                                    <input type="text" id="approvedd_installment" name="approvedd_installment" style="visibility: hidden;" readonly value="<%=(typeof editData!='undefined')? editData.approved_installment:''%>">
+                                </label></td>
+                
+            <td class=" col align-items-baseline ">
+                <label><span> Curent Status</span><br>
+                    <select id="status" name="status">
+                        <option required value="<%=(typeof editData!='undefined')? editData.current_status:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.current_status:''%></option>
+                       
+                            <%
+                            if(cs_s.length!=0){
+                            var i=1;
+                            cs_s.forEach(function(data){
+                               
+                            %>
+                            <option  value="<%= data.current_status%>" ><%= data.current_status%></option>
+                            <%  i++; }) %>
+                            <% } else{ %>
+                                <option>No data</option>
+                            <% } %>
+        
+                        </select>
+                </label> 
+            </td>
+            
+            <td class=" col align-items-baseline ">
+                <label><span> Remarks</span><br>
+                    <input type="text" name="Remarks" value="<%=(typeof editData!='undefined')? editData.remarks:''%>">
+                </label> 
+            </td>
+            
+            
+                    </tr>
+               
+                  
+            
+            </table>
+            </div>
+            
+            </div>
+
+    
+<!-- UPDATED ADDITIONAL DETAILS -->
+
+<div>
+    
+<div class="d-flex flex-row ">
+    <div style="    border: 1px solid #5c5c5c;
+    width: 3%;
+    position: relative;
+    background-color: rgb(33,37,41)">
+        <h6 style="transform:rotate(270deg);top:75%;position: absolute; width:100%; font-size: medium;">ADDITIONAL_DETAILS</h6>
+    </div>
+    
+        <div style="width: 97%;  background-color: rgb(62 65 68);">
+            <!-- <div class="w-100"> -->
+                <table class="w-100">
+                    <tr class=" row w-100  ">
+            
+            <td id ="loanrejected_r" class="col">
+                <label><span> Loan Rejected</span><br>
+                    <select id="loan_rejected" name="loan_rejected"  onchange="loancase(this.value)">
+                        <option required value="<%=(typeof editData!='undefined')? editData.loan_rejected:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.loan_rejected:''%></option>
+                        <option value="Yes">Yes</option>
+                        <option value="No" >No</option>
+                    </select>
+                </label>
+            </td>
+            <td class=" col align-items-baseline ">
+                <label><span> Loan Rejected Reason</span><br>
+                    <select id="loan_rejected_reason" name="loan_rejected_reason" style="display:none">
+                            <option required value="<%=(typeof editData!='undefined')? editData.loan_rejected_reason:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.loan_rejected_reason:''%></option>
+                            <%
+                            if(lrr_s.length!=0){
+                            var i=1;
+                            lrr_s.forEach(function(data){
+                               
+                            %>
+                            <option  value="<%= data.loan_rejected_reason%>" ><%= data.loan_rejected_reason%></option>
+                            <%  i++; }) %>
+                            <% } else{ %>
+                                <option>No data</option>
+                            <% } %>
+        
+                        </select>
+                </label></td>
+    
+            
+        <td id = "refund_r" class="col-2 ml-4 align-items-baseline ">
+            <label><span> Refund Raised</span><br>
+                <select id="refund" name="Refund_Raised" onchange="refundcase( this.value );">
+                    <option required value="<%=(typeof editData!='undefined')? editData.refund:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.refund:''%></option>
+                    <option value="Yes" id="refund_yes">Yes</option>
+                    <option value="No" id="refund_no" >No</option>
+                </select>
+            </label>
+            </td>
+    
+            <td class="col align-items-baseline ">
+                <label><span>Refund Date</span>
+                    <input type="date" name="Refund_Dat" id="Refund_Dat" style="display:none; width: 1.25rem; height: 1.0rem; padding:0%; " onchange="getrefunddate(this.value)" value="<%=(typeof editData!='undefined')? editData.refund_date:''%>">
+                    <input type="text" name="Refund_Date" id="Refund_Date" style="display:none" readonly value="<%=(typeof editData!='undefined' && editData.refund_date!=null)?  (editData.refund_date.getMonth()+1).toString()+'/'+editData.refund_date.getDate().toString()+'/'+editData.refund_date.getFullYear().toString():''%>">
+    
+                </label></td>
+    
+<td class="col align-items-baseline ">
+    <label><span> Refund Reason</span><br>
+        <select id="refund reason" name="Refund_Reason" style="display:none">
+            <option  value="<%=(typeof editData!='undefined')? editData.refund_reason:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.refund_reason:''%></option>
+            <label id="refund_label">
+                <%
+                if(rr_s.length!=0){
+                var i=1;
+                rr_s.forEach(function(data){
+                   
+                %>
+                <option  value="<%= data.refund_reason%>" ><%= data.refund_reason%></option>
+                <%  i++; }) %>
+                <% } else{ %>
+                    <option>No data</option>
+                <% } %>
+            </label>
+
+        </select>
+    </label>
+</td>
+
+
+
+        <td class="col align-items-baseline " >
+            <label><span>Refund Remarks</span><br>
+                <input type="text" name="refund_remarks" id="refund_remarks" style="display:none"  value="<%=(typeof editData!='undefined')? editData.refund_remarks:''%>">
+            </label></td>
+        </tr>
+    </div>
+   
+        <tr class="row w-100 d-flex align-items-baseline w-100 justify-content-between ">
+
+
+            <td id = "dropout_r" class="col">
+            
+                <label><span> Dropout : </span><br>
+                    <select id="Dropout" name="Dropout" onchange="dropoutcase(this.value)">
+                        <option  value="<%=(typeof editData!='undefined')? editData.dropout:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.dropout:''%></option>
+                        <option value="Yes">Yes</option>
+                        <option value="No" >No</option>
+                    </select>
+                </label>
+                
+                
+            </td>
+            
+            
+    
+    
+                <td class="col">
+                    <label><span> Dropout Reason</span><br>
+                        <select id="Dropout reason" name="Dropout_reason" style="display: none; ">
+                            <option  value="<%=(typeof editData!='undefined')? editData.dropout_reason:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.dropout_reason:''%></option>
+                            <%
+                            if(dr_s.length!=0){
+                            var i=1;
+                            dr_s.forEach(function(data){
+                               
+                            %>
+                            <option  value="<%= data.dropout_reason%>" ><%= data.dropout_reason%></option>
+                            <%  i++; }) %>
+                            <% } else{ %>
+                                <option>No data</option>
+                            <% } %>
+                        </select>
+                    </label></td>
+    
+            <td class="col">
+                <label>
+                    <span>Dropout Date</span><br>
+                    <input type="date" name="Dropout_Dat" id="Dropout_Dat" style="display:none;width: 1.25rem;height: 1.25rem;padding:0%;" onchange="getdropoutdate(this.value)" value="<%=(typeof editData!='undefined')? editData.dropout_date:''%>">
+                    <input type="text" name="Dropout_Date" id="Dropout_Date" style="display:none" readonly value="<%=(typeof editData!='undefined' && editData.dropout_date!=null)?  (editData.dropout_date.getMonth()+1).toString()+'/'+editData.dropout_date.getDate().toString()+'/'+editData.dropout_date.getFullYear().toString():''%>">
+    
+                </label></td>
+   
+
+                <td id = "deferred_r" class="col">
+                    <label><span> Batch Deferred : </span><br>
+                        <select id="Deferred" name="Deferred"  onchange="deferredcase(this.value);validate(this.value)">
+                            <option  value="<%=(typeof editData!='undefined')? editData.batch_deferred:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.batch_deferred:''%></option>
+                            <option value="Yes" >Yes</option>
+                            <option value="No" >No</option>
+                        </select>
+                    </label>
+                    </td>
+
+
+                <td class="col">
+                    <label><span>Deferred to Next Month</span><br>
+                        <select id="nb" style="display:none"   onchange="batch_decide(this.value)">
+                            <option  value="<%=(typeof editData!='undefined')? editData.deferred_to_next_batch:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.deferred_to_next_batch:''%></option>
+                            <option value="Btach Not Decided" >BaTch Not Decided</option>
+                            
+                        </select>
+        
+                       
+                            <input type="month" id="next_batch_month" style="display: none;width:1.5rem;" onchange="getmonth(this.value)" >
+                            <input type="text" id="next batch" name="deferred_next_batch"  style="display: none"  value="<%=(typeof editData!='undefined')? editData.deferred_to_next_batch:''%>">
+                        
+                    </label></td>
+                    
+                    <td class="col">
+                        <label><span>Deferred Date</span><br>
+                            <input type="date"  id="Deferred_Dat" style="display: none;width:1.5rem;" onchange="getdeferred_dat(this.value)"  value="<%=(typeof editData!='undefined')? editData.deferred_date:''%>">
+                            <input type="text" name="Deferred_Date" id="Deferred_Date" style="display: none" readonly   value="<%=(typeof editData!='undefined' && editData.deferred_date!=null)?  (editData.deferred_date.getMonth()+1).toString()+'/'+editData.deferred_date.getDate().toString()+'/'+editData.deferred_date.getFullYear().toString():''%>">
+            
+            
+                        </label>
+            
+
+
+        </tr>
+        
+        <tr class="row w-100 d-flex align-items-baseline w-100 justify-content-between " id="marginalspace">
+            
+            <td id = "latestart_r" class="col">
+                
+                <label><span class="radio-heading">Late Start</span>
+                    <div class="d-flex ">
+                    <label><input type="radio" id="yes" name="late_star" value="Yes"  onclick="ShowHideDiv(this.value)" />Yes</label>
+                    <label><input type="radio" id="no" name="late_star" value="No" onclick="ShowHideDiv(this.value)" />No</label>
+                    </div>
+                    <input type="text" name="late_start" id="no_yes" style="display: block" readonly   required value="<%=(typeof editData!='undefined')? editData.late_start:''%>">
+                </label>
+            </td>
+            
+            <td class="col" >
+            
+                    <label>
+                        <span> Late_Start(Batch_Month)</span><br>
+                        <select id="dvPassport" onchange="getls(this.value)"  style="display:none" >
+                            <option  value="<%=(typeof editData!='undefined')? editData.late_start_month:''%>" selected="selected"><%=(typeof editData!='undefined')? editData.late_start_month:''%></option>
+                            <option value="Batch Not Decided">Batch Not Decided</option>
+                            
+                        </select>
+                        <input type="month" id="dvPassport_s" style="display:none;" onchange="getm(this.value)">
+                        <input type="text"  name="late_start_month" id="dvPassport_st" style="display:none"    value="<%=(typeof editData!='undefined')? editData.late_start_month:''%>" >
+                    </label>
+            </td>
+        
+        </div>
+        
+
+        
+            <!-- <td class=" col align-items-baseline " style="visibility: hidden;">
+                <label ><span> Email id</span><br>
+                    <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                </label></td> -->
+                
+                <td class="col align-items-baseline " style="visibility: hidden;">
+                    <label ><span> In Batch</span><br>
+                        <input type="text" id ="in_batch" name="in_batch" style="visibility: hidden;" >
+                    </label></td>
+                    <td class="col align-items-baseline " style="visibility: hidden;">
+                        <label ><span> Email id dummy</span><br>
+                            <input type="email" name="email_address_dummy" style="visibility: hidden;" >
+                        </label></td>
+
+                        <td class="col align-items-baseline " style="visibility: hidden;">
+                            <label ><span> Email id dummy</span><br>
+                                <input type="email" name="email_address_dummy" style="visibility: hidden;" >
+                            </label></td>
+
+                            <td class="col align-items-baseline " style="visibility: hidden;">
+                                <label ><span> Email id dummy</span><br>
+                                    <input type="email" name="email_address_dummy" style="visibility: hidden;" >
+                                </label></td>
+                <!-- <td class="col align-items-baseline " style="visibility: hidden;">
+                    <label ><span> Email id</span><br>
+                        <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                    </label></td>
+                    <td class="col align-items-baseline " style="visibility: hidden;">
+                        <label ><span> Email id</span><br>
+                            <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                        </label></td>
+                        <td class="col align-items-baseline " style="visibility: hidden;">
+                            <label ><span> Email id</span><br>
+                                <input type="email" name="email_address" style="visibility: hidden;" required value="<%=(typeof editData!='undefined')? editData.email_address:''%>"  >
+                            </label></td> -->
+    </tr>
+    
+
+    
+</table>
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- ADDITIONAL DETAILS SECTION  -->
+
+
+
+
+
+<!-- ADMIN PANEL -->
+
+
+<div class="d-flex flex-row" style="    margin-top: 7px;">
+    <div style="    border: 1px solid #5c5c5c;
+    width: 3%;
+    position: relative;
+    background-color: rgb(33,37,41);">
+        <h6 style="transform:rotate(270deg);top:75%;position: absolute; width:100%; margin-top: -20px;font-size: medium;"> ADMIN</h6>
+    </div>
+    
+        <div style="width: 97%;">
+            <!-- <div class="w-100"> -->
+    <table class="w-100">
+        
+        <tr class=" row   justify-content-between ">
+            
+                <td class="col">
+                    <label>
+                        <span style="color: rgb(255, 255, 255);">Comment For Approval </span>
+                    <input type="text"  name="sales_pre_batch_comment"
+                    value="<%=(typeof editData!='undefined')? editData.sales_pre_batch_comment:''%>">
+
+                    <!-- <textarea  id="comment_request" name= "comment_request" cols="30" rows="3" value="<%=(typeof editData!='undefined')? editData.sales_pre_batch_comment:''%>"></textarea> -->
+                    </label>
+                </td>
+    
+            </td>
+            <td class=" col align-items-baseline " >
+                <label><span style="color:rgb(255, 255, 255); font-weight: bold;"> Approval Status</span>
+                    <input type="text" name="approval_status" id="approval_status" readonly  value="<%=(typeof editData!='undefined')? editData.approval_status:''%>" >
+    
+                </label></td>
+    
+            
+        <td class=" col align-items-baseline ">
+            <label>
+                <span style="color:rgb(255, 255, 255); font-weight: bold;">Comment By Admin</span>
+                <input type="text" readonly value="<%=(typeof editData!='undefined')? editData.pre_batch_comment:''%>">
+
+                <!-- <textarea  cols="30" rows="2" readonly value="<%=(typeof editData!='undefined')? editData.pre_batch_comment:''%>"></textarea> -->
+                </label>
+            </td>
+            <td  class=" col align-items-baseline ">               
+                
+              
+
+                    <button class="btn btn-success float-top " onclick="approval_status.value='Pending'" id="butoning" style="display:none ;  border-color: #808080 ;  MARGIN-TOP: 10PX; " >Submit For Approval</button> 
+       
+                             
+            </td>
+
+            <td class=" col align-items-baseline">
+                <div class="button-box " id="buton" style="display:none ;"
+                >
+                <button class="btn btn-success float-right " id="submit" value="Submit" style="background-color: #b22b2b;
+                border-color: #760606;  MARGIN-TOP: 10PX; "  >Submit Booking</button>
+            </div>
+            </td>
+
+        </tr>
+   
+      
+
+        </table>
+    </div>
+
+
+
+        
+</div>
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> 
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+
+<script>
+
+
+
+    function calcprice() {
+        if(scholarship.value==null)
+        {
+            scholarship.value=0;
+        }
+        if(discount.value==null)
+        {
+            discount.value=0;
+        }
+        if(offer_price.value==null)
+        {
+            offer_price.value=0;
+        }
+    
+        
+      let num3 = scholarship.value;
+        let num2 = discount.value;
+    
+        let num1 = offer_price.value;
+    
+      let sum = Number(num1) - Number(num2) - Number(num3);
+      console.log(sum);
+      let a=Number(num3)+Number(num2);
+      let b=Number(num1);
+      console.log(a);
+      console.log(b);
+      console.log(a/b);
+      scholarship_perc.value=(a/b)*100;
+    
+      console.log(((Number(num3)+Number(num2))/Number(num1))*100);
+      document.getElementsByName("price_after")[0].value = sum;
+      price_with_tax.value=sum+0.18*sum;
+    
+    
+      buton.style.display="block";
+      butoning.style.display="block";
+    
+     
+      }
+    
+    function calcscholarship() {
+        
+        let num8 = scholarship.value;
+        let num10 = discount.value;
+    
+        let num9 = offer_price.value;
+        //scholarship_perc.value= ((Number(num8)+Number(num10)) / Number(num9)) * 100;
+        console.log(((Number(num8)+Number(num10)) / Number(num9)) * 100);
+    
+    
+    }
+    function total_self_loan_t(){
+       if(self_payment.value==null)
+        {
+            self_payment.value=0;
+        }
+       
+    
+        if(loan_payment.value==null)
+        {
+            loan_payment.value=0;
+        }
+        
+    
+        if(subvention.value==null)
+        {
+            subvention.value=0;
+        }
+       
+        let num4 = subvention.value;
+        console.log(num4);
+    
+        let num2 = loan_payment.value;
+    
+        let num1 = self_payment.value;
+    
+        let num3 = document.getElementsByName("offer_price")[0].value;
+    
+      
+        let sum = Number(num1) + Number(num2) +Number(num4);
+        console.log(sum);
+        let sum1 = (Number(num1) + Number(num2)) / 1.18;
+        let diff = Number(num3)+0.18*Number(num3) - Number(num1) - Number(num2)-Number(num4);
+        let diff1=Number(price_with_tax.value)-Number(sum);
+        total_val.value = sum;
+        total_without_tax.value = sum1;
+        Remaining.value = diff1;
+    
+        due_per.value=(Number(diff1)/Number(price_with_tax.value))*100;
+        let due_perc=(Number(diff1)/Number(price_with_tax.value))*100;
+    
+        if(Number(due_perc)<=49.5)
+        {
+          no_yes_r.value="Approved";
+          
+          
+          var mydate = new Date(running_batch_start.value);
+    
+          
+          var q = new Date();
+          var date = new Date(q.getFullYear(),q.getMonth(),q.getDate());
+    
+          if(mydate<=date)
+          {
+            no_yes_n.value="due";
+          }
+          else{
+          no_yes_n.value="Not due";
+          }
+    
+    
+        }
+        else{
+          no_yes_r.value="Not Approved";
+          no_yes_n.value="Not due";
+        }
+        
+        
+    
+      }
+    
+    
+    function remaining() {
+    
+        let num1 = document.getElementsByName("price_with_tax")[0].value;
+        let num2 = document.getElementsByName("loan_payment")[0].value;
+        let num3 = document.getElementsByName("self_payment")[0].value;
+    
+        let diff = Number(num1) - Number(num2) - Number(num3);
+        document.getElementsByName("Remaining")[0].value = diff;
+    
+    }
+    
+    
+    function total_self_loan(){
+    
+      let num1 = document.getElementsByName("self_payment")[0].value;
+      let num2 = document.getElementsByName("loan_payment")[0].value;
+    
+      let sum = Number(num1) + Number(num2);
+      document.getElementsByName("totalTAX")[0].value = sum;
+    }
+    
+    function total_self_loan_withoutTAX(){
+    
+      let num1 = document.getElementsByName("self_payment")[0].value;
+      let num2 = document.getElementsByName("loan_payment")[0].value;
+    
+      let sum = (Number(num1) + Number(num2)) / 1.18;
+      let sum1 = sum.toFixed(2)
+      document.getElementsByName("totalwithoutTAX")[0].value = sum1;
+    }
+    
+    function refundcase( a )
+    {
+        if(a=="Yes")
+        {
+            
+        document.getElementById( "refund reason" ).style.display = "block";
+        document.getElementById("refund reason").setAttribute('required','');
+        document.getElementById( "refund_remarks" ).style.display = "block";
+    
+        document.getElementById( "Refund_Dat" ).style.display = "block";
+        document.getElementById("Refund_Dat").setAttribute('required','');
+        document.getElementById("Refund_Date").setAttribute('required','');
+        document.getElementById( "Refund_Date" ).style.display = "block";
+        
+        no_yes.value="No";
+        Deferred.value="No";
+        Dropout.value="No";
+        loan_rejected.value="No";
+        document.getElementById( "Dropout reason" ).style.display = "none";
+      document.getElementById( "Dropout_Date" ).style.display = "none";
+    
+      document.getElementById( "Dropout_Date" ).value = " ";
+    
+      document.getElementById( "Dropout_Dat" ).style.display = "none";
+      dvPassport.style.display="none";
+                dvPassport_s.style.display="none";
+                dvPassport_st.style.display="none";
+                dvPassport.value=0;
+                dvPassport_st.value="";
+                no_yes.value="No";
+                document.getElementById( "next batch" ).style.display = "none";
+      document.getElementById( "next_batch_month" ).style.display = "none";
+      document.getElementById( "nb" ).style.display = "none";
+      document.getElementById( "next batch" ).value = "";
+     
+      document.getElementById("Deferred_Date").style.display = "none";
+      document.getElementById("Deferred_Dat").style.display = "none";
+      document.getElementById("Deferred_Date").value = "";
+      loan_rejected_reason.style.display = "none";
+    
+           // document.getElementById( "refund reason" ).style.display = "block";
+    
+        }
+    
+    
+     else if( a == "No" )
+      {
+        document.getElementById( "refund reason" ).style.display = "none";
+            document.getElementById( "refund_remarks" ).style.display = "none";
+    
+            document.getElementById( "Refund_Dat" ).style.display = "none";
+    
+            document.getElementById( "Refund_Date" ).style.display = "none";
+    
+            document.getElementById( "Refund_Date" ).value = " ";
+    
+            document.getElementById( "refund_remarks" ).value = " ";
+    
+    
+      }
+    
+    }
+    
+    function getrefunddate(c){
+       
+        var enroll = new Date(document.getElementById( "enrollment_date" ).value);
+        var r = new Date(c);
+        var refund = new Date(r.getFullYear(), r.getMonth(), r.getDate(),0,0,0,0);
+        var ctoday = new Date();
+            var today= new Date(ctoday.getFullYear(), ctoday.getMonth(), ctoday.getDate(), 0,0,0,0 );
+
+        var sd = new Date(today.getFullYear(),today.getMonth()-1,1,0,0,0,0);
+        var cd = new Date(today.getFullYear(),today.getMonth(),1,0,0,0,0);
+        var ed = new Date(today.getFullYear(),today.getMonth(),7,0,0,0,0);
+        
+        if(today<=ed){
+                if(refund>enroll && refund>=sd && refund <=today)
+                {
+                    document.getElementById( "Refund_Date" ).value = c ;
+                    
+
+                }
+                else{alert("Invalid Date");
+                document.getElementById("Refund_Dat").value = '';
+                document.getElementById( "Refund_Date" ).value = '' ;
+            }
+            } 
+        
+        
+        else{    
+            if(refund>enroll && refund>=cd && refund<=today)
+            {
+                document.getElementById( "Refund_Date" ).value = c ;
+                
+            }
+            else{
+                alert("Invalid date");
+                document.getElementById("Refund_Dat").value = '';
+                document.getElementById( "Refund_Date" ).value = '' ;
+            }
+
+        } 
+    }
+        
+           
+    
+    
+    
+    
+    function getdropoutdate(t){
+       
+
+        var enroll = new Date(document.getElementById( "enrollment_date" ).value);
+        var dr = new Date(t);
+        var drop = new Date(dr.getFullYear(), dr.getMonth(), dr.getDate(), 0,0,0,0);
+        var ctoday = new Date();
+            var today= new Date(ctoday.getFullYear(), ctoday.getMonth(), ctoday.getDate(), 0,0,0,0 );
+
+        var sd = new Date(today.getFullYear(),today.getMonth()-1,1,0,0,0,0);
+        var cd = new Date(today.getFullYear(),today.getMonth(),1,0,0,0,0);
+        var ed = new Date(today.getFullYear(),today.getMonth(),7,0,0,0,0);
+        
+        if(today<=ed){
+                if(drop>enroll && drop>=sd && drop <=today)
+                {
+                    document.getElementById( "Dropout_Date" ).value =t;
+                    
+                }
+                else{alert("Invalid Date");
+                document.getElementById("Dropout_Dat").value = '';
+                document.getElementById( "Dropout_Date" ).value = '' ;
+            }
+            } 
+        
+        
+        else{    
+            if(drop>enroll && drop>=cd && drop<=today)
+            {
+                document.getElementById("Dropout_Date").value = t ;
+                
+            }
+            else{
+                alert("Invalid date");
+                document.getElementById("Dropout_Dat").value = '';
+                document.getElementById( "Dropout_Date" ).value = '' ;
+            }
+
+        } 
+    }
+
+    
+    
+
+    
+    
+    function dropoutcase(b)
+    {
+        
+     if( b == "Yes" )
+      {
+        document.getElementById( "Dropout reason" ).style.display = "block";
+        document.getElementById("Dropout reason").setAttribute('required','');
+        document.getElementById( "Dropout_Date" ).style.display = "block";
+    
+        document.getElementById( "Dropout_Dat" ).style.display = "block";
+        document.getElementById("Dropout_Date").setAttribute('required','');
+        document.getElementById("Dropout_Dat").setAttribute('required','');
+        no_yes.value="No";
+        Deferred.value="No";
+        loan_rejected.value="No";
+        refund.value="No";
+        dvPassport.style.display="none";
+                dvPassport_s.style.display="none";
+                dvPassport_st.style.display="none";
+                dvPassport.value=0;
+                dvPassport_st.value="";
+                no_yes.value="No";
+                document.getElementById( "refund reason" ).style.display = "none";
+            document.getElementById( "refund_remarks" ).style.display = "none";
+    
+            document.getElementById( "Refund_Dat" ).style.display = "none";
+    
+            document.getElementById( "Refund_Date" ).style.display = "none";
+    
+            document.getElementById( "Refund_Date" ).value = " ";
+    
+            document.getElementById( "refund_remarks" ).value = " ";
+            document.getElementById( "next batch" ).style.display = "none";
+      document.getElementById( "next_batch_month" ).style.display = "none";
+      document.getElementById( "nb" ).style.display = "none";
+      document.getElementById( "next batch" ).value = "";
+    
+    
+      
+      document.getElementById("Deferred_Date").style.display = "none";
+      document.getElementById("Deferred_Dat").style.display = "none";
+      document.getElementById("Deferred_Date").value = "";
+      loan_rejected_reason.style.display = "none";
+    
+    
+    
+    
+      }
+      else if(b=="No")
+      {
+      document.getElementById( "Dropout reason" ).style.display = "none";
+      document.getElementById( "Dropout_Date" ).style.display = "none";
+    
+      document.getElementById( "Dropout_Date" ).value = " ";
+    
+      document.getElementById( "Dropout_Dat" ).style.display = "none";
+      
+    
+      
+    
+      }
+    }
+    
+    
+    function loancase( b )
+    {
+        loan_rejected_reason.style.display = "none";
+    
+      if( b == "Yes" )
+      {
+        loan_rejected_reason.style.display = "block";
+        document.getElementById("loan_rejected_reason").setAttribute('required','');
+        refund.value="No";
+        no_yes.value="No";
+        Deferred.value="No";
+        Dropout.value="No";
+        document.getElementById( "Dropout reason" ).style.display = "none";
+      document.getElementById( "Dropout_Date" ).style.display = "none";
+    
+      document.getElementById( "Dropout_Date" ).value = " ";
+    
+      document.getElementById( "Dropout_Dat" ).style.display = "none";
+      dvPassport.style.display="none";
+                dvPassport_s.style.display="none";
+                dvPassport_st.style.display="none";
+                dvPassport.value=0;
+                dvPassport_st.value="";
+                no_yes.value="No";
+                document.getElementById( "refund reason" ).style.display = "none";
+            document.getElementById( "refund_remarks" ).style.display = "none";
+    
+            document.getElementById( "Refund_Dat" ).style.display = "none";
+    
+            document.getElementById( "Refund_Date" ).style.display = "none";
+    
+            document.getElementById( "Refund_Date" ).value = " ";
+    
+            document.getElementById( "refund_remarks" ).value = " ";
+            document.getElementById( "next batch" ).style.display = "none";
+      document.getElementById( "next_batch_month" ).style.display = "none";
+      document.getElementById( "nb" ).style.display = "none";
+      document.getElementById( "next batch" ).value = "";
+    
+    
+      
+      document.getElementById("Deferred_Date").style.display = "none";
+      document.getElementById("Deferred_Dat").style.display = "none";
+      document.getElementById("Deferred_Date").value = "";
+        
+      
+        
+    }
+
+    }
+    
+    
+    function deferredcase( c )
+    {
+        if(c=="No")
+        {
+    
+      document.getElementById( "next batch" ).style.display = "none";
+      document.getElementById( "next_batch_month" ).style.display = "none";
+      document.getElementById( "nb" ).style.display = "none";
+      document.getElementById( "next batch" ).value = "";
+    
+    
+      
+      document.getElementById("Deferred_Date").style.display = "none";
+      document.getElementById("Deferred_Dat").style.display = "none";
+      document.getElementById("Deferred_Date").value = "";
+        }
+    
+      else if(c=="Yes")
+      {
+      document.getElementById( "next batch" ).style.display = "block";
+      document.getElementById( "next_batch_month" ).style.display = "block";
+      document.getElementById( "nb" ).style.display = "block";
+      
+      document.getElementById("Deferred_Date").style.display = "block";
+      document.getElementById("Deferred_Dat").style.display = "block";
+      document.getElementById("Deferred_Dat").setAttribute('required','');
+      document.getElementById("Deferred_Date").setAttribute('required','');
+      document.getElementById("next batch").setAttribute('required','');
+
+      
+      no_yes.value="No";
+        Dropout.value="No";
+        loan_rejected.value="No";
+        refund.value="No";
+        document.getElementById( "Dropout reason" ).style.display = "none";
+      document.getElementById( "Dropout_Date" ).style.display = "none";
+    
+      document.getElementById( "Dropout_Date" ).value = " ";
+    
+      document.getElementById( "Dropout_Dat" ).style.display = "none";
+      dvPassport.style.display="none";
+                dvPassport_s.style.display="none";
+                dvPassport_st.style.display="none";
+                dvPassport.value=0;
+                dvPassport_st.value="";
+                no_yes.value="No";
+                document.getElementById( "refund reason" ).style.display = "none";
+            document.getElementById( "refund_remarks" ).style.display = "none";
+    
+            document.getElementById( "Refund_Dat" ).style.display = "none";
+    
+            document.getElementById( "Refund_Date" ).style.display = "none";
+    
+            document.getElementById( "Refund_Date" ).value = " ";
+    
+            document.getElementById( "refund_remarks" ).value = " ";
+            loan_rejected_reason.style.display = "none";
+    
+    
+    
+    
+      }
+    }
+    
+    function validateins(t){
+        if(t>=2 && t<=6){
+            approvedd_installment.value =t;
+        }
+        if(t<approvedd_installment.value || t>6 || t<0 ){
+            alert("Invalid Input");
+            approved_installment.value = '';
+        }
+
+    } 
+
+    function validate(j){
+
+    }
+    
+    function gemon(t)
+    {
+    upcoming_batch.value=t;
+    }
+    function gebatch(t)
+    {
+    upcoming_batch.value=t;
+    
+    }
+    
+    
+    
+      function getmonth(t){
+        
+     document.getElementById( "next batch" ).value = t;
+    
+    }
+    
+    function batch_decide(t)
+    {
+        document.getElementById( "next batch" ).value = t;
+    
+    
+    }
+    
+    function getdeferred_dat(c){
+        
+        
+        var enroll = new Date(document.getElementById( "enrollment_date" ).value);
+        var def = new Date(c);
+        var defer = new Date(def.getFullYear(), def.getMonth(), def.getDate(), 0,0,0,0 );
+        var ctoday = new Date();
+            var today= new Date(ctoday.getFullYear(), ctoday.getMonth(), ctoday.getDate(), 0,0,0,0 );
+
+        var sd = new Date(today.getFullYear(),today.getMonth()-1,1,0,0,0,0);
+        var cd = new Date(today.getFullYear(),today.getMonth(),1,0,0,0,0);
+        var ed = new Date(today.getFullYear(),today.getMonth(),7,0,0,0,0);
+        
+        if(today<=ed){
+                if(defer>enroll && defer>=sd && defer <=today)
+                {
+                    document.getElementById( "Deferred_Date" ).value = c ;
+                    
+
+                }
+                else{alert("Invalid Date");
+                document.getElementById("Deferred_Dat").value = '';
+                document.getElementById( "Deferred_Date" ).value = '' ;
+            }
+            } 
+        
+        
+        else{    
+            if(defer>enroll && defer>=cd && defer<=today)
+            {
+                document.getElementById( "Deferred_Date" ).value = c ;
+                
+            }
+            else{
+                alert("Invalid date");
+                document.getElementById("Deferred_Dat").value = '';
+                document.getElementById( "Deferred_Date" ).value = '' ;
+            }
+
+        } 
+ 
+ 
+    }
+        
+    function pmode( c )
+    {
+       
+    
+      document.getElementById( "loan" ).style.visibility = "hidden";
+      
+    
+        
+    
+    
+      if( c == "Loan" )
+      {
+        document.getElementById( "loan" ).style.visibility = "visible";
+       
+       
+    
+      }
+    }
+    function ShowHideDiv(t) {
+        
+            if(t=="Yes")
+            {   
+                dvPassport.style.display="block";
+                dvPassport_s.style.display="block";
+                dvPassport_st.style.display="block";
+                no_yes.value="Yes";
+                document.getElementById("dvPassport_st").setAttribute('required','');
+        Deferred.value="No";
+        Dropout.value="No";
+        loan_rejected.value="No";
+        refund.value="No";
+        document.getElementById( "Dropout reason" ).style.display = "none";
+      document.getElementById( "Dropout_Date" ).style.display = "none";
+    
+      document.getElementById( "Dropout_Date" ).value = " ";
+    
+      document.getElementById( "Dropout_Dat" ).style.display = "none";
+      document.getElementById( "refund reason" ).style.display = "none";
+            document.getElementById( "refund_remarks" ).style.display = "none";
+    
+            document.getElementById( "Refund_Dat" ).style.display = "none";
+    
+            document.getElementById( "Refund_Date" ).style.display = "none";
+    
+            document.getElementById( "Refund_Date" ).value = " ";
+    
+            document.getElementById( "refund_remarks" ).value = " ";
+            document.getElementById( "next batch" ).style.display = "none";
+      document.getElementById( "next_batch_month" ).style.display = "none";
+      document.getElementById( "nb" ).style.display = "none";
+      document.getElementById( "next batch" ).value = "";
+    
+    
+      
+      document.getElementById("Deferred_Date").style.display = "none";
+      document.getElementById("Deferred_Dat").style.display = "none";
+      document.getElementById("Deferred_Date").value = "";
+      loan_rejected_reason.style.display = "none";
+    
+    
+    
+            }
+            else if(t=="No")
+            {
+                dvPassport.style.display="none";
+                dvPassport_s.style.display="none";
+                dvPassport_st.style.display="none";
+                dvPassport.value=0;
+                dvPassport_st.value="";
+                no_yes.value="No";
+    
+    
+            }
+    
+    
+        }
+    
+    
+        function myfn()
+        {
+            approvedd_installment.style.display ="none";
+
+            if(discount.value.length==0)
+            {
+                discount.value=0;
+            }
+            if(scholarship.value.length==0)
+            {
+                scholarship.value=0;
+            }
+    
+            if(Deferred.value=="")
+            {
+                Deferred.value="No";
+            }
+
+            if(Deferred.value=="Yes")
+            {
+                document.getElementById("deferred_r").style.border="2px solid #c72828";
+            }
+
+            if(Dropout.value=="")
+            {
+                Dropout.value="No";
+            }
+
+            if(Dropout.value=="Yes")
+            {
+                document.getElementById("dropout_r").style.border="2px solid #c72828";
+            }
+
+
+            if(refund.value=="")
+            {
+                refund.value="No";
+            }
+            if(refund.value == "Yes")
+            {
+                document.getElementById("refund_r").style.border="2px solid #c72828";
+            }
+            if(loan_rejected.value=="")
+            {
+                loan_rejected.value="No";
+    
+            }
+
+            if(loan_rejected.value=="Yes")
+            {
+                document.getElementById("loanrejected_r").style.border="2px solid #c72828";
+    
+            }
+            if(no_yes.value=="")
+            {
+                no_yes.value="No";
+            }
+
+            if(no_yes.value=="Yes")
+            {
+                document.getElementById("latestart_r").style.border="2px solid #c72828";
+            }
+            if(approved_installment.value.length==0)
+            {
+                approved_installment.value=0;
+            }
+            if(refund_yes.value=="Yes")
+            {
+                document.getElementById( "refund reason" ).style.display = "block";
+                refund_remarks.style.display="block";
+                Refund_Dat.style.display="block";
+                Refund_Date.style.display="block";
+    
+    
+    
+            }
+            if(loan_rejected.value=="Yes")
+            {
+                loan_rejected_reason.style.display="block";   
+            }
+            if(Dropout.value=="Yes")
+        {
+            document.getElementById( "Dropout reason" ).style.display = "block";
+            Dropout_Dat.style.display="block";
+            Dropout_Date.style.display="block";
+    
+    
+        }
+        if(Deferred.value=="Yes")
+        {
+            Deferred_Dat.style.display="block";
+            Deferred_Date.style.display="block";
+            next_batch_month.style.display="block";
+            nb.value="block";
+            document.getElementById( "next batch" ).style.display = "block";
+    
+        }
+        if(no_yes.value=="Yes")
+            {
+                dvPassport.style.display="block";
+                dvPassport_s.style.display="block";
+                dvPassport_st.style.display="block";
+    
+            }
+            if(self_payment.value.length==0)
+        {
+            self_payment.value=0;
+        }
+       
+    
+        if(loan_payment.value.length==0)
+        {
+            loan_payment.value=0;
+        }
+        
+    
+        if(subvention.value.length==0)
+        {
+            subvention.value=0;
+        }
+    
+    
+    
+            
+    
+            
+        }
+    
+        function bt(t)
+        {
+            bt_bt.value=t;
+    
+        }
+    
+        function getcustid(){
+            document.getElementById("batch_number").setAttribute('required','');
+            document.getElementById("enrollment_date").setAttribute('required','');
+
+            var x = document.getElementById("enrollment_dat").value;
+            var b = document.getElementById("batch_number").value;
+             var dateObj = new Date(x);
+             var year = dateObj.getFullYear();
+    
+             if(customer_id.value=="" && program.value!="" && batch_number!="" && enrollment_dat!= "" )
+             {
+            
+                customer_id.value=programme.value+"-"+b+"-"+year +"-"+b_id.value;
+             }
+
+        }
+    
+        function geda(t)
+        {
+          
+            enrollment_date.value=t;
+            // enrollment_dat
+            var enroll = new Date(document.getElementById( "enrollment_date" ).value);
+            var ctoday = new Date();
+            var today= new Date(ctoday.getFullYear(), ctoday.getMonth(), ctoday.getDate(), 0,0,0,0 );
+             var tom= new Date();
+             tom.setDate(today.getDate()+1);
+            
+
+            var sd = new Date(today.getFullYear(),today.getMonth()-1,1,0,0,0,0);
+            var cd = new Date(today.getFullYear(),today.getMonth(),1,0,0,0,0);
+            var ed = new Date(today.getFullYear(),today.getMonth(),7,0,0,0,0);
+            
+            console.log(ed);
+            if(today<=ed){
+                    if(enroll>=sd && enroll <=tom)
+                    {
+                        document.getElementById( "enrollment_date" ).value = t ;
+                    }
+                    else{
+                        console.log(ed);
+                        alert("Invalid Date1. You cannot enter future dates after tomorrow or dates before previous month.");
+                        document.getElementById("enrollment_dat").value = '';
+                        document.getElementById( "enrollment_date" ).value = '' ;
+                    }
+                } 
+               
+            else{    
+                if( enroll>=cd && enroll<=tom)
+                {
+                    document.getElementById( "enrollment_date" ).value = t ;                   
+                }
+                else{
+                    console.log(ed);
+                    alert("Invalid Date2. You cannot enter future dates after tomorrow or dates before previous month.");
+                    document.getElementById("enrollment_dat").value = '';
+                    document.getElementById( "enrollment_date" ).value = '' ;
+                }
+
+            }
+        }
+
+        
+    
+    
+        function getls(b)
+        {
+            dvPassport_st.value=b;
+        }
+    
+        function getm(b)
+        {
+            dvPassport_st.value=b;
+        }
+    
+        function update(t) {
+                    var select = document.getElementById('program');
+                    var option = select.options[select.selectedIndex];
+    
+                    offer_price.value = t;
+                    
+                    document.getElementById('programme').value = option.text;
+                   
+                }
+        
+        function getTL(k) {
+                    var select = document.getElementById('counsellor');
+                    var option = select.options[select.selectedIndex];
+                    var map = k.split("<>")
+
+                    team_lead.value = map[1];
+                    asst_mgr.value = map[2];
+                    
+                    document.getElementById('counsell').value = option.text;
+                   
+                }
+                
+        
+        function getbatchdate(i) {
+                    var select = document.getElementById('batch_id');
+                    var option = select.options[select.selectedIndex];
+                    
+                                       
+                    
+                    var id = option.text;
+                    var batch = id.split("-");
+                    // alert(batch[0]);
+                    // alert(document.getElementById('programme').value);
+                    
+                    if(batch[0]== document.getElementById('programme').value)
+                    {
+                        document.getElementById('batchidd').value = option.text;
+                        document.getElementById("batch_number").value = batch[1];
+                        document.getElementById('batch_date').value = new Date(i).toDateString();
+                    }
+                    else{
+                        // alert("Invalid Input");
+                        document.getElementById('batch_id').value='';
+                    }
+
+                    document.getElementById("batch_id").setAttribute('required','');
+
+                }
+        function validation(){
+                    var select = document.getElementById('batch_id');
+                    var option = select.options[select.selectedIndex];
+                    var id = option.text;
+                    var batch = id.split("-");
+                    if(batch[0]!= document.getElementById('programme').value)
+                    {
+                        // alert("Invalid Input");
+                        document.getElementById('batch_id').value='';
+                        document.getElementById("batch_number").value='';
+                        document.getElementById('batch_date').value ='';
+
+
+                    }
+
+
+
+        }
+        
+        
+    
+        function getbatchd(t)
+        {
+        
+            batch_date.value=t;
+        }
+        function getbootcampd(t)
+        {
+            bootcamp_date.value=t;
+        }
+    </script>
+</body>
+
+    <!-- <h3>SALESX Form</h3> -->
+    
+
+</html>

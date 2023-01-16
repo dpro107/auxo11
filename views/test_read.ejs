@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+   
+    
+table, td, th {  
+ border: 1px solid #ddd;
+ text-align: left;
+}
+table{
+ border-collapse: collapse;
+ width: 50%;
+}
+.table-data{
+  overflow-x:auto;
+  overflow-y: auto;
+  height: 700px;
+}
+.headcol {
+        position: absolute;
+        width: 5em;
+        left: 10px;
+        
+        z-index: 2;
+        border-top-width: 2px;
+        margin-top: -1px;
+      }
+      .headcol1 {
+        position: sticky;
+        width: 5em;
+        left: 10px;
+        z-index: 1;
+        background-color:white;
+
+        
+       
+        border-top-width: 2px;
+        margin-top: -1px;
+      }
+.table-data thead th {
+      position: sticky;
+      top: 0;
+      background-color: aqua;
+    }
+th, td {
+  padding: 15px;
+}
+ </style>
+</head>
+<body>
+  
+  
+  <div class="table-data">
+    <table border="1" >
+        <thead>
+            <th>ID</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone_number</th>
+            <th> Edit</th>
+        </thead> 
+        
+        <%
+        if(fetchData.length!=0){
+        var i=1;
+        fetchData.forEach(function(data){
+        %>
+        
+        <tr>
+            <td><%=data.id %></td>
+            <td><%=data.email_address %></td>
+            <td><%=data.first_name %></td>
+            <td><%=data.last_name %></td>
+            <td><%=data.phone %></td>
+            <td><a href="/frud/edit/<%=data.id%>">Edit Data</a></td> 
+
+        </tr>
+        
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    
+    </table>
+    </div>
+
+
+</body>
+</html>
